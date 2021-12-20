@@ -4,7 +4,7 @@
 }
 
 .navbar-violet .navbar-collapse {
-  flex-grow: 0;
+  //flex-grow: 0;
 }
 
 .navbar-violet .navbar-brand img {
@@ -14,4 +14,12 @@
 
 .navbar-toggler-icon {
   color: white;
+}
+
+.navbar-logo {
+  margin-right: 70px;
+}
+
+h3 {
+  margin-left: 10px;
 }

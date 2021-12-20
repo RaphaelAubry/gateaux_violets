@@ -12,10 +12,21 @@
 @import "components/index";
 @import "pages/index";
 
+
+
 body {
   height:100vh;
 }
 
 .wrapper {
   height: 100vh
+}
+
+.horizontal {
+  display: flex;
+  align-items: center;
+}
+
+.push-right {
+  flex-grow: 1;
 }
