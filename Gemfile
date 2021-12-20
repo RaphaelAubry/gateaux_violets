@@ -57,3 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Simple form
 gem 'simple_form'
+
+#Front-end gems
+gem 'autoprefixer-rails', '10.2.5'
+gem 'font-awesome-sass', '~> 5.6.1'
