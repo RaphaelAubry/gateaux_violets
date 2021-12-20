@@ -1,12 +1,17 @@
 class CakesController < ApplicationController
-  def new
-  end
-
-  def create
-  end
 
   def index
   end
+
+  def new
+    @cake = Cake.new
+  end
+
+  def create
+    @cake = Cake.new(params[:cake])
+    @cake.save
+  end
+
 
   def show
   end
