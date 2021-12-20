@@ -1,12 +1,19 @@
-.navbar-lewagon {
+.navbar-violet {
   justify-content: space-between;
-  background: white;
+  background: rgb(58, 22, 120);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-violet .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-violet .navbar-brand img {
   width: 40px;
+  height: 40px;
 }
+
+.navbar-toggler-icon {
+  color: white;
+}
+
+.navbar-toggler { border-color: #008000; }
