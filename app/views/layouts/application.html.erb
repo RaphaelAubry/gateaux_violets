@@ -13,8 +13,19 @@
   </head>
 
   <body>
+
+
     <%= render 'shared/navbar' %>
-    <%= yield %>
+
+    <div class="wrapper">
+      <div class="sizer">
+
+        <%= yield %>
+
+      </div>
+    </div>
+
     <%= render 'shared/footer' %>
+
   </body>
 </html>
