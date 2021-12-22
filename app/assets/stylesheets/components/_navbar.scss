@@ -18,6 +18,9 @@
 
 .navbar-logo {
   margin-right: 70px;
+  @media(max-width: 768px) {
+    margin-right: 10px;
+  }
 }
 
 .navbar-brand {

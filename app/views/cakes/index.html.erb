@@ -5,7 +5,7 @@
     <div class="products">
       <% @cakes.each do |cake| %>
 
-        <%= link_to cake.name, cake_path(cake) %>
+        <%= render 'card', cake: cake %>
 
       <% end %>
     </div>
