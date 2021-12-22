@@ -1,0 +1,12 @@
+  <div class="left">
+
+    <%= link_to "Nouveau", new_cake_path %>
+
+    <div class="products">
+      <% @cakes.each do |cake| %>
+
+        <%= link_to cake.name, cake_path(cake) %>
+
+      <% end %>
+    </div>
+  </div>

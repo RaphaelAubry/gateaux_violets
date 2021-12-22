@@ -1,0 +1,11 @@
+<div class="center">
+  <div class="form">
+    <%= simple_form_for(@cake) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.input :size %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

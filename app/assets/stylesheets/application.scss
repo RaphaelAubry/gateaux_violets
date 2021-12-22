@@ -27,6 +27,18 @@ body {
   align-items: center;
 }
 
+.center {
+  width: 50vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  width: 50vw;
+  margin: 0 auto;
+}
+
 .push-right {
   flex-grow: 1;
 }
