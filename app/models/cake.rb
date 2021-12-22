@@ -1,7 +1,7 @@
 class Cake < ApplicationRecord
   validates :name, presence: true
 
-
+  include ActionView::Helpers::NumberHelper
 
   def to_s
     "id: #{id} /name: #{name} /descripion: #{description} /price: #{price} /size: #{size}"
@@ -15,7 +15,7 @@ class Cake < ApplicationRecord
     " EUR"
   end
 
-  def priced
+  def price_2d
     number_with_precision(price, precision: 2)
   end
 end
