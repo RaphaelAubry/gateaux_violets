@@ -1,8 +1,9 @@
 <div class="left">
 
   <%= render 'product', cake: @cake %>
+  <div>
     <%= link_to 'edit', edit_cake_path %>
     <%= link_to 'delete', cake_path(@cake), method: :delete, data: { confirm: "Are you sure ?" } %>
-    <%= link_to 'back', :back %>
-
+  </div>
+  <%= link_to 'back', :back %>
 </div>
