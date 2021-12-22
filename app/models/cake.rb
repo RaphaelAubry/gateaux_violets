@@ -4,4 +4,12 @@ class Cake < ApplicationRecord
   def to_s
     "id: #{id} /name: #{name} /descripion: #{description} /price: #{price} /size: #{size}"
   end
+
+  def personnes
+    " personnes"
+  end
+
+  def currency
+    " EUR"
+  end
 end

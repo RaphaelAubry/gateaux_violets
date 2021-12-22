@@ -1,9 +1,11 @@
 
-<div class="card">
+<div class="product">
 
-  <p><%= cake.name %></p>
-  <p><%= cake.description %></p>
-  <p><%= cake.size %></p>
-  <p><%= cake.price %></p>
-
+  <div class=""><%= image_tag "cake1.png", class: "photo" %></div>
+  <div>
+  <p class="name"><%= cake.name %></p>
+  <p class="description"><%= cake.description %></p>
+  <p class="size"><%= cake.size %><%= cake.personnes %></p>
+  <p class="price"><%= cake.price %><%= cake.currency %></p>
+  </div>
 </div>
