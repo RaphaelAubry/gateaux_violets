@@ -1,5 +1,7 @@
 <div class="left">
 
   <%= @cake.name %>
+  <%= link_to 'edit', edit_cake_path %>
+  <%= link_to 'delete', cake_path(@cake), method: :delete, data: { confirm: "Are you sure ?" } %>
 
 </div>

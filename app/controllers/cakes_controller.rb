@@ -26,10 +26,16 @@ class CakesController < ApplicationController
 
   def update
     @cake = Cake.find(params[:id])
+    @cake.update(cake_params)
+
+    redirect_to cake_path
   end
 
   def destroy
     @cake = Cake.find(params[:id])
+    @cake.destroy
+
+    redirect_to cakes_path
   end
 
   private
