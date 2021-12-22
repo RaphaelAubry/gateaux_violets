@@ -19,8 +19,6 @@
 @media(max-width: 768px) {
 }
 
-
-
 body {
   height:100vh;
 }
@@ -46,6 +44,7 @@ body {
 
 .left {
   width: 50vw;
+  min-height: 100vh;
   margin: 0 auto;
   @media(max-width: 768px) {
     width: 95vw;
@@ -54,4 +53,12 @@ body {
 
 .push-right {
   flex-grow: 1;
+}
+
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: $violet;
+  }
 }

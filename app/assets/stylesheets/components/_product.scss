@@ -1,6 +1,5 @@
 .product {
   border-radius: 5px;
-
   p {
     font-size: 14px;
   }
@@ -26,4 +25,8 @@
   width: 235px;
   height: 215px;
   object-fit: cover;
+  @media(max-width: 768px) {
+  width: 46vw;
+  height: 46vw;
+  }
 }

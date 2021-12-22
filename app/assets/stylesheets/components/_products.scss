@@ -2,6 +2,8 @@
  display: grid;
  grid-template-columns: 1fr 1fr 1fr;
  @media(max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 46vw 46vw;
+    grid-gap: 10px;
   }
+ grid-gap: 20px;
 }
