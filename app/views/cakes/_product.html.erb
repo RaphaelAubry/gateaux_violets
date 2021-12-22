@@ -1,0 +1,11 @@
+<div class="product">
+  <%= link_to cake_path(cake) do %>
+    <div class=""><%= image_tag "cake1.png", class: "photo" %></div>
+    <div class="text">
+      <p class="name"><%= cake.name %></p>
+      <p class="description"><%= cake.description %></p>
+      <p class="size"><%= cake.size %><%= cake.personnes %></p>
+      <p class="price"><%= cake.priced %><%= cake.currency %></p>
+    </div>
+  <% end %>
+</div>

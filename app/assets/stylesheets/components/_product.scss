@@ -5,6 +5,20 @@
   }
 }
 
+.photo {
+  width: 235px;
+  height: 215px;
+  object-fit: cover;
+  @media(max-width: 768px) {
+  width: 46vw;
+  height: 46vw;
+  }
+}
+
+.text {
+  margin-top: 10px;
+}
+
 .name {
   font-weight: bold;
 }
@@ -19,14 +33,4 @@
 
 .price {
   font-weight: bold;
-}
-
-.photo {
-  width: 235px;
-  height: 215px;
-  object-fit: cover;
-  @media(max-width: 768px) {
-  width: 46vw;
-  height: 46vw;
-  }
 }
