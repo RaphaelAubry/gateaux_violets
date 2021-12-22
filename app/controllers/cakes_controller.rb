@@ -17,15 +17,19 @@ class CakesController < ApplicationController
 
 
   def show
+    @cake = Cake.find(params[:id])
   end
 
   def edit
+    @cake = Cake.find(params[:id])
   end
 
   def update
+    @cake = Cake.find(params[:id])
   end
 
   def destroy
+    @cake = Cake.find(params[:id])
   end
 
   private
