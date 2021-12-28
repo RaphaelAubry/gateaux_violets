@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'cakes#index', as: :home
 
   resources :cakes, except: [:index]
+  resources :baskets
 end
