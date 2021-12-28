@@ -12,7 +12,7 @@ class CakesController < ApplicationController
     @cake = Cake.new(cake_params)
     @cake.save
 
-    redirect_to cakes_path
+    redirect_to home_path
   end
 
 
@@ -35,7 +35,7 @@ class CakesController < ApplicationController
     @cake = Cake.find(params[:id])
     @cake.destroy
 
-    redirect_to cakes_path
+    redirect_to home_path
   end
 
   private
