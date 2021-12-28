@@ -1,8 +1,6 @@
 class Cake < ApplicationRecord
   validates :name, presence: true
 
-  has_many :baskets
-
   include ActionView::Helpers::NumberHelper
 
   def to_s

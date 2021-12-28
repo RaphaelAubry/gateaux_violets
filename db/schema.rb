@@ -17,10 +17,8 @@ ActiveRecord::Schema.define(version: 2021_12_28_134822) do
 
   create_table "baskets", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "cake_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cake_id"], name: "index_baskets_on_cake_id"
     t.index ["user_id"], name: "index_baskets_on_user_id"
   end
 
@@ -49,6 +47,5 @@ ActiveRecord::Schema.define(version: 2021_12_28_134822) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "baskets", "cakes"
   add_foreign_key "baskets", "users"
 end
