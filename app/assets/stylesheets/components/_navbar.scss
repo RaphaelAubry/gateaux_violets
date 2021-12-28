@@ -1,6 +1,7 @@
 .navbar-violet {
   justify-content: space-between;
-  background: rgb(58, 22, 120);
+  background: $violet;
+  margin-bottom: 10px;
 }
 
 .navbar-violet .navbar-collapse {
@@ -18,6 +19,9 @@
 
 .navbar-logo {
   margin-right: 70px;
+  @media(max-width: 768px) {
+    margin-right: 10px;
+  }
 }
 
 .navbar-brand {

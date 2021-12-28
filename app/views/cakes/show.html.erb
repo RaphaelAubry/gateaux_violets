@@ -1,7 +1,18 @@
 <div class="left">
 
-  <%= @cake.name %>
-  <%= link_to 'edit', edit_cake_path %>
-  <%= link_to 'delete', cake_path(@cake), method: :delete, data: { confirm: "Are you sure ?" } %>
+  <%= render 'product', cake: @cake %>
+
+  <div>
+    <div class="button-wrapper">
+      <%= link_to 'edit', edit_cake_path, class: "button" %>
+    </div>
+    <div class="button-wrapper">
+      <%= link_to 'delete', cake_path(@cake), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %>
+    </div>
+  </div>
+
+  <div class="button-wrapper">
+    <%= link_to 'back', :back, class: "button" %>
+  </div>
 
 </div>

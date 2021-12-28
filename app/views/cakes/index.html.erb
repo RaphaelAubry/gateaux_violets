@@ -1,12 +1,19 @@
   <div class="left">
 
-    <%= link_to "Nouveau", new_cake_path %>
+    <div class="button-wrapper">
+      <%= link_to "Nouveau", new_cake_path, class: "button" %>
+    </div>
 
     <div class="products">
       <% @cakes.each do |cake| %>
 
-        <%= link_to cake.name, cake_path(cake) %>
+        <%= render 'product', cake: cake %>
 
       <% end %>
     </div>
+
+    <div class="button-wrapper">
+      <%= link_to "Back", :back, class: "button" %>
+    </div>
+
   </div>

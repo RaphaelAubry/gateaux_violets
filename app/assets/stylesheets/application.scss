@@ -13,6 +13,11 @@
 @import "pages/index";
 
 
+@media(max-width: 992px) {
+}
+
+@media(max-width: 768px) {
+}
 
 body {
   height:100vh;
@@ -32,13 +37,28 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  @media(max-width: 768px) {
+    width: 95vw;
+  }
 }
 
 .left {
   width: 50vw;
+  min-height: 100vh;
   margin: 0 auto;
+  @media(max-width: 768px) {
+    width: 95vw;
+  }
 }
 
 .push-right {
   flex-grow: 1;
+}
+
+a {
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: $violet;
+  }
 }
