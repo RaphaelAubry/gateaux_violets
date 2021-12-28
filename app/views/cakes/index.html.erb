@@ -1,6 +1,8 @@
   <div class="left">
 
-    <%= link_to "Nouveau", new_cake_path %>
+    <div class="button-wrapper">
+      <%= link_to "Nouveau", new_cake_path, class: "button" %>
+    </div>
 
     <div class="products">
       <% @cakes.each do |cake| %>
@@ -9,5 +11,9 @@
 
       <% end %>
     </div>
-    <%= link_to "Back", :back %>
+
+    <div class="button-wrapper">
+      <%= link_to "Back", :back, class: "button" %>
+    </div>
+
   </div>

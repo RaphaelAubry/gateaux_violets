@@ -5,8 +5,12 @@
       <%= f.input :description %>
       <%= f.input :price %>
       <%= f.input :size %>
-      <%= f.submit %>
+      <div class="button-wrapper">
+        <%= f.submit class: "button" %>
+      </div>
     <% end %>
-      <%= link_to "Back", :back %>
+      <div class="button-wrapper">
+        <%= link_to "Back", :back, class: "button" %>
+      </div>
   </div>
 </div>

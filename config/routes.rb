@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: 'pages#home', as: :home
+  root to: 'cakes#index', as: :home
 
-  resources :cakes
+  resources :cakes, except: [:index]
 end

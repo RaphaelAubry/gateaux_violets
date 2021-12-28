@@ -25,4 +25,4 @@ puts "Start seed ..."
 end
 
 puts "End of seed ..."
-puts "#{Cake.count}"
+puts "Creation de #{Cake.count} gateaux"
