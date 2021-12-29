@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :baskets
 
   resources :cakes do
-    resources :lines
+    resources :lines, only: [:new, :create]
   end
+
 end

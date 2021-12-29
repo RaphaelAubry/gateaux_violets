@@ -1,0 +1,30 @@
+<div class="left">
+  <div class="show">
+
+
+
+
+    <div>
+       <div>
+        Order flow
+      </div>
+
+      <div>
+        <h1>My basket</h1>
+      </div>
+      <div>
+        <%= @basket.created_at %>
+        <% @basket.lines.each do |line| %>
+            <p>Cake <%= line.cake.name %></p>
+        <% end %>
+      </div>
+      <div class="button-wrapper">
+        <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %>
+      </div>
+      <div class="button-wrapper">
+        <%= link_to "Back", :back, class: "button" %>
+      </div>
+    </div>
+
+  </div>
+</div>

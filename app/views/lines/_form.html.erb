@@ -2,10 +2,16 @@
   <div class="form">
 
     <p>Ma commande</p>
-    <p>Name</p>
-    <p>Quantité</p>
-    <p>Prix</p>
-    <p>Total</p>
+
+    <%= simple_form_for [@cake, @line] do |f| %>
+      <p>Name</p>
+      <%= f.input :quantity %>
+      <p>Price</p>
+      <%= f.input :total %>
+      <div class="button-wrapper">
+        <%= f.submit class: "button" %>
+      </div>
+    <% end %>
 
     <div>
       <div class="button-wrapper">
