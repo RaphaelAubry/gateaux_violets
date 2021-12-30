@@ -15,6 +15,7 @@ class LinesController < ApplicationController
       @basket.save
     end
     @line.basket = @basket
+    @line.total = calcTotal(@cake.price)
     @line.cake = @cake
     if @line.save
       redirect_to basket_path(@basket)
@@ -28,6 +29,7 @@ class LinesController < ApplicationController
 
   def update
     @basket = Basket.find(@line.basket_id)
+    @line.total = calcTotal(@line.cake.price)
     @line.update(line_params)
 
     redirect_to basket_path(@basket)
@@ -50,4 +52,7 @@ class LinesController < ApplicationController
     @line = Line.find(params[:id])
   end
 
+  def calcTotal(price)
+    return price * line_params[:quantity].to_i
+  end
 end
