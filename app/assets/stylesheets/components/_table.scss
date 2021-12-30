@@ -1,0 +1,22 @@
+$width-number: 75px;
+$width-string: 250px;
+
+.tabl-name {
+  margin-right: 10px;
+  width: $width-string;
+}
+
+.tabl-price {
+  margin-right: 10px;
+  width: $width-number;
+}
+
+.tabl-quantity {
+  margin-right: 10px;
+  width: $width-number;
+}
+
+.tabl-total {
+  margin-right: 10px;
+  width: $width-number;
+}

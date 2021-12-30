@@ -1,23 +1,35 @@
 <div class="left">
   <div class="show">
 
-
-
-
     <div>
        <div>
-        Order flow
+        <p>Order flow</p>
       </div>
 
       <div>
         <h1>My basket</h1>
       </div>
-      <div>
-        <%= @basket.created_at %>
+
+      <div class="">
+        <p><%= TimeFr(@basket.created_at) %></p>
+
+          <div class="horizontal">
+            <p class="tabl-name">Name</p>
+            <p class="tabl-price">Price</p>
+            <p class="tabl-quantity">Quantity</p>
+            <p class="tabl-total">Total</p>
+          </div>
+
         <% @basket.lines.each do |line| %>
-            <p>Cake <%= line.cake.name %></p>
+          <div class="horizontal">
+            <p class="tabl-name"><%= line.cake.name %></p>
+            <p class="tabl-price"><%= line.cake.price %></p>
+            <p class="tabl-quantity"><%= line.quantity %></p>
+            <p class="tabl-total"><%= line.total %></p>
+          </div>
         <% end %>
       </div>
+
       <div class="button-wrapper">
         <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %>
       </div>

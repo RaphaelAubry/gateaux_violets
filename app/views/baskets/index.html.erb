@@ -1,4 +1,4 @@
- <div class="center">
+ <div class="left">
   <div class="form">
 
 
@@ -8,8 +8,11 @@
     <% @baskets.each do |basket| %>
 
       <%= link_to basket_path(basket) do %>
-        <p>Basket #<%= basket.id %></p>
-        <p><%= basket.user.email %></p>
+        <div class="horizontal">
+          <p>Basket #<%= basket.id %></p>
+          <p>/</p>
+          <p><%= basket.user.email %></p>
+        </div>
       <% end %>
 
     <% end %>
