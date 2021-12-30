@@ -10,4 +10,6 @@ Rails.application.routes.draw do
     resources :lines, only: [:new, :create]
   end
 
+  resources :lines, except: [:new, :create]
+
 end

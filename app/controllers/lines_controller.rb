@@ -23,6 +23,26 @@ class LinesController < ApplicationController
     end
   end
 
+  def edit
+    @line = Line.find(params[:id])
+  end
+
+  def update
+    @line = Line.find(params[:id])
+    @basket = Basket.find(@line.basket_id)
+    @line.update(line_params)
+
+    redirect_to basket_path(@basket)
+  end
+
+  def destroy
+    @line = Line.find(params[:id])
+    @basket = Basket.find(@line.basket_id)
+    @line.destroy
+
+    redirect_to basket_path(@basket)
+  end
+
   private
 
   def line_params
