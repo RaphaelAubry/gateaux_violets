@@ -5,4 +5,11 @@ Rails.application.routes.draw do
 
   resources :cakes, except: [:index]
   resources :baskets
+
+  resources :cakes do
+    resources :lines, only: [:new, :create]
+  end
+
+  resources :lines, except: [:new, :create]
+
 end

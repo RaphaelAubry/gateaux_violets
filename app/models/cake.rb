@@ -1,6 +1,8 @@
 class Cake < ApplicationRecord
   validates :name, presence: true
 
+  has_many :lines
+
   include ActionView::Helpers::NumberHelper
 
   def to_s

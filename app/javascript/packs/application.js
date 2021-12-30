@@ -9,6 +9,14 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
+import { initForm } from '../components/form.js'
+// import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener('turbolinks:load', () => {
+  initForm();
+
+})

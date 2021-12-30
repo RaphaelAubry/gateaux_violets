@@ -1,0 +1,48 @@
+<div class="left">
+  <div class="show">
+
+    <div>
+       <div>
+        <p>Order flow</p>
+      </div>
+
+      <div>
+        <h1>My basket</h1>
+      </div>
+
+      <div class="">
+        <p><%= TimeFr(@basket.created_at) %></p>
+
+          <div class="horizontal">
+            <p class="tabl-name">Name</p>
+            <p class="tabl-price">Price</p>
+            <p class="tabl-quantity">Quantity</p>
+            <p class="tabl-total">Total</p>
+            <p class="tabl-total">Edit</p>
+            <p class="tabl-total">Delete</p>
+          </div>
+
+        <% @basket.lines.each do |line| %>
+          <div class="horizontal">
+            <p class="tabl-name"><%= line.cake.name %></p>
+            <p class="tabl-price"><%= line.cake.price %></p>
+            <p class="tabl-quantity"><%= line.quantity %></p>
+            <p class="tabl-total"><%= line.total %></p>
+            <p class="tabl-total"><%= link_to 'edit', edit_line_path(line), class: "button" %></p>
+            <p class="tabl-total"><%= link_to 'delete', line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="button-wrapper">
+        <%= link_to "Order more", :home, class: "button" %>
+      </div>
+      <div class="button-wrapper">
+        <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %>
+      </div>
+      <div class="button-wrapper">
+        <%= link_to "Back", :back, class: "button" %>
+      </div>
+    </div>
+
+  </div>
+</div>

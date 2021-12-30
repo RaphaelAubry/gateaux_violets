@@ -1,0 +1,25 @@
+ <div class="left">
+  <div class="form">
+
+
+
+    <h1>Paniers</h1>
+
+    <% @baskets.each do |basket| %>
+
+      <%= link_to basket_path(basket) do %>
+        <div class="horizontal">
+          <p>Basket #<%= basket.id %></p>
+          <p>/</p>
+          <p><%= basket.user.email %></p>
+        </div>
+      <% end %>
+
+    <% end %>
+    <div class="button-wrapper">
+      <%= link_to "Back", :back, class: "button" %>
+    </div>
+
+
+  </div>
+</div>
