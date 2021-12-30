@@ -1,5 +1,6 @@
 class CakesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
+  before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
   def index
     @cakes = Cake.all
@@ -18,22 +19,18 @@ class CakesController < ApplicationController
 
 
   def show
-    @cake = Cake.find(params[:id])
   end
 
   def edit
-    @cake = Cake.find(params[:id])
   end
 
   def update
-    @cake = Cake.find(params[:id])
     @cake.update(cake_params)
 
     redirect_to cake_path
   end
 
   def destroy
-    @cake = Cake.find(params[:id])
     @cake.destroy
 
     redirect_to home_path
@@ -43,5 +40,9 @@ class CakesController < ApplicationController
 
   def cake_params
     params.require(:cake).permit(:name, :description, :price, :size)
+  end
+
+  def set_cake
+    @cake = Cake.find(params[:id])
   end
 end

@@ -1,4 +1,6 @@
 class BasketsController < ApplicationController
+  before_action :set_basket, only: [:show, :destroy]
+
   def new
     @basket = Basket.new
   end
@@ -8,13 +10,17 @@ class BasketsController < ApplicationController
   end
 
   def show
-    @basket = Basket.find(params[:id])
   end
 
   def destroy
-    @basket = Basket.find(params[:id])
     @basket.destroy
 
     redirect_to home_path
+  end
+
+  private
+
+  def set_basket
+    @basket = Basket.find(params[:id])
   end
 end

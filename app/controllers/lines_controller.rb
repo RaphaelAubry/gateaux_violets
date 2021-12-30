@@ -1,5 +1,5 @@
 class LinesController < ApplicationController
-
+  before_action :set_line, only: [:edit, :update, :destroy]
 
   def new
     @cake = Cake.find(params[:cake_id])
@@ -17,18 +17,16 @@ class LinesController < ApplicationController
     @line.basket = @basket
     @line.cake = @cake
     if @line.save
-      redirect_to home_path
+      redirect_to basket_path(@basket)
     else
       render 'new'
     end
   end
 
   def edit
-    @line = Line.find(params[:id])
   end
 
   def update
-    @line = Line.find(params[:id])
     @basket = Basket.find(@line.basket_id)
     @line.update(line_params)
 
@@ -36,7 +34,6 @@ class LinesController < ApplicationController
   end
 
   def destroy
-    @line = Line.find(params[:id])
     @basket = Basket.find(@line.basket_id)
     @line.destroy
 
@@ -47,6 +44,10 @@ class LinesController < ApplicationController
 
   def line_params
     params.require(:line).permit(:quantity, :total, :cake_id, :basket_id)
+  end
+
+  def set_line
+    @line = Line.find(params[:id])
   end
 
 end
