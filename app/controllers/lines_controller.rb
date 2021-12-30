@@ -1,6 +1,9 @@
 class LinesController < ApplicationController
   before_action :set_line, only: [:edit, :update, :destroy]
 
+  def index
+  end
+
   def new
     @cake = Cake.find(params[:cake_id])
     @line = Line.new
@@ -10,7 +13,7 @@ class LinesController < ApplicationController
     @line = Line.new(line_params)
     @cake = Cake.find(params[:cake_id])
     @basket = Basket.where(user_id: current_user.id).last
-    if @basket == nil
+    if @basket.nil?
       @basket = Basket.new(user_id: current_user.id)
       @basket.save
     end
@@ -25,6 +28,8 @@ class LinesController < ApplicationController
   end
 
   def edit
+    @basket = Basket.find(@line.basket_id)
+    @cake = Cake.find(@line.cake_id)
   end
 
   def update
