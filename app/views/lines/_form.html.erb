@@ -1,12 +1,13 @@
 <div class="center">
   <div class="form">
 
-    <p>Ma commande</p>
+    <h1>Ma commande</h1>
 
     <%= simple_form_for [@cake, @line] do |f| %>
-      <p>Name</p>
+      <p><%= image_tag "cake1.png", class: "photo" %></p>
+      <p><%= @cake.name %></p>
       <%= f.input :quantity %>
-      <p>Price</p>
+      <p><%= @cake.price_2d %><%= @cake.currency %></p>
       <%= f.input :total %>
       <div class="button-wrapper">
         <%= f.submit class: "button" %>
@@ -15,7 +16,7 @@
 
     <div>
       <div class="button-wrapper">
-        <%= link_to "Valider", "", class: "button" %>
+        <%= link_to "Cancel", cakes_path, class: "button" %>
       </div>
     </div>
     <div>
