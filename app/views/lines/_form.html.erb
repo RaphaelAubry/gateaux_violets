@@ -1,4 +1,4 @@
-<div class="center">
+<div class="left">
   <div class="form">
 
     <h1>Ma commande</h1>
@@ -6,9 +6,13 @@
     <%= simple_form_for [@cake, @line] do |f| %>
       <p><%= image_tag "cake1.png", class: "photo" %></p>
       <p><%= @cake.name %></p>
-      <%= f.input :quantity %>
-      <p><%= @cake.price_2d %><%= @cake.currency %></p>
-      <%= f.input :total %>
+      <%= f.input :quantity, :input_html => { class: "field" }, label: false %>
+      <p id="price" data-price=<%="#{@cake.price_2d}"%>></p>
+      <!-- <%= f.input :total, :input_html => { class: "field" }, readonly: true %> -->
+      <div class="horizontal">
+        <p id="total"></p>
+        <p> <%= @cake.currency %></p>
+      </div>
       <div class="button-wrapper">
         <%= f.submit class: "button" %>
       </div>
@@ -27,6 +31,3 @@
 
   </div>
 </div>
-
-
-<%= console %>

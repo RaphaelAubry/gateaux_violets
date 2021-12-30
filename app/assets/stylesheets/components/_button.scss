@@ -6,9 +6,16 @@
   opacity: 1;
   border: 1px solid $violet;
   &:hover {
+    color: $violet;
     background: white;
     border: 1px solid $violet;
     transition: all 0.5s ease;
+  }
+  &:focus {
+    background: white;
+    color: $violet;
+    border: 2px solid $violet !important;
+    box-shadow: 0px 0px 0px 0px $violet;
   }
 }
 
