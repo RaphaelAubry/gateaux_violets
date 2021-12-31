@@ -14,7 +14,7 @@ class LinesController < ApplicationController
     @cake = Cake.find(params[:cake_id])
     @basket = Basket.where(user_id: current_user.id).last
     if @basket.nil?
-      @basket = Basket.new(user_id: current_user.id)
+      @basket = Basket.new(user_id: current_user.id, status: 'basket')
       @basket.save
     end
     @line.basket = @basket
