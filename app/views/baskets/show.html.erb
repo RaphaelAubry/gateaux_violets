@@ -2,15 +2,14 @@
   <div class="show">
     <div>
 
-      <div>
+      <div class="flow">
         <p id="flow" data-status=<%= "#{@basket.status}" %>></p>
         <div class="horizontal">
           <div class="" id="basket"><%= Basket::STATUS[0] %></div>
-          <div> >> </div>
+          <div class="space"> >> </div>
           <div class="" id="delivery"><%= Basket::STATUS[1] %></div>
-          <div> >> </div>
+          <div class="space"> >> </div>
           <div class="" id="payment"><%= Basket::STATUS[2] %></div>
-          <div> >> </div>
         </div>
       </div>
 
