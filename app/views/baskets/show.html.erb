@@ -1,48 +1,78 @@
 <div class="left">
   <div class="show">
-
     <div>
-       <div>
-        <p>Order flow</p>
-      </div>
 
       <div>
-        <h1>My basket</h1>
+        <p id="flow" data-status=<%= "#{@basket.status}" %>></p>
+        <div class="horizontal">
+          <div class="" id="basket"><%= Basket::STATUS[0] %></div>
+          <div> >> </div>
+          <div class="" id="delivery"><%= Basket::STATUS[1] %></div>
+          <div> >> </div>
+          <div class="" id="payment"><%= Basket::STATUS[2] %></div>
+          <div> >> </div>
+        </div>
       </div>
 
-      <div class="">
-        <p><%= TimeFr(@basket.created_at) %></p>
+      <div class="basket">
+        <div>
+          <h1>My basket</h1>
+        </div>
 
-          <div class="horizontal">
-            <p class="tabl-name">Name</p>
-            <p class="tabl-price">Price</p>
-            <p class="tabl-quantity">Quantity</p>
-            <p class="tabl-total">Total</p>
-            <p class="tabl-total">Edit</p>
-            <p class="tabl-total">Delete</p>
+        <div>
+          <p><%= TimeFr(@basket.created_at) %></p>
+
+            <div class="horizontal">
+              <p class="tabl-name">Name</p>
+              <p class="tabl-price">Price</p>
+              <p class="tabl-quantity">Quantity</p>
+              <p class="tabl-total">Total</p>
+              <p class="tabl-total">Edit</p>
+              <p class="tabl-total">Delete</p>
+            </div>
+
+          <% @basket.lines.each do |line| %>
+            <div class="horizontal">
+              <p class="tabl-name"><%= line.cake.name %></p>
+              <p class="tabl-price"><%= line.cake.price %></p>
+              <p class="tabl-quantity"><%= line.quantity %></p>
+              <p class="tabl-total"><%= line.total %></p>
+              <p class="tabl-total"><%= link_to 'edit', edit_line_path(line), class: "button" %></p>
+              <p class="tabl-total"><%= link_to 'delete', line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %></p>
+            </div>
+            <!-- <% @line = line %><% @cake = line.cake %> -->
+            <!--<%= render 'lines/form', locals: { line: @line, cake: @cake} %> -->
+          <% end %>
+        </div>
+
+        <div>
+          <div class="button-wrapper">
+            <%= link_to "Order more", :home, class: "button" %>
           </div>
-
-        <% @basket.lines.each do |line| %>
-          <div class="horizontal">
-            <p class="tabl-name"><%= line.cake.name %></p>
-            <p class="tabl-price"><%= line.cake.price %></p>
-            <p class="tabl-quantity"><%= line.quantity %></p>
-            <p class="tabl-total"><%= line.total %></p>
-            <p class="tabl-total"><%= link_to 'edit', edit_line_path(line), class: "button" %></p>
-            <p class="tabl-total"><%= link_to 'delete', line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %></p>
+          <div class="button-wrapper">
+            <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
           </div>
-        <% end %>
+          <div class="button-wrapper">
+            <%= link_to "Back", :back, class: "button" %>
+          </div>
+        </div>
+        <%= render 'baskets/basket', basket: @basket %>
       </div>
-      <div class="button-wrapper">
-        <%= link_to "Order more", :home, class: "button" %>
+
+      <div class="delivery">
+        <div>
+          <h1>My delivery</h1>
+        </div>
+        <%= render 'baskets/basket', basket: @basket %>
       </div>
-      <div class="button-wrapper">
-        <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %>
+
+      <div class="payment">
+        <div>
+          <h1>My payment</h1>
+        </div>
+        <%= render 'baskets/basket', basket: @basket %>
       </div>
-      <div class="button-wrapper">
-        <%= link_to "Back", :back, class: "button" %>
-      </div>
+
     </div>
-
   </div>
 </div>

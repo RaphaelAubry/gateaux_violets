@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :baskets
 
   resources :cakes do
-    resources :lines, only: [:new, :create]
+    resources :lines, only: [:new, :create, :edit, :update]
   end
 
   resources :lines, except: [:new, :create]

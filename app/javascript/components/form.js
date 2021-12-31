@@ -1,16 +1,14 @@
 const initForm = () => {
-  console.log("begin !!!!!")
 
   // get targets
   const quantity = document.getElementById("line_quantity")
   const total = document.getElementById("total")
   const price = document.getElementById("price")
 
-  quantity.value = 1
-  total.innerText = quantity.value * price.dataset.price;
-
   if (quantity != null && total != null && price != null){
 
+    quantity.value = 1
+    total.innerText = quantity.value * price.dataset.price;
 
     quantity.addEventListener('input', () => {
 
@@ -19,8 +17,6 @@ const initForm = () => {
 
     })
   };
-
-  console.log("end !!!!!")
 }
 
 

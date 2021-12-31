@@ -10,6 +10,7 @@ import "channels"
 import 'bootstrap';
 
 import { initForm } from '../components/form.js'
+import { initFlow } from '../components/flow.js'
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -18,5 +19,5 @@ ActiveStorage.start()
 
 document.addEventListener('turbolinks:load', () => {
   initForm();
-
+  initFlow();
 })

@@ -1,5 +1,5 @@
 class BasketsController < ApplicationController
-  before_action :set_basket, only: [:show, :destroy]
+  before_action :set_basket, only: [:show, :edit, :update, :destroy]
 
   def new
     @basket = Basket.new
@@ -12,6 +12,15 @@ class BasketsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    @basket.update(basket_params)
+
+    redirect_to basket_path(@basket)
+  end
+
   def destroy
     @basket.destroy
 
@@ -19,6 +28,10 @@ class BasketsController < ApplicationController
   end
 
   private
+
+  def basket_params
+    params.require(:basket).permit(:status)
+  end
 
   def set_basket
     @basket = Basket.find(params[:id])
