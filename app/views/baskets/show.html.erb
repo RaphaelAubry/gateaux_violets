@@ -3,14 +3,14 @@
     <div>
 
       <div>
-        <p id="flow" data-status="basket"></p>
+        <p id="flow" data-status=<%= "#{@basket.status}" %>></p>
         <div class="horizontal">
-          <div class="" id="basket">Panier >>
-          </div>
-           <div class="" id="delivery">Livraison >>
-          </div>
-           <div class="" id="payment">Paiement
-          </div>
+          <div class="" id="basket"><%= Basket::STATUS[0] %></div>
+          <div> >> </div>
+          <div class="" id="delivery"><%= Basket::STATUS[1] %></div>
+          <div> >> </div>
+          <div class="" id="payment"><%= Basket::STATUS[2] %></div>
+          <div> >> </div>
         </div>
       </div>
 
@@ -50,28 +50,27 @@
             <%= link_to "Order more", :home, class: "button" %>
           </div>
           <div class="button-wrapper">
-            <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %>
+            <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
           </div>
           <div class="button-wrapper">
             <%= link_to "Back", :back, class: "button" %>
           </div>
         </div>
-
-        <div class="button-wrapper">
-          <%= link_to "Order basket", "", class: "button" %>
-        </div>
+        <%= render 'baskets/basket', basket: @basket %>
       </div>
 
       <div class="delivery">
         <div>
           <h1>My delivery</h1>
         </div>
+        <%= render 'baskets/basket', basket: @basket %>
       </div>
 
       <div class="payment">
         <div>
           <h1>My payment</h1>
         </div>
+        <%= render 'baskets/basket', basket: @basket %>
       </div>
 
     </div>
