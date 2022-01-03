@@ -1,5 +1,5 @@
 $width-number: 75px;
-$width-string: 250px;
+$width-string: 200px;
 
 .tabl-name {
   margin-right: 10px;
@@ -8,15 +8,15 @@ $width-string: 250px;
 
 .tabl-price {
   margin-right: 10px;
-  width: $width-number;
+  width: 50px;
 }
 
 .tabl-quantity {
   margin-right: 10px;
-  width: $width-number;
+  width: 150px;
 }
 
 .tabl-total {
   margin-right: 10px;
-  width: $width-number;
+  width: 65px;
 }

@@ -26,22 +26,22 @@
               <p class="tabl-price">Price</p>
               <p class="tabl-quantity">Quantity</p>
               <p class="tabl-total">Total</p>
-              <p class="tabl-total">Edit</p>
-              <p class="tabl-total">Delete</p>
             </div>
 
           <% @basket.lines.each do |line| %>
+          <% @total += line.total  %>
             <div class="horizontal">
               <p class="tabl-name"><%= line.cake.name %></p>
               <p class="tabl-price"><%= line.cake.price %></p>
-              <p class="tabl-quantity"><%= line.quantity %></p>
+              <% @line = line %><% @cake = line.cake %>
+              <%= render 'lines/basket', locals: { line: @line, cake: @cake}, class: "tabl-quantity" %>
               <p class="tabl-total"><%= line.total %></p>
-              <p class="tabl-total"><%= link_to 'edit', edit_line_path(line), class: "button" %></p>
-              <p class="tabl-total"><%= link_to 'delete', line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %></p>
+              <p class="tabl-total"><%= line.cake.currency %></p>
+              <!--<p class="tabl-total"><%= link_to 'edit', edit_line_path(line), class: "button" %></p>-->
+              <p class="tabl-total"><%= link_to 'delete', line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %></p>
             </div>
-            <!-- <% @line = line %><% @cake = line.cake %> -->
-            <!--<%= render 'lines/form', locals: { line: @line, cake: @cake} %> -->
           <% end %>
+          <p class="basket-total">Total <%= @total %></p>
         </div>
 
         <div>
@@ -51,25 +51,26 @@
           <div class="button-wrapper">
             <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
           </div>
-          <div class="button-wrapper">
-            <%= link_to "Back", :back, class: "button" %>
-          </div>
         </div>
-        <%= render 'baskets/basket', basket: @basket %>
+        <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
       <div class="delivery">
         <div>
           <h1>My delivery</h1>
         </div>
-        <%= render 'baskets/basket', basket: @basket %>
+        <div class="horizontal">
+          <div>Invoicing Adress</div>
+          <div>Delivery Adress</div>
+        </div>
+        <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
       <div class="payment">
         <div>
           <h1>My payment</h1>
         </div>
-        <%= render 'baskets/basket', basket: @basket %>
+        <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
     </div>
