@@ -5,6 +5,8 @@ class Cake < ApplicationRecord
 
   include ActionView::Helpers::NumberHelper
 
+  CURRENCY = "EUR"
+
   def to_s
     "id: #{id} /name: #{name} /descripion: #{description} /price: #{price} /size: #{size}"
   end

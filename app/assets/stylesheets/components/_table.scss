@@ -1,6 +1,9 @@
 $width-number: 50px;
 $width-string: 200px;
 $margin-right: 10px;
+$font-little: 0.75em;
+
+
 
 .tabl-name {
   margin-right: $margin-right;
@@ -13,7 +16,6 @@ $margin-right: 10px;
 .tabl-price {
   margin-right: $margin-right;
   width: $width-number;
-
 }
 
 .tabl-quantity {
@@ -24,11 +26,23 @@ $margin-right: 10px;
 .tabl-total {
   margin-right: 20px;
   min-width: 90px;
-  font-weight: bold;
   display: flex;
   align-items: center;
 }
 
 .tabl-icon {
   margin-right: $margin-right;
+}
+
+.basket-total {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 70px 0px 0px;
+  border-top: 1px double black;
+  font-weight: bold;
+  font-size: 1.25em;
+  p {
+    margin-right: 10px;
+  }
+  margin-bottom: 50px;
 }

@@ -14,15 +14,15 @@
       </div>
 
       <div class="basket">
-        <div>
+        <div class="title">
           <h1>My basket</h1>
         </div>
 
         <div>
-          <p><%= TimeFr(@basket.created_at) %></p>
+          <p>Création: <%= TimeFr(@basket.created_at) %></p>
 
             <div class="horizontal">
-              <p class="tabl-name">Name</p>
+              <p class="tabl-name"></p>
               <p class="tabl-price">Price</p>
               <p class="tabl-quantity">Quantity</p>
             </div>
@@ -42,7 +42,7 @@
               <p class="tabl-icon"><%= link_to "", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "fas fa-trash", remote: true %></p>
             </div>
           <% end %>
-          <p class="basket-total">Total <%= @total %></p>
+          <div class="basket-total"><p><%= number_with_precision(@total, precision: 2) %></p><p><%= Cake::CURRENCY %></p></div>
         </div>
 
         <div>
@@ -57,7 +57,7 @@
       </div>
 
       <div class="delivery">
-        <div>
+        <div class="title">
           <h1>My delivery</h1>
         </div>
         <div class="horizontal">
@@ -68,7 +68,7 @@
       </div>
 
       <div class="payment">
-        <div>
+        <div class="title">
           <h1>My payment</h1>
         </div>
         <%= render 'baskets/basket', basket: @basket, remote: true %>
