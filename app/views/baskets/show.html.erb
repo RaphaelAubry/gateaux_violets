@@ -61,8 +61,19 @@
           <h1>My delivery</h1>
         </div>
         <div class="horizontal">
-          <div>Invoicing Adress</div>
-          <div>Delivery Adress</div>
+          <div class="invoicing-address">
+            Invoicing Adress
+            <div>
+            your address
+            </div>
+          </div>
+
+          <div class="delivery-address">
+            Delivery Adress
+            <div>
+            A emporter
+            </div>
+          </div>
         </div>
         <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
@@ -71,6 +82,18 @@
         <div class="title">
           <h1>My payment</h1>
         </div>
+        <div class="payment">
+          <div>
+            Par virement aux coordonnées bancaires suivantes:
+          </div>
+          <div>
+            En espèces sur place:
+          </div>
+          <div>
+            Carte de paiment
+            </div>
+        </div>
+
         <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
