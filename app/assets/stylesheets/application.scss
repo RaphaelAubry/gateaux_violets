@@ -30,6 +30,9 @@ body {
 .horizontal {
   display: flex;
   align-items: center;
+  a {
+    display: flex;
+  }
 }
 
 .center {
