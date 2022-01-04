@@ -3,6 +3,7 @@
 
     <div>
       <p id="flow" data-id=<%= "#{@line.id}" %>></p>
+      <p id="dbdate" data-deliverydate=<%= "#{@line.delivery_date.to_json}" %>></p>
     </div>
 
     <h1>Ma commande</h1>
