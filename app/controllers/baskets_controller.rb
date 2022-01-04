@@ -13,7 +13,6 @@ class BasketsController < ApplicationController
 
   def show
     @total = 0
-    @form_token = form_authenticity_token
   end
 
   def edit

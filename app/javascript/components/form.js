@@ -1,3 +1,6 @@
+
+
+
 const initForm = () => {
 
   // get targets
@@ -25,5 +28,12 @@ const initForm = () => {
   };
 }
 
+const test = (element) => {
+  flatpickr(element, {});
+  console.log("ok")
 
-export { initForm }
+
+}
+
+
+export { initForm, test }
