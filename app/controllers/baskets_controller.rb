@@ -19,8 +19,16 @@ class BasketsController < ApplicationController
   end
 
   def update
-    @basket.update(basket_params)
-
+    @total = 0
+    @basket.lines.each do |line|
+    @total += line.total
+    end
+    #update filled basket only
+    if @total != 0
+      @basket.update(basket_params)
+    else
+      flash[:alert] = "Your basket is empty, you must order a cake to validate your basket"
+    end
     redirect_to basket_path(@basket)
   end
 

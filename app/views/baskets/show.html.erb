@@ -2,6 +2,7 @@
   <div class="show">
     <div>
 
+      <!-- flow management -->
       <div class="flow">
         <p id="flow" data-status=<%= "#{@basket.status}" %>></p>
         <div class="horizontal">
@@ -13,11 +14,13 @@
         </div>
       </div>
 
+      <!-- stage basket -->
       <div class="basket">
         <div class="title">
           <h1>My basket</h1>
         </div>
 
+        <!-- table -->
         <div>
             <div class="horizontal">
               <p class="tabl-name"></p>
@@ -57,28 +60,29 @@
         <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
+      <!-- stage delivery -->
       <div class="delivery">
         <div class="title">
           <h1>My delivery</h1>
         </div>
         <div class="horizontal">
+
           <div class="invoicing-address">
-            Invoicing Adress
-            <div>
-            your address
-            </div>
+            Invoicing Address
+            <%= render 'baskets/address', basket: @basket %>
           </div>
 
+
           <div class="delivery-address">
-            Delivery Adress
-            <div>
+            Delivery Address
             A emporter
-            </div>
           </div>
+
         </div>
         <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
+      <!-- stage payment -->
       <div class="payment">
         <div class="title">
           <h1>My payment</h1>
