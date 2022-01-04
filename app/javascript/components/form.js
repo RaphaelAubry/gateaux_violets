@@ -1,13 +1,22 @@
+import flatpickr from "flatpickr";
+import { French } from "flatpickr/dist/l10n/fr.js"
+
 const initForm = () => {
 
   // get targets
+  const flow = document.getElementById("flow")
   const quantity = document.getElementById("line_quantity")
   const total = document.getElementById("total")
   const price = document.getElementById("price")
 
-  if (quantity != null && total != null && price != null){
+  if (quantity != null && total != null && price != null && flow != null){
 
-    quantity.value = 1
+    //check if there is already a quantity line in the database
+
+    if (flow.dataset.id == ""){
+        quantity.value = 1
+    }
+
     total.innerText = quantity.value * price.dataset.price;
 
     quantity.addEventListener('input', () => {
@@ -19,5 +28,18 @@ const initForm = () => {
   };
 }
 
+const test = () => {
 
-export { initForm }
+  const date = document.getElementById("delivery_date")
+  if (date != null) {
+  const fp = flatpickr(date, {
+    enableTime: true,
+    dateFormat: "Le d/m/Y à H:i",
+    "locale": French,
+  });
+  console.log(fp)
+  }
+}
+
+
+export { initForm, test }

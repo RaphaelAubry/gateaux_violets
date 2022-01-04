@@ -1,22 +1,48 @@
-$width-number: 75px;
-$width-string: 250px;
+$width-number: 50px;
+$width-string: 200px;
+$margin-right: 10px;
+$font-little: 0.75em;
+
+
 
 .tabl-name {
-  margin-right: 10px;
+  margin-right: $margin-right;
   width: $width-string;
+  @media(max-width: 768px) {
+    max-width: 75px;
+  }
 }
 
 .tabl-price {
-  margin-right: 10px;
+  margin-right: $margin-right;
   width: $width-number;
 }
 
 .tabl-quantity {
-  margin-right: 10px;
-  width: $width-number;
+  margin-right: $margin-right;
+  width: 80px;
 }
 
 .tabl-total {
-  margin-right: 10px;
-  width: $width-number;
+  margin-right: 20px;
+  min-width: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.tabl-icon {
+  margin-right: $margin-right;
+}
+
+.basket-total {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 70px 0px 0px;
+  border-top: 1px double black;
+  font-weight: bold;
+  font-size: 1.25em;
+  p {
+    margin-right: 10px;
+  }
+  margin-bottom: 50px;
 }

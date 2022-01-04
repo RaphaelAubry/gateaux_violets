@@ -2,47 +2,47 @@
   <div class="show">
     <div>
 
-      <div>
+      <div class="flow">
         <p id="flow" data-status=<%= "#{@basket.status}" %>></p>
         <div class="horizontal">
           <div class="" id="basket"><%= Basket::STATUS[0] %></div>
-          <div> >> </div>
+          <div class="space"> >> </div>
           <div class="" id="delivery"><%= Basket::STATUS[1] %></div>
-          <div> >> </div>
+          <div class="space"> >> </div>
           <div class="" id="payment"><%= Basket::STATUS[2] %></div>
-          <div> >> </div>
         </div>
       </div>
 
       <div class="basket">
-        <div>
+        <div class="title">
           <h1>My basket</h1>
         </div>
 
         <div>
-          <p><%= TimeFr(@basket.created_at) %></p>
+          <p>Création: <%= TimeFr(@basket.created_at) %></p>
 
             <div class="horizontal">
-              <p class="tabl-name">Name</p>
+              <p class="tabl-name"></p>
               <p class="tabl-price">Price</p>
               <p class="tabl-quantity">Quantity</p>
-              <p class="tabl-total">Total</p>
-              <p class="tabl-total">Edit</p>
-              <p class="tabl-total">Delete</p>
             </div>
 
           <% @basket.lines.each do |line| %>
+          <% @total += line.total  %>
             <div class="horizontal">
-              <p class="tabl-name"><%= line.cake.name %></p>
-              <p class="tabl-price"><%= line.cake.price %></p>
-              <p class="tabl-quantity"><%= line.quantity %></p>
-              <p class="tabl-total"><%= line.total %></p>
-              <p class="tabl-total"><%= link_to 'edit', edit_line_path(line), class: "button" %></p>
-              <p class="tabl-total"><%= link_to 'delete', line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "button" %></p>
+              <%= link_to edit_line_path(line) do %>
+                <p class="tabl-name"><%= line.cake.name %></p>
+                <p class="tabl-price"><%= line.cake.price_2d %></p>
+                <p class="tabl-quantity"><%= line.quantity %></p>
+                <!-- <% @line = line %><% @cake = line.cake %>
+                <%= render 'lines/basket', locals: { line: @line, cake: @cake}, class: "tabl-quantity" %> -->
+                <p class="tabl-total"><%= line.total_2d %><%= line.cake.currency %></p>
+              <% end %>
+              <p class="tabl-icon"><%= link_to "", edit_line_path(line), class: "fas fa-edit" %></p>
+              <p class="tabl-icon"><%= link_to "", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "fas fa-trash", remote: true %></p>
             </div>
-            <!-- <% @line = line %><% @cake = line.cake %> -->
-            <!--<%= render 'lines/form', locals: { line: @line, cake: @cake} %> -->
           <% end %>
+          <div class="basket-total"><p><%= number_with_precision(@total, precision: 2) %></p><p><%= Cake::CURRENCY %></p></div>
         </div>
 
         <div>
@@ -52,27 +52,53 @@
           <div class="button-wrapper">
             <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
           </div>
-          <div class="button-wrapper">
-            <%= link_to "Back", :back, class: "button" %>
-          </div>
         </div>
-        <%= render 'baskets/basket', basket: @basket %>
+        <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
       <div class="delivery">
-        <div>
+        <div class="title">
           <h1>My delivery</h1>
         </div>
-        <%= render 'baskets/basket', basket: @basket %>
+        <div class="horizontal">
+          <div class="invoicing-address">
+            Invoicing Adress
+            <div>
+            your address
+            </div>
+          </div>
+
+          <div class="delivery-address">
+            Delivery Adress
+            <div>
+            A emporter
+            </div>
+          </div>
+        </div>
+        <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
       <div class="payment">
-        <div>
+        <div class="title">
           <h1>My payment</h1>
         </div>
-        <%= render 'baskets/basket', basket: @basket %>
+        <div class="payment">
+          <div>
+            Par virement aux coordonnées bancaires suivantes:
+          </div>
+          <div>
+            En espèces sur place:
+          </div>
+          <div>
+            Carte de paiment
+            </div>
+        </div>
+
+        <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
     </div>
   </div>
 </div>
+
+<%= console %>

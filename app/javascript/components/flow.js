@@ -1,8 +1,6 @@
 const initFlow = () => {
 
   const flow = document.getElementById("flow")
-  console.log("start")
-
 
   if (flow != null){
 
@@ -37,7 +35,6 @@ const initFlow = () => {
     }
 
   }
-  console.log("end")
 }
 
 export { initFlow }
