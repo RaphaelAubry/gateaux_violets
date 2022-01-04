@@ -13,6 +13,22 @@ $font-little: 0.75em;
   }
 }
 
+.tabl-date {
+  width: 200px;
+   @media(max-width: 768px) {
+    display: none;
+  }
+}
+
+.tabl-date-smallscreen {
+  width: 200px;
+   @media(min-width: 769px) {
+    display: none;
+  }
+}
+
+
+
 .tabl-price {
   margin-right: $margin-right;
   width: $width-number;
