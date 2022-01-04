@@ -9,7 +9,6 @@
   }
 }
 
-
 .field {
   &:hover {
     box-shadow: 0px 0px 0px 0px $violet;
@@ -28,4 +27,9 @@
 #delivery_date {
   width: 230px;
   background: $white;
+}
+
+.flatpickr-day.selected {
+  background: $violet;
+  border-color: $violet;
 }
