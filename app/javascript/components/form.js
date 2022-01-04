@@ -1,5 +1,5 @@
-
-
+import flatpickr from "flatpickr";
+import { French } from "flatpickr/dist/l10n/fr.js"
 
 const initForm = () => {
 
@@ -28,11 +28,17 @@ const initForm = () => {
   };
 }
 
-const test = (element) => {
-  flatpickr(element, {});
-  console.log("ok")
+const test = () => {
 
-
+  const date = document.getElementById("delivery_date")
+  if (date != null) {
+  const fp = flatpickr(date, {
+    enableTime: true,
+    dateFormat: "Le d/m/Y à H:i",
+    "locale": French,
+  });
+  console.log(fp)
+  }
 }
 
 
