@@ -32,18 +32,18 @@
               <%= link_to edit_line_path(line) do %>
                 <p class="tabl-name"><%= line.cake.name %></p>
                 <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
-                <p class="tabl-price"><%= line.cake.price_2d %></p>
+                <p class="tabl-price"><%= d2(line.cake.price) %></p>
                 <p class="tabl-quantity"><%= line.quantity %></p>
                 <!-- <% @line = line %><% @cake = line.cake %>
                 <%= render 'lines/basket', locals: { line: @line, cake: @cake}, class: "tabl-quantity" %> -->
-                <p class="tabl-total"><%= line.total_2d %><%= line.cake.currency %></p>
+                <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
               <% end %>
               <p class="tabl-icon"><%= link_to "", edit_line_path(line), class: "fas fa-edit" %></p>
               <p class="tabl-icon"><%= link_to "", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "fas fa-trash", remote: true %></p>
             </div>
             <p class="tabl-date-smallscreen">To <%= TimeFr(line.delivery_date) %></p>
           <% end %>
-          <div class="basket-total"><p><%= number_with_precision(@total, precision: 2) %></p><p><%= Cake::CURRENCY %></p></div>
+          <div class="basket-total"><p><%= d2(@total) %></p><p><%= ApplicationHelper::CURRENCY %></p></div>
         </div>
 
         <div>
