@@ -3,6 +3,7 @@
 
     <div>
       <p id="flow" data-id=<%= "#{@line.id}" %>></p>
+      <p id="dbdate" data-deliverydate=<%= "#{@line.delivery_date.to_json}" %>></p>
     </div>
 
     <h1>Ma commande</h1>
@@ -11,10 +12,10 @@
       <p><%= image_tag "cake1.png", class: "photo" %></p>
       <p><%= @cake.name %></p>
       <%= f.input :quantity, collection: Line::QUANTITY, :input_html => { class: "field" }, label: false, include_blank: false %>
-      <p id="price" data-price=<%="#{@cake.price_2d}"%>></p>
+      <p id="price" data-price=<%="#{d2(@cake.price)}"%>></p>
       <div class="horizontal">
         <p id="total" class="price"></p>
-        <p class="price"><%= @cake.currency %></p>
+        <p class="price"><%= currency() %></p>
       </div>
       <%= f.input :delivery_date, as: :string, :input_html => { id: "delivery_date" } %>
       <div class="button-wrapper">

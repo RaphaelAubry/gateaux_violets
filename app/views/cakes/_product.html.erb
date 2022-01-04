@@ -4,8 +4,8 @@
     <div class="text">
       <p class="name"><%= cake.name %></p>
       <p class="description"><%= cake.description %></p>
-      <p class="size"><%= cake.size %><%= cake.personnes %></p>
-      <p class="price"><%= cake.price_2d %><%= cake.currency %></p>
+      <p class="size"><%= cake.size %><%= personnes() %></p>
+      <p class="price"><%= d2(cake.price) %><%= currency() %></p>
     </div>
     <div class="button-wrapper">
       <%= link_to "Order", new_cake_line_path(cake), class: "button" %>

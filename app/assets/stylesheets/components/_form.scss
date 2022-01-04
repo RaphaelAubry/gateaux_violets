@@ -32,4 +32,9 @@
 .flatpickr-day.selected {
   background: $violet;
   border-color: $violet;
+  &:hover {
+    background: white;
+    border-color: $violet;
+    color: $violet;
+  }
 }

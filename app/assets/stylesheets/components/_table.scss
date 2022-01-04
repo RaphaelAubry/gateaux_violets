@@ -1,9 +1,9 @@
+//line table
+
 $width-number: 50px;
 $width-string: 200px;
 $margin-right: 10px;
 $font-little: 0.75em;
-
-
 
 .tabl-name {
   margin-right: $margin-right;
@@ -12,6 +12,22 @@ $font-little: 0.75em;
     max-width: 75px;
   }
 }
+
+.tabl-date {
+  width: 200px;
+   @media(max-width: 768px) {
+    display: none;
+  }
+}
+
+.tabl-date-smallscreen {
+  width: 200px;
+   @media(min-width: 769px) {
+    display: none;
+  }
+}
+
+
 
 .tabl-price {
   margin-right: $margin-right;
@@ -42,7 +58,20 @@ $font-little: 0.75em;
   font-weight: bold;
   font-size: 1.25em;
   p {
-    margin-right: 10px;
+    margin-right: $margin-right;
   }
   margin-bottom: 50px;
+}
+
+//basket table
+
+.tabl-id {
+  width: 50px;
+  margin-right: $margin-right;
+
+}
+
+.tabl-email {
+  width: $width-string + 50px;
+  margin-right: $margin-right;
 }
