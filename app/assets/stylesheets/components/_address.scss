@@ -1,0 +1,35 @@
+$width: 300px;
+$margin-left: 20px;
+
+.delivery {
+  width: 800px;
+  h3 {
+    margin: 20px 0 20px 0;
+  }
+}
+
+.address {
+  display: flex;
+  justify-content: flex-start;
+  @media(max-width: 768px) {
+  display: block;
+  width: 80vw;
+  }
+}
+
+.invoicing-address {
+  width: $width;
+
+}
+
+.delivery-contact {
+  width: $width;
+}
+
+.delivery-contact {
+  width: $width;
+}
+
+.ad-name {
+  margin-right: 10px;
+}

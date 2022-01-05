@@ -13,6 +13,7 @@ class BasketsController < ApplicationController
 
   def show
     @total = 0
+    @address = Address.find_by(user_id: current_user.id)
   end
 
   def edit
@@ -25,7 +26,11 @@ class BasketsController < ApplicationController
     end
     #update filled basket only
     if @total != 0
-      @basket.update(basket_params)
+      if current_user.addresses.exists?
+        @basket.update(basket_params)
+      else
+        flash[:alert] = "Please enter an address"
+      end
     else
       flash[:alert] = "Your basket is empty, you must order a cake to validate your basket"
     end

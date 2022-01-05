@@ -1,0 +1,19 @@
+<div class="center">
+  <div class="form">
+
+    <h1>New Address</h1>
+    <%= simple_form_for(@address) do |f| %>
+
+      <%= f.input :surname %>
+      <%= f.input :name %>
+      <%= f.input :phone %>
+      <%= f.input :address %>
+      <%= f.input :addition_address %>
+      <%= f.input :zip_code %>
+      <%= f.input :city %>
+
+      <%= f.submit class: "button" %>
+    <% end %>
+
+  </div>
+</div>

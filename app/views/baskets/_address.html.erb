@@ -1,2 +1,14 @@
-<div>Adress Form</div>
-<%= @basket.user.email %>
+
+  <div class="horizontal">
+    <p><%= @address.surname %></p>
+    <p><%= @address.name %></p>
+  </div>
+  <div>
+    <p><%= @address.address %></p>
+    <p><%= @address.addition_address %></p>
+    <div class="horizontal">
+      <p><%= @address.zip_code %></p>
+      <p><%= @address.city %></p>
+    </div>
+  </div>
+  <%= link_to "", edit_address_path(@address), class: "fas fa-edit" %>
