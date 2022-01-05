@@ -1,3 +1,4 @@
-
   <p><%= @basket.user.email %><p>
-  <p>Phone number</p>
+  <% if current_user.addresses.exists? %>
+  <p><%= @address.phone %><p>
+  <% end %>

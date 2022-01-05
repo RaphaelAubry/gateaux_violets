@@ -83,7 +83,7 @@
             <div class="delivery-contact">
               <h3>Contact</h3>
 
-              <%= render 'baskets/contact', basket: @basket %>
+              <%= render 'baskets/contact', local: { basket: @basket, address: @address } %>
             </div>
           </div>
 
@@ -123,5 +123,3 @@
     </div>
   </div>
 </div>
-
-<%= console %>
