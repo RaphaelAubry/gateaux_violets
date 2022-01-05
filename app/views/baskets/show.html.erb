@@ -62,23 +62,41 @@
 
       <!-- stage delivery -->
       <div class="delivery">
+
         <div class="title">
-          <h1>My delivery</h1>
+          <h1>Delivery</h1>
         </div>
-        <div class="horizontal">
 
-          <div class="invoicing-address">
-            Invoicing Address
-            <%= render 'baskets/address', basket: @basket %>
+        <div class="address">
+          <div>
+            <div class="invoicing-address">
+              <h3>Invoicing Address</h3>
+
+              <% if current_user.addresses.exists? %>
+                <%= render 'address', local: { basket: @basket, address: @address } %>
+              <% else %>
+                Ajouter une adresse svp
+                <%= link_to 'new', new_address_path, class: "button" %>
+              <% end %>
+            </div>
+
+            <div class="delivery-contact">
+              <h3>Contact</h3>
+
+              <%= render 'baskets/contact', basket: @basket %>
+            </div>
           </div>
 
+          <div>
+            <div class="delivery-address">
+              <h3>Delivery Address</h3>
 
-          <div class="delivery-address">
-            Delivery Address
-            A emporter
+               <%= render 'takeaway' %>
+
+            </div>
           </div>
-
         </div>
+
         <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
@@ -98,7 +116,7 @@
             Carte de paiment
             </div>
         </div>
-
+        Dès réception de votre règlement, je commence à préparer votre commande.
         <%= render 'baskets/basket', basket: @basket, remote: true %>
       </div>
 
