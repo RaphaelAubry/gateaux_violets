@@ -12,3 +12,4 @@
     </div>
   </div>
   <%= link_to "", edit_address_path(@address), class: "fas fa-edit" %>
+  <%= link_to "", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "fas fa-trash" %>

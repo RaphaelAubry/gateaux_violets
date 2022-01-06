@@ -1,17 +1,16 @@
 class LinesController < ApplicationController
   before_action :set_line, only: [:edit, :update, :destroy]
+  before_action :set_cake, only: [:new, :create]
 
   def index
   end
 
   def new
-    @cake = Cake.find(params[:cake_id])
     @line = Line.new
   end
 
   def create
     @line = Line.new(line_params)
-    @cake = Cake.find(params[:cake_id])
     @basket = Basket.where(user_id: current_user.id).last
     if @basket.nil?
       @basket = Basket.new(user_id: current_user.id, status: Basket::STATUS[0])
@@ -55,6 +54,10 @@ class LinesController < ApplicationController
 
   def set_line
     @line = Line.find(params[:id])
+  end
+
+  def set_cake
+    @cake = Cake.find(params[:cake_id])
   end
 
   def calcTotal(price)

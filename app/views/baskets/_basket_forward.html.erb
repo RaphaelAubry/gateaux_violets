@@ -3,7 +3,6 @@
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <% case @basket.status %>
         <% when "basket" %>
-
           <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[1] }, label: false %>
           <%= f.submit "Validate", class: "button" %>
         <% when "delivery" %>
