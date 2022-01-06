@@ -11,7 +11,8 @@ class LinesController < ApplicationController
 
   def create
     @line = Line.new(line_params)
-    @basket = Basket.where(user_id: current_user.id).last
+    #select current basket
+    @basket = Basket.where(user_id: current_user.id, payment_type: nil).last
     if @basket.nil?
       @basket = Basket.new(user_id: current_user.id, status: Basket::STATUS[0])
       @basket.save

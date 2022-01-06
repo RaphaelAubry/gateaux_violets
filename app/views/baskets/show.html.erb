@@ -115,21 +115,21 @@
           <h1>My payment</h1>
         </div>
         <div class="payment">
-           <div class="horizontal"><p id="total"><%= d2(@total) %></p><p><%= ApplicationHelper::CURRENCY %></p></div>
-          <div>
-            Par virement aux coordonnées bancaires suivantes:
+          <div class="horizontal">
+            <p id="total"><%= d2(@total) %></p>
+            <p><%= ApplicationHelper::CURRENCY %></p>
           </div>
-          <div>
-            En espèces sur place:
-          </div>
-          <div>
-            Carte de paiment
-            </div>
-        </div>
-        <div class="message">
-        Dès réception de votre règlement, je commence à préparer votre commande.
-        </div>
+          <% if @basket.payment_type.nil? %>
+            <%= render 'baskets/payment' %>
+          <% else %>
+             <p class="tabl-email"><%= @basket.payment_type %></p>
+          <% end %>
 
+
+          <div class="message">
+          Dès réception de votre règlement, je commence à préparer votre commande.
+          </div>
+        </div>
         <!-- flow forms -->
         <div class="horizontal">
           <%= render 'baskets/basket_forward', basket: @basket, remote: true %>

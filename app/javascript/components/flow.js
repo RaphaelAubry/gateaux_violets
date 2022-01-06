@@ -31,7 +31,7 @@ const initFlow = () => {
           payment.classList.toggle("inprogress")
         break;
       default:
-          console.log("")
+          console.log("Please check the flow display")
     }
 
   }
