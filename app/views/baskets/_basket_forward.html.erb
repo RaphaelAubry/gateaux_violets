@@ -1,0 +1,16 @@
+<%= simple_form_for((@basket), remote: true, authenticity_token: true) do |f| %>
+   <div class="button-wrapper">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <% case @basket.status %>
+        <% when "basket" %>
+          <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[1] }, label: false %>
+          <%= f.submit "Validate", class: "button" %>
+        <% when "delivery" %>
+          <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[2] }, label: false %>
+          <%= f.submit "Order", class: "button" %>
+        <% when "payment" %>
+          <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[0] }, label: false %>
+          <%= f.submit "Approve payment", class: "button" %>
+      <% end %>
+    </div>
+<% end %>

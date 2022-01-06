@@ -11,6 +11,8 @@
           <div class="" id="delivery"><%= Basket::STATUS[1] %></div>
           <div class="space"> >> </div>
           <div class="" id="payment"><%= Basket::STATUS[2] %></div>
+          <div class="space"> >> </div>
+          <div class="" id="invoice"><%= "Invoice" %></div>
         </div>
       </div>
 
@@ -57,7 +59,11 @@
             <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
           </div>
         </div>
-        <%= render 'baskets/basket', basket: @basket, remote: true %>
+        <!-- flow forms -->
+        <div class="horizontal">
+          <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
+          <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
+        </div>
       </div>
 
       <!-- stage delivery -->
@@ -75,7 +81,6 @@
               <% if current_user.addresses.exists? %>
                 <%= render 'address', local: { basket: @basket, address: @address } %>
               <% else %>
-                Ajouter une adresse svp
                 <%= link_to 'new', new_address_path, class: "button" %>
               <% end %>
             </div>
@@ -97,7 +102,11 @@
           </div>
         </div>
 
-        <%= render 'baskets/basket', basket: @basket, remote: true %>
+        <!-- flow forms -->
+        <div class="horizontal">
+          <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
+          <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
+        </div>
       </div>
 
       <!-- stage payment -->
@@ -106,6 +115,7 @@
           <h1>My payment</h1>
         </div>
         <div class="payment">
+           <div class="horizontal"><p id="total"><%= d2(@total) %></p><p><%= ApplicationHelper::CURRENCY %></p></div>
           <div>
             Par virement aux coordonnées bancaires suivantes:
           </div>
@@ -116,8 +126,15 @@
             Carte de paiment
             </div>
         </div>
+        <div class="message">
         Dès réception de votre règlement, je commence à préparer votre commande.
-        <%= render 'baskets/basket', basket: @basket, remote: true %>
+        </div>
+
+        <!-- flow forms -->
+        <div class="horizontal">
+          <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
+          <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
+        </div>
       </div>
 
     </div>
