@@ -11,6 +11,8 @@
           <div class="" id="delivery"><%= Basket::STATUS[1] %></div>
           <div class="space"> >> </div>
           <div class="" id="payment"><%= Basket::STATUS[2] %></div>
+          <div class="space"> >> </div>
+          <div class="" id="invoice"><%= "Invoice" %></div>
         </div>
       </div>
 
@@ -113,6 +115,7 @@
           <h1>My payment</h1>
         </div>
         <div class="payment">
+           <div class="horizontal"><p id="total"><%= d2(@total) %></p><p><%= ApplicationHelper::CURRENCY %></p></div>
           <div>
             Par virement aux coordonnées bancaires suivantes:
           </div>
@@ -123,8 +126,9 @@
             Carte de paiment
             </div>
         </div>
+        <div class="message">
         Dès réception de votre règlement, je commence à préparer votre commande.
-
+        </div>
 
         <!-- flow forms -->
         <div class="horizontal">

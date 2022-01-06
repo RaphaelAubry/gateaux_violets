@@ -44,7 +44,7 @@ const test = () => {
       enableTime: true,
       dateFormat: "Le d/m/Y à H:i",
       "locale": French,
-      minDate: minDeliveryDate(+48),
+      minDate: minDeliveryDate(+(24*7)),
     });
 
   }
