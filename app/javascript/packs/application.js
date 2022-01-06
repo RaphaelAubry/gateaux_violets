@@ -10,7 +10,7 @@ import "channels"
 import 'bootstrap';
 
 
-import { initForm, test } from '../components/form.js'
+import { initForm, calendar, displayIBAN } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
@@ -21,5 +21,6 @@ ActiveStorage.start()
 document.addEventListener('turbolinks:load', () => {
   initForm();
   initFlow();
-  test();
+  calendar();
+  displayIBAN();
 })

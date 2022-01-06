@@ -32,6 +32,7 @@ class BasketsController < ApplicationController
     else
       flash[:alert] = "Your basket is empty, you must order a cake to validate your basket"
     end
+
     redirect_to basket_path(@basket)
   end
 
@@ -44,7 +45,7 @@ class BasketsController < ApplicationController
   private
 
   def basket_params
-    params.require(:basket).permit(:status)
+    params.require(:basket).permit(:status, :payment_type)
   end
 
   def set_basket

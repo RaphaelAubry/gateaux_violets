@@ -30,7 +30,7 @@ const initForm = () => {
   };
 }
 
-const test = () => {
+const calendar = () => {
 
   const date = document.getElementById("delivery_date")
   const dbdate = document.getElementById("dbdate")
@@ -56,7 +56,30 @@ const minDeliveryDate = (notice) => {
   const date = new Date()
   date.setHours(notice + date.getHours())
   return date
-
 }
 
-export { initForm, test }
+const displayIBAN = () => {
+
+  const iban = document.querySelector(".IBAN")
+  const paymentType = document.querySelector("#paymentType")
+
+  if ( iban != null && paymentType != null ){
+
+    paymentType.addEventListener('change', () => {
+
+    console.log(paymentType.options[paymentType.selectedIndex].value)
+    console.log(iban)
+
+      switch (paymentType.options[paymentType.selectedIndex].value) {
+        case "Cash":
+          iban.style.visibility = "hidden"
+          break;
+        case "Bank transfer":
+          iban.style.visibility = "visible";
+          break;
+      }
+    })
+  }
+}
+
+export { initForm, calendar, displayIBAN }
