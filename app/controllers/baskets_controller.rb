@@ -6,7 +6,8 @@ class BasketsController < ApplicationController
   end
 
   def index
-    @baskets = Basket.all
+    @baskets = policy_scope(Basket)
+
   end
 
   def show
@@ -50,5 +51,6 @@ class BasketsController < ApplicationController
 
   def set_basket
     @basket = Basket.find(params[:id])
+    authorize @basket
   end
 end

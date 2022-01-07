@@ -3,15 +3,17 @@ class CakesController < ApplicationController
   before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cakes = Cake.all
+    @cakes = policy_scope(Cake)
   end
 
   def new
     @cake = Cake.new
+    authorize @cake
   end
 
   def create
     @cake = Cake.new(cake_params)
+    authorize @cake
     @cake.save
 
     redirect_to home_path
@@ -51,5 +53,6 @@ class CakesController < ApplicationController
 
   def set_cake
     @cake = Cake.find(params[:id])
+    authorize @cake
   end
 end
