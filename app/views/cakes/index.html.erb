@@ -2,9 +2,11 @@
 
       <h1>Créations</h1>
 
-      <div class="button-wrapper">
-        <%= link_to "New", new_cake_path, class: "button" %>
-      </div>
+      <% if user_signed_in? && current_user.admin? %>
+        <div class="button-wrapper">
+          <%= link_to "New", new_cake_path, class: "button" %>
+        </div>
+      <% end %>
 
       <div class="products">
         <% @cakes.each do |cake| %>
@@ -14,8 +16,11 @@
         <% end %>
       </div>
 
+      <!-- >
       <div class="button-wrapper">
         <%= link_to "Back", :back, class: "button" %>
-      </div>
+      </div> -->
 
   </div>
+
+  <%= console %>

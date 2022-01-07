@@ -66,3 +66,6 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'devise', '~> 4.2'
 
 gem 'turbolinks_render'
+
+#Pundit
+gem 'pundit'

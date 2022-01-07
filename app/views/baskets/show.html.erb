@@ -59,6 +59,7 @@
             <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
           </div>
         </div>
+
         <!-- flow forms -->
         <div class="horizontal">
           <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
@@ -97,7 +98,6 @@
               <h3>Delivery Address</h3>
 
                <%= render 'takeaway' %>
-
             </div>
           </div>
         </div>
@@ -130,6 +130,7 @@
           Dès réception de votre règlement, je commence à préparer votre commande.
           </div>
         </div>
+
         <!-- flow forms -->
         <div class="horizontal">
           <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
