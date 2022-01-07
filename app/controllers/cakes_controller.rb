@@ -2,8 +2,6 @@ class CakesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
-
-
   def index
     @cakes = policy_scope(Cake)
   end

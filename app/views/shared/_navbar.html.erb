@@ -21,9 +21,17 @@
           <li class="nav-item active w100">
             <%= link_to "Créations", home_path, class: "nav-link" %>
           </li>
-          <li class="nav-item active w100 push-right">
-            <%= link_to "Paniers", baskets_path, class: "nav-link" %>
-          </li>
+
+            <li class="nav-item active w100 push-right">
+              <% if user_signed_in? %>
+                <% if current_user.admin? %>
+                  <%= link_to "Paniers", baskets_path, class: "nav-link" %>
+                <% else %>
+                  <%= link_to "Mes commandes", baskets_path, class: "nav-link" %>
+                <% end %>
+              <% end %>
+            </li>
+
           <% if !user_signed_in? %>
           <li class="nav-item active w100">
             <%= link_to "", "", class: "nav-link" %>

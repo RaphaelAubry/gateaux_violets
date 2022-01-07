@@ -5,24 +5,24 @@ class CakePolicy < ApplicationPolicy
     end
   end
 
-    def show?
-      true
-      #user.admin?
-      #record.user == user
-    end
+  def create?
+    user.admin?
+    #return true
+  end
 
-    def create?
-      user.admin?
-      #return true
-    end
+  def show?
+    return true
+    #user.admin?
+    #record.user == user
+  end
 
-    def update?
-      user.admin?
-      #record.user == user
-    end
+  def update?
+    user.admin?
+    #record.user == user
+  end
 
-    def destroy?
-      user.admin?
-      #record.user == user
-    end
+  def destroy?
+    user.admin?
+    #record.user == user
+  end
 end
