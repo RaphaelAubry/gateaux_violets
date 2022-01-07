@@ -9,8 +9,10 @@
           <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[2] }, label: false %>
           <%= f.submit "Order", class: "button" %>
         <% when "payment" %>
-          <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[0] }, label: false %>
-          <%= f.submit "Approve payment", class: "button" %>
+          <% if current_user.admin? %>
+            <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[0] }, label: false %>
+            <%= f.submit "Approve payment", class: "button" %>
+          <% end %>
       <% end %>
     </div>
 <% end %>

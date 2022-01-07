@@ -7,10 +7,12 @@ class LinesController < ApplicationController
 
   def new
     @line = Line.new
+    authorize @line
   end
 
   def create
     @line = Line.new(line_params)
+    authorize @line
     #select current basket
     @basket = Basket.where(user_id: current_user.id, payment_type: nil).last
     if @basket.nil?
@@ -55,6 +57,7 @@ class LinesController < ApplicationController
 
   def set_line
     @line = Line.find(params[:id])
+    authorize @line
   end
 
   def set_cake
