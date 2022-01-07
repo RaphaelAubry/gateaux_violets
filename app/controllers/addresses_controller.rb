@@ -4,10 +4,12 @@ class AddressesController < ApplicationController
 
   def new
     @address = Address.new
+    authorize @address
   end
 
   def create
     @address = Address.new(address_params)
+     authorize @address
     @address.user_id = current_user.id
     if @address.save
       redirect_to basket_path(@basket)
@@ -43,6 +45,7 @@ class AddressesController < ApplicationController
 
   def set_address
     @address = Address.find(params[:id])
+    authorize @address
   end
 
   def set_basket
