@@ -2,28 +2,16 @@
   <div class="show">
     <div>
 
-      <h1 class="title">Paniers</h1>
+    <% if current_user.admin? %>
 
-      <div class="horizontal">
-        <p class="tabl-id">Id</p>
-        <p class="tabl-email">Customer email</p>
-        <p class="tabl-email">Status</p>
-        <p class="tabl-email">Payment Type</p>
-      </div>
+      <%= render 'baskets/baskets_admin' %>
 
+    <% else %>
 
-        <% @baskets.each do |basket| %>
+      <%= render 'baskets/baskets_client' %>
 
-        <%= link_to basket_path(basket) do %>
-          <div class="horizontal">
-            <p class="tabl-id"><%= basket.id %></p>
-            <p class="tabl-email"><%= basket.user.email %></p>
-            <p class="tabl-email"><%= basket.status %></p>
-            <p class="tabl-email"><%= basket.payment_type %></p>
-          </div>
-        <% end %>
+    <% end %>
 
-      <% end %>
 
       <div class="button-wrapper">
         <%= link_to "Back", :back, class: "button" %>

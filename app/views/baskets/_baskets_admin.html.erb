@@ -1,0 +1,20 @@
+<h1 class="title">Paniers</h1>
+
+      <div class="horizontal">
+        <p class="tabl-email">Customer email</p>
+        <p class="tabl-email">Status</p>
+        <p class="tabl-email">Payment Type</p>
+      </div>
+
+
+        <% @baskets.each do |basket| %>
+
+        <%= link_to basket_path(basket) do %>
+          <div class="horizontal">
+            <p class="tabl-email"><%= basket.user.email %></p>
+            <p class="tabl-email"><%= basket.status %></p>
+            <p class="tabl-email"><%= basket.payment_type %></p>
+          </div>
+        <% end %>
+
+      <% end %>
