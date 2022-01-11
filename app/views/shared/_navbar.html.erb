@@ -32,9 +32,11 @@
               <% end %>
             </li>
 
-            <li class="nav-item active basket-icon">
-               <%= link_to "", baskets_path, class: "nav-link fas fa-shopping-bag" %>
-            </li>
+            <% if user_signed_in? && !current_user.admin? %>
+              <li class="nav-item active basket-icon">
+                <%= link_to "", mybasket, class: "nav-link fas fa-shopping-bag" %>
+              </li>
+            <% end %>
 
           <% if !user_signed_in? %>
           <li class="nav-item active w100">
