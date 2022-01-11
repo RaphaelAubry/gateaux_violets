@@ -40,3 +40,17 @@
 h2 {
   margin-left: 10px;
 }
+
+.basket-icon {
+  width: 50px;
+  font-size: 20px;
+  @media(max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.nav-link {
+    @media(max-width: 768px) {
+    width: 70vw;
+  }
+}
