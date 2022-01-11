@@ -27,8 +27,6 @@ $font-little: 0.75em;
   }
 }
 
-
-
 .tabl-price {
   margin-right: $margin-right;
   width: $width-number;
@@ -72,6 +70,21 @@ $font-little: 0.75em;
 }
 
 .tabl-email {
-  width: $width-string + 50px;
+  width: $width-string +30px;
+  margin-right: $margin-right;
+}
+
+.tabl-status {
+  width: 100px;
+  margin-right: $margin-right;
+}
+
+.tabl-payment-type {
+  width: 150px;
+  margin-right: $margin-right;
+}
+
+.tabl-total {
+  width: 150px;
   margin-right: $margin-right;
 }

@@ -1,24 +1,23 @@
 <h1 class="title">Paniers</h1>
 
-      <div class="horizontal">
-        <p class="tabl-date">Date</p>
-        <p class="tabl-email">Customer email</p>
-        <p class="tabl-status">Status</p>
-        <p class="tabl-payment_status">Payment Type</p>
-        <p class="tabl-total">Amount</p>
-      </div>
+  <div class="horizontal">
+    <p class="tabl-date">Date</p>
+    <p class="tabl-email">Customer email</p>
+    <p class="tabl-status">Status</p>
+    <p class="tabl-payment-type">Payment Type</p>
+    <p class="tabl-total">Amount</p>
+  </div>
 
+  <% @baskets.each do |basket| %>
 
-        <% @baskets.each do |basket| %>
+  <%= link_to basket_path(basket) do %>
+    <div class="horizontal">
+      <p class="tabl-date"><%= TimeFr(basket.created_at) %></p>
+      <p class="tabl-email"><%= basket.user.email %></p>
+      <p class="tabl-status"><%= basket.status %></p>
+      <p class="tabl-payment-type"><%= basket.payment_type %></p>
+      <p class="tabl-total"><%= number_with_precision(basket.totalize, precision: 2) %></p>
+    </div>
+  <% end %>
 
-        <%= link_to basket_path(basket) do %>
-          <div class="horizontal">
-            <p class="tabl-date"><%= TimeFr(basket.created_at) %></p>
-            <p class="tabl-email"><%= basket.user.email %></p>
-            <p class="tabl-status"><%= basket.status %></p>
-            <p class="tabl-payment-type"><%= basket.payment_type %></p>
-            <p class="tabl-total"><%= number_with_precision(basket.totalize, precision: 2) %></p>
-          </div>
-        <% end %>
-
-      <% end %>
+<% end %>
