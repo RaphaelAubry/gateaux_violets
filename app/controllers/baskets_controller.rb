@@ -19,10 +19,7 @@ class BasketsController < ApplicationController
   end
 
   def update
-    @total = 0
-    @basket.lines.each do |line|
-    @total += line.total
-    end
+    @total = @basket.totalize
     #update filled basket only
     if @total != 0
       if current_user.addresses.exists?
