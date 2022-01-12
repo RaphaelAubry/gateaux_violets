@@ -22,4 +22,8 @@ class BasketPolicy < ApplicationPolicy
     record.user == user || user.admin?
   end
 
+  def invoice?
+    record.user == user || user.admin?
+  end
+
 end

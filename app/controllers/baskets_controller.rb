@@ -1,5 +1,5 @@
 class BasketsController < ApplicationController
-  before_action :set_basket, only: [:show, :edit, :update, :destroy]
+  before_action :set_basket, only: [:show, :edit, :update, :destroy, :invoice]
 
   def new
     @basket = Basket.new
@@ -16,6 +16,9 @@ class BasketsController < ApplicationController
   end
 
   def edit
+  end
+
+  def invoice
   end
 
   def update
