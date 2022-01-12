@@ -4,8 +4,9 @@
   width: 500px;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
-   @media(max-width: 768px) {
+  @media(max-width: 768px) {
     padding: 5px;
+    width: 95vw;
   }
 }
 
@@ -41,4 +42,16 @@
 
 #paymentType {
    width: 230px;
+}
+
+.ap-dropdown-menu.ap-with-places {
+  width:40vw;
+  @media(max-width: 768px) {
+  width: 90vw;
+  }
+
+}
+
+.form svg {
+  margin-right: 20px;
 }

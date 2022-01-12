@@ -2,4 +2,16 @@
     background: rgb(58, 22, 120);
     color: white;
     height: 300px;
+    a {
+      color: white;
+      font-size: 30px;
+      &:hover {
+        color: white;
+      }
+    }
+}
+
+.social-network {
+  display: flex;
+  justify-content: center;
 }

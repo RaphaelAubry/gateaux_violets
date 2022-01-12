@@ -1,4 +1,4 @@
-<div class="center">
+<div class="left">
   <div class="form">
 
     <h1>New Address</h1>
@@ -7,15 +7,13 @@
       <%= f.input :surname %>
       <%= f.input :name %>
       <%= f.input :phone %>
-      <%= f.input :address %>
-      <%= f.input :addition_address %>
-      <%= f.input :zip_code %>
-      <%= f.input :city %>
+      <%= f.input :address, input_html: { id: "form-address" } %>
+      <%= f.input :addition_address, input_html: { id: "form-address2" } %>
+      <%= f.input :zip_code, input_html: { id: "form-zip" } %>
+      <%= f.input :city, input_html: { id: "form-city" } %>
 
       <%= f.submit class: "button" %>
     <% end %>
 
   </div>
 </div>
-
-<%= console %>
