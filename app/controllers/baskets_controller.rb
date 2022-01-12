@@ -31,6 +31,10 @@ class BasketsController < ApplicationController
           else
             flash[:alert] = "Please enter an address"
           end
+        when Basket::STATUS[2]
+            @basket.update(basket_params)
+        when Basket::STATUS[3]
+            @basket.update(basket_params)
         end
     else
       flash[:alert] = "Your basket is empty, you must order a cake to validate your basket"
