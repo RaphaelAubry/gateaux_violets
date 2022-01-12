@@ -12,6 +12,7 @@ import 'bootstrap';
 
 import { initForm, calendar, displayIBAN } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
+import { address } from '../components/autocomplete.js'
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -23,4 +24,5 @@ document.addEventListener('turbolinks:load', () => {
   initFlow();
   calendar();
   displayIBAN();
+  address();
 })

@@ -22,11 +22,16 @@ class BasketsController < ApplicationController
     @total = @basket.totalize
     #update filled basket only
     if @total != 0
-      if current_user.addresses.exists?
-        @basket.update(basket_params)
-      else
-        flash[:alert] = "Please enter an address"
-      end
+      case @basket.status
+        when Basket::STATUS[0]
+          @basket.update(basket_params)
+        when Basket::STATUS[1]
+          if current_user.addresses.exists?
+            @basket.update(basket_params)
+          else
+            flash[:alert] = "Please enter an address"
+          end
+        end
     else
       flash[:alert] = "Your basket is empty, you must order a cake to validate your basket"
     end
