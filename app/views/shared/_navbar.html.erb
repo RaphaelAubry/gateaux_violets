@@ -22,21 +22,26 @@
             <%= link_to "Créations", home_path, class: "nav-link" %>
           </li>
 
-            <li class="nav-item active push-right" style="margin-right: 20px;">
-              <% if user_signed_in? %>
-                <% if current_user.admin? %>
-                  <%= link_to "Paniers", baskets_path, class: "nav-link" %>
-                <% else %>
-                  <%= link_to "Mes commandes", baskets_path, class: "nav-link" %>
-                <% end %>
+          <li class="nav-item active push-right" style="margin-right: 20px;">
+            <% if user_signed_in? %>
+              <% if current_user.admin? %>
+                <%= link_to "Paniers", baskets_path, class: "nav-link" %>
+              <% else %>
+                <%= link_to "Mes commandes", baskets_path, class: "nav-link" %>
               <% end %>
-            </li>
-
-            <% if user_signed_in? && !current_user.admin? %>
-              <li class="nav-item active basket-icon">
-                <%= link_to "", basket_path(mybasket), class: "nav-link fas fa-shopping-bag" %>
-              </li>
             <% end %>
+          </li>
+
+          <li class="nav-item active basket-icon">
+            <% if user_signed_in? && !current_user.admin? %>
+
+              <% basket = Basket.where(user_id: current_user.id).last %>
+              <%= link_to "", basket_path(basket), class: "nav-link fas fa-shopping-bag" %>
+
+
+
+            <% end %>
+          </li>
 
           <% if !user_signed_in? %>
           <li class="nav-item active w100">
