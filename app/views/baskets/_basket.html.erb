@@ -17,7 +17,7 @@
         <p class="tabl-quantity"><%= line.quantity %></p>
         <!-- <% @line = line %><% @cake = line.cake %>
         <%= render 'lines/basket', locals: { line: @line, cake: @cake}, class: "tabl-quantity" %> -->
-        <p class="tabl-total"><%= d2(@basket.totalize) %><%= currency() %></p>
+        <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
       <% end %>
       <% if @basket.status == Basket::STATUS[0] %>
         <p class="tabl-icon"><%= link_to "", edit_line_path(line), class: "fas fa-edit" %></p>

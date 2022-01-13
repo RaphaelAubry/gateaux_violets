@@ -7,7 +7,6 @@ class BasketsController < ApplicationController
 
   def index
     @baskets = policy_scope(Basket)
-
   end
 
   def show

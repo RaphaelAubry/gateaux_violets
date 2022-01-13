@@ -13,6 +13,11 @@
             <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[3] }, label: false %>
             <%= f.submit "Approve payment", class: "button" %>
           <% end %>
+        <% when "complete" %>
+           <% if current_user.admin? %>
+           <% else %>
+            <%= link_to "new order", cakes_path, class: "button" %>
+           <% end %>
       <% end %>
     </div>
 <% end %>
