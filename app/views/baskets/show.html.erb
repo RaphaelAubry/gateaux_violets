@@ -100,9 +100,10 @@
       <div class="payment">
 
         <div class="title">
-          <h1>My payment</h1>
+          <h1>Overview</h1>
         </div>
 
+        <h3>Basket</h3>
         <%= render 'baskets/basket', basket: @basket %>
 
         <div class="payment">
@@ -110,6 +111,7 @@
             <p id="total"><%= d2(@total) %></p>
             <p><%= ApplicationHelper::CURRENCY %></p>
           </div> -->
+          <h3>Payment</h3>
           <% if @basket.payment_type.nil? %>
             <%= render 'baskets/payment' %>
           <% else %>
@@ -120,7 +122,8 @@
           <div class="message">
             Dès réception de votre règlement, je commence à préparer votre commande.
           </div>
-          <div>
+
+          <div class="delivery-address">
             <h3>Delivery Address</h3>
             <%= render 'takeaway' %>
           </div>
@@ -139,9 +142,10 @@
       <div class="complete">
 
         <div class="title">
-          <h1>My Invoice</h1>
+          <h1>Overview</h1>
         </div>
 
+        <h3>Basket</h3>
         <%= render 'baskets/basket', basket: @basket %>
 
         <div class="message">
@@ -153,7 +157,7 @@
         </div>
 
         <div>
-          <%= link_to "My invoice", invoice_path(@basket), target: :_blank, method: :get %>
+          <%= link_to "My invoice", invoice_path(@basket), target: :_blank, method: :get, class: "button" %>
         </div>
 
 
@@ -171,5 +175,3 @@
     </div>
   </div>
 </div>
-
-<%= console %>
