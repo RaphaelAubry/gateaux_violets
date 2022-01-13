@@ -7,7 +7,7 @@
       <p class="tabl-quantity">Quantity</p>
     </div>
 
-  <% @basket.lines.each do |line| %>
+  <% @basket.lines.order("delivery_date").each do |line| %>
   <% @total += line.total  %>
     <div class="horizontal">
       <% if @basket.status == Basket::STATUS[0] %>

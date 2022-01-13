@@ -1,7 +1,7 @@
 class BasketPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      user.admin? ? scope.all : scope.where(user_id: user.id)
+      user.admin? ? scope.all : scope.where(user_id: user.id).order("created_at")
     end
   end
 
