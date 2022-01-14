@@ -1,7 +1,7 @@
 class LinePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.all.order("delivery_date")
     end
   end
 

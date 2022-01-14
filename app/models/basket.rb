@@ -4,7 +4,7 @@ class Basket < ApplicationRecord
 
   STATUS = ["basket", "delivery", "payment", "complete"]
 
-  PAYMENT_TYPE = ["Bank transfer", "Cash"]
+  PAYMENT_TYPE = ["Bank transfer", "Cash", "Paypal"]
 
   IBAN = "FR76 1234 5647 9191 58"
 
@@ -15,4 +15,14 @@ class Basket < ApplicationRecord
     end
     return total
   end
+
+
+  #def self.newbasket(user)
+    #basket = self.where(user_id: user.id).last
+    #if basket.totalize != 0
+   #   basket = self.new(user_id: user.id, status: "basket")
+   #   basket.save
+   # end
+   # return basket
+  #end
 end

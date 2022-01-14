@@ -2,15 +2,15 @@
   <div class="show">
     <div>
 
-    <% if current_user.admin? %>
+      <% if current_user.admin? %>
 
-      <%= render 'baskets/baskets_admin' %>
+        <%= render 'baskets/baskets_admin' %>
 
-    <% else %>
+      <% else %>
 
-      <%= render 'baskets/baskets_client' %>
+        <%= render 'baskets/baskets_client' %>
 
-    <% end %>
+      <% end %>
 
 
       <div class="button-wrapper">

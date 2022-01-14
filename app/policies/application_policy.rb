@@ -36,6 +36,10 @@ class ApplicationPolicy
     false
   end
 
+  def invoice
+    invoice?
+  end
+
   class Scope
     def initialize(user, scope)
       @user = user

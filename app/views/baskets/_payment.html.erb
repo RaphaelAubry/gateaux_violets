@@ -1,16 +1,35 @@
 <%= simple_form_for((@basket), remote: true, authenticity_token: true) do |f| %>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
-  <%= f.input :payment_type, collection: Basket::PAYMENT_TYPE, label: false, selected: Basket::PAYMENT_TYPE[0], input_html: { id: "paymentType", class: "field"} %>
+  <div class="horizontal">
+    <%= f.input :payment_type, collection: Basket::PAYMENT_TYPE, label: false, selected: Basket::PAYMENT_TYPE[0], input_html: { id: "paymentType", class: "field"} %>
+    <p class="fas fa-money-bill-wave icon"></p>
+    <p class="fas fa-server icon"></p>
+    <p class="fab fa-cc-paypal icon"></p>
+  </div>
 
   <div class="IBAN">
-    <p>Bank details below</p>
-    <%= "#{Basket::IBAN}" %>
-    <p></p>
+    <div class="horizontal">
+      <p class="label">IBAN</p>
+      <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
+    </div>
   </div>
+
+  <div class="Cash">
+    <div class="horizontal">
+      <p class="label">Cash on delivery</p>
+    </div>
+  </div>
+
+  <div class="Paypal">
+    <div class="horizontal">
+      <p class="label">Paypal</p>
+    </div>
+  </div>
+
+
   <div>
     <%= f.submit "Approve basket", class: "button" %>
     <p></p>
   </div>
-
 <% end %>

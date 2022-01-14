@@ -58,24 +58,53 @@ const minDeliveryDate = (notice) => {
   return date
 }
 
-const displayIBAN = () => {
+const displayPaymentMethod = () => {
 
-  const iban = document.querySelector(".IBAN")
   const paymentType = document.querySelector("#paymentType")
 
-  if ( iban != null && paymentType != null ){
+  if ( paymentType != null ){
+
+    const IBANDiv = document.querySelector(".IBAN")
+    const cashDiv = document.querySelector(".Cash")
+    const paypalDiv = document.querySelector(".Paypal")
+    const IBANIcon = document.querySelector(".fa-server")
+    const cashIcon = document.querySelector(".fa-money-bill-wave")
+    const paypalIcon = document.querySelector(".fa-cc-paypal")
+
+    cashDiv.style.display = "none";
+    paypalDiv.style.display = "none";
+    cashIcon.style.display = "none";
+    paypalIcon.style.display = "none";
+
 
     paymentType.addEventListener('change', () => {
 
     console.log(paymentType.options[paymentType.selectedIndex].value)
-    console.log(iban)
 
       switch (paymentType.options[paymentType.selectedIndex].value) {
         case "Cash":
-          iban.style.visibility = "hidden"
+          IBANDiv.style.display = "none";
+          cashDiv.style.display = "";
+          paypalDiv.style.display = "none";
+          IBANIcon.style.display = "none";
+          cashIcon.style.display = "";
+          paypalIcon.style.display = "none";
           break;
         case "Bank transfer":
-          iban.style.visibility = "visible";
+          IBANDiv.style.display = "";
+          cashDiv.style.display = "none";
+          paypalDiv.style.display = "none";
+          IBANIcon.style.display = "";
+          cashIcon.style.display = "none";
+          paypalIcon.style.display = "none";
+          break;
+        case "Paypal":
+          IBANDiv.style.display = "none";
+          cashDiv.style.display = "none";
+          paypalDiv.style.display = "";
+          IBANIcon.style.display = "none";
+          cashIcon.style.display = "none";
+          paypalIcon.style.display = "";
           break;
       }
     })
@@ -84,4 +113,4 @@ const displayIBAN = () => {
 
 
 
-export { initForm, calendar, displayIBAN }
+export { initForm, calendar, displayPaymentMethod }

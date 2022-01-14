@@ -1,0 +1,42 @@
+<!-- table -->
+<div>
+    <div class="horizontal">
+      <p class="tabl-name label"></p>
+      <p class="tabl-date label">To</p>
+      <p class="tabl-price label">Price</p>
+      <p class="tabl-quantity label"></p>
+    </div>
+
+  <% @basket.lines.order("delivery_date").each do |line| %>
+  <% @total += line.total  %>
+    <div class="horizontal">
+      <% if @basket.status == Basket::STATUS[0] %>
+        <%= link_to edit_line_path(line) do %>
+          <p class="tabl-name"><%= line.cake.name %></p>
+          <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
+          <p class="tabl-price"><%= d2(line.cake.price) %></p>
+          <p class="label-quantity">x</p>
+          <p class="tabl-quantity"><%= line.quantity %></p>
+          <!-- <% @line = line %><% @cake = line.cake %>
+          <%= render 'lines/basket', locals: { line: @line, cake: @cake}, class: "tabl-quantity" %> -->
+          <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
+        <% end %>
+      <% else %>
+          <p class="tabl-name"><%= line.cake.name %></p>
+          <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
+          <p class="tabl-price"><%= d2(line.cake.price) %></p>
+          <p class="label-quantity">x</p>
+          <p class="tabl-quantity"><%= line.quantity %></p>
+          <!-- <% @line = line %><% @cake = line.cake %>
+          <%= render 'lines/basket', locals: { line: @line, cake: @cake}, class: "tabl-quantity" %> -->
+          <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
+      <% end %>
+      <% if @basket.status == Basket::STATUS[0] %>
+        <p class="tabl-icon"><%= link_to "", edit_line_path(line), class: "fas fa-edit" %></p>
+        <p class="tabl-icon"><%= link_to "", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "fas fa-trash", remote: true %></p>
+      <% end %>
+    </div>
+    <p class="tabl-date-smallscreen">To <%= TimeFr(line.delivery_date) %></p>
+  <% end %>
+  <div class="basket-total"><p><%= d2(@basket.totalize) %></p><p><%= ApplicationHelper::CURRENCY %></p></div>
+</div>

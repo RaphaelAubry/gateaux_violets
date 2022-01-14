@@ -22,49 +22,28 @@
           <h1>My basket</h1>
         </div>
 
-        <!-- table -->
-        <div>
-            <div class="horizontal">
-              <p class="tabl-name"></p>
-              <p class="tabl-date">To</p>
-              <p class="tabl-price">Price</p>
-              <p class="tabl-quantity">Quantity</p>
+         <!-- basket -->
+        <%= render 'baskets/basket', basket: @basket %>
+
+        <!-- basket actions -->
+        <% if @basket.status == Basket::STATUS[0] %>
+          <div>
+            <div class="button-wrapper">
+              <%= link_to "Order more", :home, class: "button" %>
             </div>
-
-          <% @basket.lines.each do |line| %>
-          <% @total += line.total  %>
-            <div class="horizontal">
-              <%= link_to edit_line_path(line) do %>
-                <p class="tabl-name"><%= line.cake.name %></p>
-                <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
-                <p class="tabl-price"><%= d2(line.cake.price) %></p>
-                <p class="tabl-quantity"><%= line.quantity %></p>
-                <!-- <% @line = line %><% @cake = line.cake %>
-                <%= render 'lines/basket', locals: { line: @line, cake: @cake}, class: "tabl-quantity" %> -->
-                <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
-              <% end %>
-              <p class="tabl-icon"><%= link_to "", edit_line_path(line), class: "fas fa-edit" %></p>
-              <p class="tabl-icon"><%= link_to "", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "fas fa-trash", remote: true %></p>
+            <div class="button-wrapper">
+              <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
             </div>
-            <p class="tabl-date-smallscreen">To <%= TimeFr(line.delivery_date) %></p>
-          <% end %>
-          <div class="basket-total"><p><%= d2(@total) %></p><p><%= ApplicationHelper::CURRENCY %></p></div>
-        </div>
-
-        <div>
-          <div class="button-wrapper">
-            <%= link_to "Order more", :home, class: "button" %>
           </div>
-          <div class="button-wrapper">
-            <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
-          </div>
-        </div>
 
-        <!-- flow forms -->
-        <div class="horizontal">
-          <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
-          <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
-        </div>
+
+          <!-- flow forms -->
+          <div class="horizontal">
+            <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
+            <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
+          </div>
+        <% end %>
+
       </div>
 
       <!-- stage delivery -->
@@ -75,7 +54,10 @@
         </div>
 
         <div class="address">
+
+          <!-- left -->
           <div>
+             <!-- invoicing address -->
             <div class="invoicing-address">
               <h3>Invoicing Address</h3>
 
@@ -85,7 +67,7 @@
                 <%= link_to 'new', new_address_path, class: "button" %>
               <% end %>
             </div>
-
+             <!-- contact address -->
             <div class="delivery-contact">
               <h3>Contact</h3>
 
@@ -93,45 +75,71 @@
             </div>
           </div>
 
+          <!-- right -->
           <div>
             <div class="delivery-address">
               <h3>Delivery Address</h3>
-
-               <%= render 'takeaway' %>
+              <!-- delivery address -->
+              <%= render 'takeaway' %>
             </div>
           </div>
         </div>
 
+
         <!-- flow forms -->
-        <div class="horizontal">
-          <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
-          <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
-        </div>
+        <% if @basket.status == Basket::STATUS[1] %>
+          <div class="horizontal">
+            <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
+            <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
+          </div>
+        <% end %>
+
       </div>
 
       <!-- stage payment -->
       <div class="payment">
+
         <div class="title">
-          <h1>My payment</h1>
+            <h1>Overview</h1>
         </div>
+
+        <h3>Basket</h3>
+
+        <%= render 'baskets/basket', basket: @basket %>
+
+        <div class="delivery-address">
+          <h3>Delivery Address</h3>
+          <%= render 'takeaway' %>
+        </div>
+
         <div class="payment">
-          <div class="horizontal">
+          <!-- <div class="horizontal">
             <p id="total"><%= d2(@total) %></p>
             <p><%= ApplicationHelper::CURRENCY %></p>
-          </div>
+          </div> -->
+          <h3>Payment</h3>
           <% if @basket.payment_type.nil? %>
             <%= render 'baskets/payment' %>
           <% else %>
              <p class="tabl-email"><%= @basket.payment_type %></p>
+             <% if @basket.payment_type == Basket::PAYMENT_TYPE[0] %>
+              <div class="horizontal">
+                <p class="label">IBAN</p>
+                <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
+              </div>
+             <% end %>
           <% end %>
 
 
           <div class="message">
-          Dès réception de votre règlement, je commence à préparer votre commande.
+            Dès réception de votre règlement, je commence à préparer votre commande.
           </div>
+
+
+
         </div>
 
-             <!-- flow forms -->
+        <!-- flow forms -->
         <div class="horizontal">
           <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
           <!-- <%= render 'baskets/basket_backward', basket: @basket, remote: true %> -->
@@ -141,12 +149,24 @@
 
       <!-- stage complete -->
       <div class="complete">
+
         <div class="title">
-          <h1>My Invoice</h1>
+          <h1>Overview</h1>
         </div>
 
+        <h3>Basket</h3>
+        <%= render 'baskets/basket', basket: @basket %>
+
         <div class="message">
-        J'ai reçu votre règlement et je prépare votre commande.
+          J'ai reçu votre règlement et je prépare votre commande.
+        </div>
+        <div>
+          <h3>Delivery Address</h3>
+          <%= render 'takeaway' %>
+        </div>
+
+        <div>
+          <%= link_to "My invoice", invoice_path(@basket), target: :_blank, method: :get, class: "button" %>
         </div>
 
 

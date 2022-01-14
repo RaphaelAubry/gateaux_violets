@@ -8,9 +8,7 @@ $font-little: 0.75em;
 .tabl-name {
   margin-right: $margin-right;
   width: $width-string;
-  @media(max-width: 768px) {
-    max-width: 75px;
-  }
+
 }
 
 .tabl-date {
@@ -34,11 +32,11 @@ $font-little: 0.75em;
 
 .tabl-quantity {
   margin-right: $margin-right;
-  width: 80px;
+  width: 25px;
 }
 
 .tabl-total {
-  margin-right: 20px;
+  margin-right: 5px;
   min-width: 90px;
   display: flex;
   align-items: center;
@@ -58,7 +56,7 @@ $font-little: 0.75em;
   p {
     margin-right: $margin-right;
   }
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 //basket table
@@ -87,4 +85,9 @@ $font-little: 0.75em;
 .tabl-total {
   width: 150px;
   margin-right: $margin-right;
+}
+
+.label-quantity {
+  font-size: 12px;
+  margin: 0 2px 12px 0;
 }

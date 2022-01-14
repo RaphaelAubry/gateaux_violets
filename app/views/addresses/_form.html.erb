@@ -5,7 +5,7 @@
     <%= simple_form_for(@address) do |f| %>
 
       <%= f.input :surname %>
-      <%= f.input :name %>
+      <%= f.input :name, label: "Name or company" %>
       <%= f.input :phone %>
       <%= f.input :address, input_html: { id: "form-address" } %>
       <%= f.input :addition_address, input_html: { id: "form-address2" } %>

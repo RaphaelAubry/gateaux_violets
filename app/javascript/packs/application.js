@@ -10,7 +10,7 @@ import "channels"
 import 'bootstrap';
 
 
-import { initForm, calendar, displayIBAN } from '../components/form.js'
+import { initForm, calendar, displayPaymentMethod } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
 import { address } from '../components/autocomplete.js'
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
@@ -23,6 +23,6 @@ document.addEventListener('turbolinks:load', () => {
   initForm();
   initFlow();
   calendar();
-  displayIBAN();
+  displayPaymentMethod();
   address();
 })
