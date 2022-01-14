@@ -71,6 +71,11 @@ const displayPaymentMethod = () => {
     const cashIcon = document.querySelector(".fa-money-bill-wave")
     const paypalIcon = document.querySelector(".fa-cc-paypal")
 
+    cashDiv.style.display = "none";
+    paypalDiv.style.display = "none";
+    cashIcon.style.display = "none";
+    paypalIcon.style.display = "none";
+
 
     paymentType.addEventListener('change', () => {
 
