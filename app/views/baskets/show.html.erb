@@ -122,6 +122,12 @@
             <%= render 'baskets/payment' %>
           <% else %>
              <p class="tabl-email"><%= @basket.payment_type %></p>
+             <% if @basket.payment_type == Basket::PAYMENT_TYPE[0] %>
+              <div class="horizontal">
+                <p class="label">IBAN</p>
+                <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
+              </div>
+             <% end %>
           <% end %>
 
 
