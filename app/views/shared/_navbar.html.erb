@@ -36,6 +36,8 @@
             <% if user_signed_in? && !current_user.admin? %>
 
               <% basket = Basket.where(user_id: current_user.id).last %>
+
+
               <%= link_to "", basket_path(basket), class: "nav-link fas fa-shopping-bag" %>
 
 

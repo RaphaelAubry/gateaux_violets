@@ -4,7 +4,7 @@ class Basket < ApplicationRecord
 
   STATUS = ["basket", "delivery", "payment", "complete"]
 
-  PAYMENT_TYPE = ["Bank transfer", "Cash"]
+  PAYMENT_TYPE = ["Bank transfer", "Cash", "Paypal"]
 
   IBAN = "FR76 1234 5647 9191 58"
 

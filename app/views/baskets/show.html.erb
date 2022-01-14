@@ -100,11 +100,17 @@
       <div class="payment">
 
         <div class="title">
-          <h1>Overview</h1>
+            <h1>Overview</h1>
         </div>
 
         <h3>Basket</h3>
+
         <%= render 'baskets/basket', basket: @basket %>
+
+        <div class="delivery-address">
+          <h3>Delivery Address</h3>
+          <%= render 'takeaway' %>
+        </div>
 
         <div class="payment">
           <!-- <div class="horizontal">
@@ -123,10 +129,7 @@
             Dès réception de votre règlement, je commence à préparer votre commande.
           </div>
 
-          <div class="delivery-address">
-            <h3>Delivery Address</h3>
-            <%= render 'takeaway' %>
-          </div>
+
 
         </div>
 
