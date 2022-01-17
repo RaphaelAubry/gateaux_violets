@@ -48,7 +48,7 @@ class CakesController < ApplicationController
   private
 
   def cake_params
-    params.require(:cake).permit(:name, :description, :price, :size)
+    params.require(:cake).permit(:name, :description, :price, :size, :photo)
   end
 
   def set_cake
