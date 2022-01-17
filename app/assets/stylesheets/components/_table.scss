@@ -8,7 +8,11 @@ $font-little: 0.75em;
 .tabl-name {
   margin-right: $margin-right;
   width: $width-string;
+}
 
+.tabl-photo {
+  margin-right: $margin-right;
+  width: 90px;
 }
 
 .tabl-date {
@@ -89,5 +93,5 @@ $font-little: 0.75em;
 
 .label-quantity {
   font-size: 12px;
-  margin: 0 2px 12px 0;
+  margin: 5px 2px 12px 0
 }

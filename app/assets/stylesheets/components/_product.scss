@@ -10,12 +10,19 @@
   height: 215px;
   object-fit: cover;
   border-radius: 5px;
-  object-fit: cover;
   @media(max-width: 768px) {
   width: 46vw;
   height: 46vw;
   }
 }
+
+.photo-basket {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 
 .text {
   margin-top: 10px;

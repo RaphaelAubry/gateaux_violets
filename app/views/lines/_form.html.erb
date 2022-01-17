@@ -10,7 +10,7 @@
 
     <%= simple_form_for([@cake, @line]) do |f| %>
 
-      <p><%= image_tag "cake1.png", class: "photo" %></p>
+      <p><%= cl_image_tag @cake.photo.key, class: "photo" %></p>
       <p><%= @cake.name %></p>
 
       <%= f.input :quantity, collection: Line::QUANTITY, :input_html => { class: "field" }, label: false, include_blank: false %>

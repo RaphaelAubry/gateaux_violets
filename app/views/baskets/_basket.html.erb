@@ -1,8 +1,9 @@
 <!-- table -->
 <div>
     <div class="horizontal">
+      <p class="tabl-photo"></p>
       <p class="tabl-name label"></p>
-      <p class="tabl-date label">To</p>
+      <p class="tabl-date label">Delivery date</p>
       <p class="tabl-price label">Price</p>
       <p class="tabl-quantity label"></p>
     </div>
@@ -12,6 +13,7 @@
     <div class="horizontal">
       <% if @basket.status == Basket::STATUS[0] %>
         <%= link_to edit_line_path(line) do %>
+          <p class="tabl-photo"></p>
           <p class="tabl-name"><%= line.cake.name %></p>
           <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
           <p class="tabl-price"><%= d2(line.cake.price) %></p>
@@ -22,6 +24,7 @@
           <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
         <% end %>
       <% else %>
+          <p class="tabl-photo"><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></p>
           <p class="tabl-name"><%= line.cake.name %></p>
           <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
           <p class="tabl-price"><%= d2(line.cake.price) %></p>
