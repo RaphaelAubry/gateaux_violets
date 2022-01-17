@@ -69,3 +69,12 @@ gem 'turbolinks_render'
 
 #Pundit
 gem 'pundit'
+
+#Braintree
+gem "braintree", "~> 4.4.0"
+
+#Keys
+gem 'dotenv-rails', groups: [:development, :test]
+
+#Cloudinary
+gem 'cloudinary', '~> 1.16.0'

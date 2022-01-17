@@ -13,6 +13,7 @@ import 'bootstrap';
 import { initForm, calendar, displayPaymentMethod } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
 import { address } from '../components/autocomplete.js'
+import { brain } from '../components/braintree.js'
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -25,4 +26,6 @@ document.addEventListener('turbolinks:load', () => {
   calendar();
   displayPaymentMethod();
   address();
+  brain();
+
 })
