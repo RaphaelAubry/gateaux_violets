@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :lines, except: [:new, :create]
 
   resources :addresses, except: [:index]
+
+  resources :transactions, only: [:new, :create]
 end

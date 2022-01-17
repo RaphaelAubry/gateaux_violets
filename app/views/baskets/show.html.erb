@@ -105,7 +105,7 @@
 
         <h3>Basket</h3>
 
-        <%= render 'baskets/basket', basket: @basket %>
+        <%= render 'basket', basket: @basket %>
 
         <div class="delivery-address">
           <h3>Delivery Address</h3>
@@ -118,6 +118,7 @@
             <p><%= ApplicationHelper::CURRENCY %></p>
           </div> -->
           <h3>Payment</h3>
+          <!--
           <% if @basket.payment_type.nil? %>
             <%= render 'baskets/payment' %>
           <% else %>
@@ -128,7 +129,9 @@
                 <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
               </div>
              <% end %>
-          <% end %>
+          <% end %> -->
+
+          <%= render 'transaction' %>
 
 
           <div class="message">
@@ -142,7 +145,7 @@
         <!-- flow forms -->
         <div class="horizontal">
           <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
-          <!-- <%= render 'baskets/basket_backward', basket: @basket, remote: true %> -->
+          <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
         </div>
 
       </div>
@@ -184,3 +187,5 @@
     </div>
   </div>
 </div>
+
+<%= console %>
