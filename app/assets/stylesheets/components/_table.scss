@@ -4,6 +4,22 @@ $width-number: 50px;
 $width-string: 200px;
 $margin-right: 10px;
 $font-little: 0.75em;
+$font-size: 14px;
+
+.tabl-head {
+  font-size: $font-size;
+  border-bottom: 1px solid rgb(204, 199, 199);
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.tabl-data {
+  font-size: $font-size;
+  p {
+    margin: 8px 10px 8px 0px;
+  }
+}
 
 .tabl-name {
   margin-right: $margin-right;
