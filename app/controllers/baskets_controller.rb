@@ -28,12 +28,13 @@ class BasketsController < ApplicationController
         when Basket::STATUS[0]
           @basket.update(basket_params)
         when Basket::STATUS[1]
+
+        when Basket::STATUS[2]
           if current_user.addresses.exists?
             @basket.update(basket_params)
           else
             flash[:alert] = "Please enter an address"
           end
-        when Basket::STATUS[2]
             @basket.update(basket_params)
         when Basket::STATUS[3]
             @basket.update(basket_params)

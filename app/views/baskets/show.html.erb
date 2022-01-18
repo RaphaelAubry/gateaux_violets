@@ -23,7 +23,7 @@
         </div>
 
          <!-- basket -->
-        <%= render 'baskets/basket', basket: @basket %>
+        <%= render 'basket', basket: @basket %>
 
         <!-- basket actions -->
         <% if @basket.status == Basket::STATUS[0] %>
@@ -37,10 +37,10 @@
           </div>
 
 
-          <!-- flow forms -->
+          <!-- flow forms --><!-- stage basket -->
           <div class="horizontal">
-            <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
-            <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
+            <%= render 'basket_forward', basket: @basket, remote: true %>
+            <%= render 'basket_backward', basket: @basket, remote: true %>
           </div>
         <% end %>
 
@@ -57,26 +57,6 @@
 
           <!-- left -->
           <div>
-             <!-- invoicing address -->
-            <div class="invoicing-address">
-              <h3>Invoicing Address</h3>
-
-              <% if current_user.addresses.exists? %>
-                <%= render 'address', local: { basket: @basket, address: @address } %>
-              <% else %>
-                <%= link_to 'new', new_address_path, class: "button" %>
-              <% end %>
-            </div>
-             <!-- contact address -->
-            <div class="delivery-contact">
-              <h3>Contact</h3>
-
-              <%= render 'baskets/contact', local: { basket: @basket, address: @address } %>
-            </div>
-          </div>
-
-          <!-- right -->
-          <div>
             <div class="delivery-address">
               <h3>Delivery Address</h3>
               <!-- delivery address -->
@@ -89,8 +69,8 @@
         <!-- flow forms -->
         <% if @basket.status == Basket::STATUS[1] %>
           <div class="horizontal">
-            <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
-            <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
+            <%= render 'basket_forward', basket: @basket, remote: true %>
+            <%= render 'basket_backward', basket: @basket, remote: true %>
           </div>
         <% end %>
 
@@ -131,7 +111,7 @@
              <% end %>
           <% end %> -->
 
-          <%= render 'transaction' %>
+          <%= link_to "Checkout", new_basket_transaction_path(@basket), class: "button" %>
 
 
           <div class="message">
@@ -144,8 +124,8 @@
 
         <!-- flow forms -->
         <div class="horizontal">
-          <%= render 'baskets/basket_forward', basket: @basket, remote: true %>
-          <%= render 'baskets/basket_backward', basket: @basket, remote: true %>
+          <%= render 'basket_forward', basket: @basket, remote: true %>
+          <%= render 'basket_backward', basket: @basket, remote: true %>
         </div>
 
       </div>

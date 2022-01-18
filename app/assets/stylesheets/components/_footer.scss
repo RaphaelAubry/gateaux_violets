@@ -2,12 +2,17 @@
     background: rgb(58, 22, 120);
     color: white;
     height: 300px;
+    padding-top: 20px;
+    padding-left: 20px;
     a {
       color: white;
       font-size: 30px;
       &:hover {
         color: white;
       }
+    }
+    p {
+      font-size: 12px;
     }
 }
 
