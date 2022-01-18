@@ -50,18 +50,4 @@ const initFlow = () => {
   }
 }
 
-const display = () => {
-
-  const flow = document.getElementById("flow")
-
-  if (flow != null) {
-
-
-
-
-
-  }
-
-}
-
 export { initFlow }

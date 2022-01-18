@@ -21,18 +21,17 @@
     </div>
   </div>
 
-  <div class="Paypal">
+  <div class="Card">
     <div class="horizontal">
-      <p class="label">Paypal</p>
+      <p class="label">Carte</p>
     </div>
   </div>
 
-
-
-
-  <div>
-    <p></p>
-    <%= f.submit "Approve basket", class: "button" %>
-    <p></p>
+  <div class="manual-payment">
+    <%= f.submit "Checkout", class: "button" %>
   </div>
+  <div class="e-payment">
+    <p><%= link_to "Checkout", new_basket_transaction_path(@basket), class: "button" %></p>
+  </div>
+
 <% end %>

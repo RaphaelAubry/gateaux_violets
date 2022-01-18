@@ -13,7 +13,11 @@
     <div class="horizontal">
       <% if @basket.status == Basket::STATUS[0] %>
         <%= link_to edit_line_path(line) do %>
-          <p class="tabl-photo"><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></p>
+          <% if line.cake.photo.key.nil? %>
+            <p class="tabl-photo"><%= image_tag "cake1.png", class: "photo-basket" %></p>
+          <% else %>
+            <p class="tabl-photo"><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></p>
+          <% end %>
           <p class="tabl-name"><%= line.cake.name %></p>
           <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
           <p class="tabl-price"><%= d2(line.cake.price) %></p>
@@ -22,7 +26,11 @@
           <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
         <% end %>
       <% else %>
-          <p class="tabl-photo"><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></p>
+          <% if line.cake.photo.key.nil? %>
+            <p class="tabl-photo"><%= image_tag "cake1.png", class: "photo-basket" %></p>
+          <% else %>
+            <p class="tabl-photo"><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></p>
+          <% end %>
           <p class="tabl-name"><%= line.cake.name %></p>
           <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
           <p class="tabl-price"><%= d2(line.cake.price) %></p>

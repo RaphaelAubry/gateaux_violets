@@ -66,7 +66,7 @@
         </div>
 
 
-        <!-- flow forms -->
+        <!-- flow forms --><!-- stage delivery -->
         <% if @basket.status == Basket::STATUS[1] %>
           <div class="horizontal">
             <%= render 'basket_forward', basket: @basket, remote: true %>
@@ -93,12 +93,13 @@
         </div>
 
         <div class="payment">
-          <!-- <div class="horizontal">
+          <div class="horizontal">
             <p id="total"><%= d2(@total) %></p>
             <p><%= ApplicationHelper::CURRENCY %></p>
-          </div> -->
+          </div>
+
           <h3>Payment</h3>
-          <!--
+
           <% if @basket.payment_type.nil? %>
             <%= render 'baskets/payment' %>
           <% else %>
@@ -109,20 +110,14 @@
                 <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
               </div>
              <% end %>
-          <% end %> -->
-
-          <%= link_to "Checkout", new_basket_transaction_path(@basket), class: "button" %>
-
+          <% end %>
 
           <div class="message">
             Dès réception de votre règlement, je commence à préparer votre commande.
           </div>
-
-
-
         </div>
 
-        <!-- flow forms -->
+        <!-- flow forms --> <!-- stage payment -->
         <div class="horizontal">
           <%= render 'basket_forward', basket: @basket, remote: true %>
           <%= render 'basket_backward', basket: @basket, remote: true %>

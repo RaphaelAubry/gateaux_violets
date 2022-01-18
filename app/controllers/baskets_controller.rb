@@ -28,7 +28,7 @@ class BasketsController < ApplicationController
         when Basket::STATUS[0]
           @basket.update(basket_params)
         when Basket::STATUS[1]
-
+          @basket.update(basket_params)
         when Basket::STATUS[2]
           if current_user.addresses.exists?
             @basket.update(basket_params)
