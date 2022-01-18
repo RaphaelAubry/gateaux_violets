@@ -3,3 +3,12 @@
   color: $violet;
   margin-left: 20px;
 }
+
+
+.footer-icon {
+      color: white;
+      font-size: 30px;
+      &:hover {
+        color: white;
+      }
+}
