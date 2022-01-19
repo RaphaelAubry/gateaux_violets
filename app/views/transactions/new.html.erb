@@ -28,6 +28,7 @@
         <!-- Step one: add an empty container to your page -->
           <div id="dropin-container" data-token="<%= @client_token %>"></div>
           <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[3] }, label: false %>
+          <%= f.input :payment_type, :input_html => { class: "noshow", value: Basket::PAYMENT_TYPE[2] }, label: false %>
           <%= f.submit "Pay", class: "button" %>
           <input type="hidden" id="nonce" name="payment_method_nonce"/>
 
@@ -37,3 +38,6 @@
     </div>
   </div>
 </div>
+
+
+<%= console %>
