@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   resources :baskets do
     resources :transactions, only: [:new, :create]
   end
+
+  resources :transactions, only: [:index, :show]
+
 end

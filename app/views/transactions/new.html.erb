@@ -21,14 +21,15 @@
         </div>
       </div>
 
-      <%= simple_form_for([@basket, @transaction]) do |f| %>
+      <%= simple_form_for([@basket, @transaction], html: { id: "payment_form" }) do |f| %>
 
         <!-- Step one: add an empty container to your page -->
           <div id="dropin-container" data-token="<%= @client_token %>"></div>
-
+          <input type="hidden" id="nonce" name="payment_method_nonce"/>
           <%= f.submit "Pay", class: "button" %>
 
-          <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/>-->
+
+
 
         </div>
       <% end %>

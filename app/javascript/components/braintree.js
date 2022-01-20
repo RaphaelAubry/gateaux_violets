@@ -2,7 +2,11 @@
 const brain = () => {
 
   const container = document.getElementById('dropin-container')
+
   if (container != null) {
+
+    const form = document.getElementById('payment_form');
+    console.log(form)
 
     // Step two: create a dropin instance
     braintree.dropin.create({
@@ -18,7 +22,7 @@ const brain = () => {
     }).then((dropinInstance) => {
 
       form.addEventListener('submit', (event) => {
-
+        console.log(event)
         event.preventDefault();
         dropinInstance.requestPaymentMethod().then((payload) => {
           console.log(payload)
@@ -28,6 +32,7 @@ const brain = () => {
           //   it a the hidden field before submitting the complete form to
           //   a server-side integration
           document.getElementById('nonce').value = payload.nonce;
+          console.log(payload.nonce)
           form.submit();
         }).catch((error) => { throw error; });
       });

@@ -1,7 +1,7 @@
 class Basket < ApplicationRecord
   belongs_to :user
   has_many :lines, dependent: :destroy
-  has_many :transactions
+  has_many :transactions, dependent: :destroy
 
   STATUS = ["basket", "delivery", "payment", "complete"]
 
