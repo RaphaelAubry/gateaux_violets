@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :baskets
   has_many :addresses
+  has_many :transactions, through: :baskets
 
   has_one_attached :avatar
 end

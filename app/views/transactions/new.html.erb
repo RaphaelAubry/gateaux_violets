@@ -21,16 +21,14 @@
         </div>
       </div>
 
-      <%= simple_form_for((@basket), remote: true, authenticity_token: true) do |f| %>
-        <div class="button-wrapper">
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= simple_form_for([@basket, @transaction]) do |f| %>
 
         <!-- Step one: add an empty container to your page -->
           <div id="dropin-container" data-token="<%= @client_token %>"></div>
-          <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[3] }, label: false %>
-          <%= f.input :payment_type, :input_html => { class: "noshow", value: Basket::PAYMENT_TYPE[2] }, label: false %>
+
           <%= f.submit "Pay", class: "button" %>
-          <input type="hidden" id="nonce" name="payment_method_nonce"/>
+
+          <!-- <input type="hidden" id="nonce" name="payment_method_nonce"/>-->
 
         </div>
       <% end %>

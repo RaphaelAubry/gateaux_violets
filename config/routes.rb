@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   resources :addresses, except: [:index]
 
   resources :baskets do
-    resources :transactions, only: [:new, :create, :show]
+    resources :transactions, only: [:new, :create]
   end
 end

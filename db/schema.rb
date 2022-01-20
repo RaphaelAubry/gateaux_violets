@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_081815) do
+ActiveRecord::Schema.define(version: 2022_01_20_093742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,13 @@ ActiveRecord::Schema.define(version: 2022_01_17_081815) do
     t.index ["cake_id"], name: "index_lines_on_cake_id"
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "basket_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["basket_id"], name: "index_transactions_on_basket_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -111,4 +118,5 @@ ActiveRecord::Schema.define(version: 2022_01_17_081815) do
   add_foreign_key "baskets", "users"
   add_foreign_key "lines", "baskets"
   add_foreign_key "lines", "cakes"
+  add_foreign_key "transactions", "baskets"
 end
