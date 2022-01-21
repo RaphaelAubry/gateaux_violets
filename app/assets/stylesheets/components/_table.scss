@@ -33,7 +33,7 @@ $font-size: 14px;
 }
 
 .tabl-date {
-  width: 200px;
+  width: 160px;
    @media(max-width: 768px) {
     display: none;
   }
@@ -56,15 +56,9 @@ $font-size: 14px;
   width: 25px;
 }
 
-.tabl-total {
-  margin-right: 5px;
-  min-width: 90px;
-  display: flex;
-  align-items: center;
-}
-
 .tabl-icon {
   margin-right: $margin-right;
+  width: fit-content;
 }
 
 .basket-total {
@@ -104,11 +98,14 @@ $font-size: 14px;
 }
 
 .tabl-total {
-  width: 150px;
+  display: flex;
+  align-items: center;
+  min-width: 90px;
+  width: 100x;
   margin-right: $margin-right;
 }
 
 .label-quantity {
   font-size: 12px;
-  margin: 5px 2px 12px 0
+  margin: 5px 2px 20px 0;
 }

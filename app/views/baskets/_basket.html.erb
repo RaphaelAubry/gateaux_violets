@@ -39,8 +39,10 @@
           <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
       <% end %>
       <% if @basket.status == Basket::STATUS[0] %>
-        <p class="tabl-icon"><%= link_to "", edit_line_path(line), class: "fas fa-edit" %></p>
-        <p class="tabl-icon"><%= link_to "", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "fas fa-trash", remote: true %></p>
+      <div class="actions">
+        <p class="tabl-icon"><%= link_to "modifier", edit_line_path(line), class: "action" %></p>
+        <p class="tabl-icon"><%= link_to "supprimer", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "action", remote: true %></p>
+      </div>
       <% end %>
     </div>
     <p class="tabl-date-smallscreen">To <%= TimeFr(line.delivery_date) %></p>
