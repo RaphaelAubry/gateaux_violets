@@ -6,7 +6,7 @@ const brain = () => {
   if (container != null) {
 
     const form = document.getElementById('payment_form');
-    console.log(form)
+    console.log("Formulaire: " + form)
 
     // Step two: create a dropin instance
     braintree.dropin.create({

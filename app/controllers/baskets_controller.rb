@@ -12,6 +12,7 @@ class BasketsController < ApplicationController
   def show
     @total = 0
     @address = Address.find_by(user_id: current_user.id)
+    @client_token = token()
   end
 
   def edit
@@ -62,4 +63,9 @@ class BasketsController < ApplicationController
     @basket = Basket.find(params[:id])
     authorize @basket
   end
+
+  def token
+    Braintree::ClientToken.generate
+  end
+
 end

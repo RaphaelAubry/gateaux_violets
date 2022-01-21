@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
+import { brain } from "./braintree";
 
 
 
@@ -69,7 +70,7 @@ const displayPaymentMethod = () => {
     const paypalDiv = document.querySelector(".Card")
     const IBANIcon = document.querySelector(".fa-server")
     const cashIcon = document.querySelector(".fa-money-bill-wave")
-    const paypalIcon = document.querySelector(".fa-cc-paypal")
+    const paypalIcon = document.querySelector(".fa-money-check")
     const manualPaymentDiv = document.querySelector(".manual-payment")
     const ePaymentDiv = document.querySelector(".e-payment")
 
@@ -82,7 +83,9 @@ const displayPaymentMethod = () => {
 
     paymentType.addEventListener('change', () => {
 
-    console.log(paymentType.options[paymentType.selectedIndex].value)
+    brain()
+
+    console.log("Display Payment Method: " + paymentType.options[paymentType.selectedIndex].value)
 
       switch (paymentType.options[paymentType.selectedIndex].value) {
         case "Cash":

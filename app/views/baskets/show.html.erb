@@ -2,7 +2,7 @@
   <div class="show">
     <div>
 
-      <!-- flow management -->
+      <!-- flow management ---------------------------------------------->
       <div class="flow">
         <p id="flow" data-status=<%= "#{@basket.status}" %>></p>
         <div class="horizontal">
@@ -15,14 +15,15 @@
           <div class="" id="complete"><%= Basket::STATUS[3] %></div>
         </div>
       </div>
+      <!---------------------------------------------------------------->
 
-      <!-- stage basket -->
+      <!-- stage basket ------------------------------------------------>
       <div class="basket">
         <div class="title">
           <h1>My basket</h1>
         </div>
 
-         <!-- basket -->
+        <!-- basket -->
         <%= render 'basket', basket: @basket %>
 
         <!-- basket actions -->
@@ -46,7 +47,7 @@
 
       </div>
 
-      <!-- stage delivery -->
+      <!-- stage delivery --------------------------------------------------->
       <div class="delivery">
 
         <div class="title">
@@ -76,7 +77,7 @@
 
       </div>
 
-      <!-- stage payment -->
+      <!-- stage payment ---------------------------------------------------->
       <div class="payment">
 
         <div class="title">
@@ -85,37 +86,31 @@
 
         <h3>Basket</h3>
 
+        <!-- basket -->
         <%= render 'basket', basket: @basket %>
 
         <div class="delivery-address">
           <h3>Delivery Address</h3>
+          <!-- delivery address -->
           <%= render 'takeaway' %>
         </div>
 
-        <div class="payment">
-          <div class="horizontal">
-            <p id="total"><%= d2(@total) %></p>
-            <p><%= ApplicationHelper::CURRENCY %></p>
-          </div>
+        <h3>Payment</h3>
 
-          <h3>Payment</h3>
+        <% if @basket.payment_type.nil? %>
+           <!-- payment instructions -->
+          <%= render 'baskets/payment' %>
+        <% else %>
+            <p class="tabl-email"><%= @basket.payment_type %></p>
+            <% if @basket.payment_type == Basket::PAYMENT_TYPE[0] %>
+            <div class="horizontal">
+              <p class="label">IBAN</p>
+              <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
+            </div>
+            <% end %>
+        <% end %>
 
-          <% if @basket.payment_type.nil? %>
-            <%= render 'baskets/payment' %>
-          <% else %>
-             <p class="tabl-email"><%= @basket.payment_type %></p>
-             <% if @basket.payment_type == Basket::PAYMENT_TYPE[0] %>
-              <div class="horizontal">
-                <p class="label">IBAN</p>
-                <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
-              </div>
-             <% end %>
-          <% end %>
-
-          <div class="message">
-            Dès réception de votre règlement, je commence à préparer votre commande.
-          </div>
-        </div>
+      </div>
 
         <!-- flow forms --> <!-- stage payment -->
         <div class="horizontal">
@@ -125,7 +120,7 @@
 
       </div>
 
-      <!-- stage complete -->
+      <!-- stage complete --------------------------------------------------->
       <div class="complete">
 
         <div class="title">
@@ -157,10 +152,11 @@
 
       </div>
 
-
-
     </div>
+
+
   </div>
 </div>
 
-<%= console %>
+
+</div>

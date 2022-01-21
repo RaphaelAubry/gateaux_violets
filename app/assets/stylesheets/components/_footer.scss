@@ -2,10 +2,14 @@
     background: rgb(58, 22, 120);
     color: white;
     height: 300px;
+    margin-top: 20px;
     padding-top: 20px;
     padding-left: 20px;
     p {
       font-size: 12px;
+    }
+    @media(max-width: 768px) {
+      margin-top: 20px;
     }
 }
 
@@ -13,7 +17,7 @@
   font-size: 12px;
   color: white;
   &:hover {
-        color: white;
+    color: white;
   }
 }
 
