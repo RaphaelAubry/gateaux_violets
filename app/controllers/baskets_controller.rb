@@ -28,23 +28,25 @@ class BasketsController < ApplicationController
       case @basket.status
         when Basket::STATUS[0]
           @basket.update(basket_params)
+          redirect_to basket_path(@basket)
         when Basket::STATUS[1]
           @basket.update(basket_params)
+          redirect_to basket_path(@basket)
         when Basket::STATUS[2]
           if current_user.addresses.exists?
             @basket.update(basket_params)
+            redirect_to basket_path(@basket)
           else
             flash[:alert] = "Please enter an address"
+            redirect_to new_address_path
           end
-            @basket.update(basket_params)
         when Basket::STATUS[3]
             @basket.update(basket_params)
+            redirect_to basket_path(@basket)
         end
     else
       flash[:alert] = "Your basket is empty, you must order a cake to validate your basket"
     end
-
-    redirect_to basket_path(@basket)
   end
 
   def destroy
