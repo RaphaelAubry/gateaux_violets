@@ -1,14 +1,32 @@
 
   <div class="horizontal">
-    <p><%= @address.surname %></p>
-    <p><%= @address.name %></p>
+    <div>
+      <p class="label">Surname</p>
+      <p><%= @address.surname %></p>
+    </div>
+    <div>
+      <p class="label">Name</p>
+      <p><%= @address.name %></p>
+    </div>
   </div>
   <div>
-    <p><%= @address.address %></p>
-    <p><%= @address.addition_address %></p>
+    <div>
+      <p class="label">Address</p>
+      <p><%= @address.address %></p>
+    </div>
+    <div>
+      <p class="label">Additional address</p>
+      <p><%= @address.addition_address %></p>
+    </div>
     <div class="horizontal">
-      <p><%= @address.zip_code %></p>
-      <p><%= @address.city %></p>
+      <div>
+        <p class="label">Zip code</p>
+        <p><%= @address.zip_code %></p>
+      </div>
+      <div>
+       <p class="label">City</p>
+       <p><%= @address.city %></p>
+      </div>
     </div>
   </div>
 

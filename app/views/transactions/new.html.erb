@@ -2,21 +2,16 @@
   <div class="show">
     <div>
 
-    <h3>Please complete the form below</h3>
+    <h3>Transaction</h3>
 
       <div>
-          <!-- invoicing address -->
+        <!-- invoicing address -->
         <div class="invoicing-address">
           <h3>Invoicing Address</h3>
-
           <% if current_user.addresses.exists? %>
-
             <%= render 'baskets/address', local: { basket: @basket, address: @address } %>
-
           <% else %>
-
             <%= link_to 'new', new_address_path, class: "button" %>
-
           <% end %>
         </div>
       </div>

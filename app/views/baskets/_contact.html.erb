@@ -1,5 +1,7 @@
+  <p class="label">email</p>
   <p><%= @basket.user.email %><p>
   <%= link_to "", edit_user_registration_path(@basket.user), class: "fas fa-edit" %>
   <% if current_user.addresses.exists? %>
+    <p class="label">Phone</p>
     <p><%= format(@address.phone) %><p>
   <% end %>

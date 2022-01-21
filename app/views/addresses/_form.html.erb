@@ -1,7 +1,7 @@
 <div class="left">
   <div class="form">
 
-    <h1>New Address</h1>
+    <h1>Address</h1>
     <%= simple_form_for(@address) do |f| %>
 
       <%= f.input :surname %>
@@ -13,6 +13,7 @@
       <%= f.input :city, input_html: { id: "form-city" } %>
 
       <%= f.submit class: "button" %>
+
     <% end %>
 
   </div>
