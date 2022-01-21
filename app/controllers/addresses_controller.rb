@@ -28,13 +28,13 @@ class AddressesController < ApplicationController
   def update
     @address.update(address_params)
 
-    redirect_to basket_path(@basket)
+    redirect_to new_basket_transaction_path(@basket)
   end
 
   def destroy
     @address.destroy
 
-    redirect_to basket_path(@basket)
+    redirect_to new_basket_transaction_path(@basket)
   end
 
   private

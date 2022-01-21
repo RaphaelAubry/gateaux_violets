@@ -12,3 +12,12 @@
         color: white;
       }
 }
+
+.action {
+  font-size: 12px;
+  text-decoration: underline;
+  &:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

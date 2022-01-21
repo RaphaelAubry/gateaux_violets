@@ -1,36 +1,40 @@
 
   <div class="horizontal">
     <div>
-      <p class="label">Surname</p>
-      <p><%= @address.surname %></p>
+      <div class="address-label">Surname</div>
+      <p class="address-field"><%= @address.surname %></p>
     </div>
     <div>
-      <p class="label">Name</p>
-      <p><%= @address.name %></p>
+      <div class="label">Name</div>
+      <p class="address-field"><%= @address.name %></p>
     </div>
   </div>
   <div>
     <div>
-      <p class="label">Address</p>
-      <p><%= @address.address %></p>
+      <div class="label">Address</div>
+      <p class="address-field"><%= @address.address %></p>
     </div>
     <div>
-      <p class="label">Additional address</p>
-      <p><%= @address.addition_address %></p>
+      <div class="label">Additional address</div>
+      <% if @address.addition_address == "" %>
+        <p class="address-field">No info</p>
+      <% else %>
+        <p class="address-field"><%= @address.addition_address %></p>
+      <% end %>
     </div>
     <div class="horizontal">
       <div>
-        <p class="label">Zip code</p>
-        <p><%= @address.zip_code %></p>
+        <div class="label">Zip code</div>
+        <p class="address-field"><%= @address.zip_code %></p>
       </div>
       <div>
-       <p class="label">City</p>
-       <p><%= @address.city %></p>
+       <div class="label">City</div>
+       <p class="address-field"><%= @address.city %></p>
       </div>
     </div>
   </div>
 
   <%= render 'baskets/contact', local: { basket: @basket, address: @address } %>
 
-  <%= link_to "", edit_address_path(@address), class: "fas fa-edit" %>
-  <%= link_to "", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "fas fa-trash" %>
+  <%= link_to "modifier addresse", edit_address_path(@address), class: "action" %>
+  <%= link_to "supprimer", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "action" %>

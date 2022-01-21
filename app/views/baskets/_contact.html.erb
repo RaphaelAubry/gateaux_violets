@@ -1,7 +1,8 @@
-  <p class="label">email</p>
-  <p><%= @basket.user.email %><p>
-  <%= link_to "", edit_user_registration_path(@basket.user), class: "fas fa-edit" %>
+
   <% if current_user.addresses.exists? %>
-    <p class="label">Phone</p>
-    <p><%= format(@address.phone) %><p>
+    <div class="label">Phone</div>
+    <p class="address-field"><%= format(@address.phone) %><p>
   <% end %>
+  <div class="label">email</div>
+    <p class="address-field"><%= @basket.user.email %><p>
+  <%= link_to "modifier email", edit_user_registration_path(@basket.user), class: "action" %>
