@@ -61,6 +61,11 @@
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                 <%= link_to "Edit", edit_user_registration_path, class: "dropdown-item" %>
+                <% if current_user.addresses.exists? %>
+                  <%= link_to "My addresses", address_path(current_user.addresses.last), class: "dropdown-item" %>
+                <% else %>
+                  <%= link_to 'new', new_address_path, class: "button" %>
+                <% end %>
               </div>
             </li>
             <% end %>

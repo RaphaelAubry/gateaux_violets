@@ -45,3 +45,7 @@ $margin-left: 20px;
 .address-label {
   font-size: $label-font-size;
 }
+
+.address-actions .actions {
+    grid-template-columns: 110px 50px;
+  }

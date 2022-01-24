@@ -1,0 +1,68 @@
+<div class="center">
+  <div class="show">
+    <div>
+      <div class="title">
+        <h1>My address</h1>
+      </div>
+
+      <div class="horizontal">
+        <div>
+          <div class="address-label">Surname</div>
+          <p class="address-field"><%= @address.surname %></p>
+        </div>
+        <div>
+          <div class="label">Name</div>
+          <p class="address-field"><%= @address.name %></p>
+        </div>
+      </div>
+
+      <div>
+
+        <div>
+          <div class="label">Address</div>
+          <p class="address-field"><%= @address.address %></p>
+        </div>
+        <div>
+          <div class="label">Additional address</div>
+          <% if @address.addition_address == "" %>
+            <p class="address-field">No info</p>
+          <% else %>
+            <p class="address-field"><%= @address.addition_address %></p>
+          <% end %>
+        </div>
+
+        <div class="horizontal">
+          <div>
+            <div class="label">Zip code</div>
+            <p class="address-field"><%= @address.zip_code %></p>
+          </div>
+          <div>
+          <div class="label">City</div>
+          <p class="address-field"><%= @address.city %></p>
+          </div>
+        </div>
+
+        <div>
+          <div class="label">Phone</div>
+            <p class="address-field"><%= format(@address.phone) %><p>
+          </div>
+          <div>
+            <div class="label">email</div>
+            <p class="address-field"><%= current_user.email %><p>
+          </div>
+          <div class="address-actions">
+            <div class="actions">
+              <%= link_to "modifier email", edit_user_registration_path(current_user), class: "action" %>
+            </div>
+            <div class="actions">
+              <%= link_to "modifier addresse", edit_address_path(@address), class: "action" %>
+              <%= link_to "supprimer", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "action" %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

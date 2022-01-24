@@ -20,6 +20,7 @@ class AddressesController < ApplicationController
 
   def show
     @address = Address.find_by(user_id: current_user.id)
+    authorize @address
   end
 
   def edit
