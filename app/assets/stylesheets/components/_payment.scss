@@ -30,3 +30,12 @@
 .label {
   font-size: 12px;
 }
+
+
+.braintree-dropin, .braintree-form__field {
+  font-family: $body-font;
+}
+
+::placeholder {
+    font-family: $body-font;
+  }

@@ -24,9 +24,15 @@
           <!-- Step one: add an empty container to your page -->
             <div id="dropin-container" data-token="<%= @client_token %>"></div>
             <input type="hidden" id="nonce" name="payment_method_nonce"/>
+             <div class="horizontal"><p><strong><%= d2(@basket.totalize) %></p><p><%= ApplicationHelper::CURRENCY %></strong></p></div>
             <%= f.submit "Pay", class: "button" %>
+
           </div>
         <% end %>
+      </div>
+
+      <div class="button-wrapper">
+        <%= link_to 'back', :back, class: "button" %>
       </div>
 
     </div>
@@ -34,6 +40,3 @@
 
   </div>
 </div>
-
-
-<%= console %>
