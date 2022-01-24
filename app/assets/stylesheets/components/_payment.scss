@@ -1,11 +1,18 @@
 .transaction {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 500px;
   @media(max-width: 768px) {
       grid-template-columns: 90vw;
     }
   grid-gap: 25px;
   margin-top:10px;
+}
+
+.transaction-invoicing-adress {
+  margin-top: 20px;
+  .actions {
+    grid-template-columns: 110px 50px;
+  }
 }
 
 .payment-instructions {

@@ -36,5 +36,7 @@
 
   <%= render 'baskets/contact', local: { basket: @basket, address: @address } %>
 
-  <%= link_to "modifier addresse", edit_address_path(@address), class: "action" %>
-  <%= link_to "supprimer", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "action" %>
+  <div class="actions">
+    <%= link_to "modifier addresse", edit_address_path(@address), class: "action" %>
+    <%= link_to "supprimer", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "action" %>
+  </div>

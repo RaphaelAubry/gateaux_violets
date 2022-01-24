@@ -6,11 +6,13 @@
       <div>
         <!-- invoicing address -->
           <h3>Invoicing Address</h3>
-          <% if current_user.addresses.exists? %>
-            <%= render 'baskets/address', local: { basket: @basket, address: @address } %>
-          <% else %>
-            <%= link_to 'new', new_address_path, class: "button" %>
-          <% end %>
+          <div class="transaction-invoicing-adress">
+            <% if current_user.addresses.exists? %>
+              <%= render 'baskets/address', local: { basket: @basket, address: @address } %>
+            <% else %>
+              <%= link_to 'new', new_address_path, class: "button" %>
+            <% end %>
+          </div>
         </div>
       </div>
 
