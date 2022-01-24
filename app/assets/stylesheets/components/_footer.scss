@@ -2,13 +2,23 @@
     background: rgb(58, 22, 120);
     color: white;
     height: 300px;
-    a {
-      color: white;
-      font-size: 30px;
-      &:hover {
-        color: white;
-      }
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    p {
+      font-size: 12px;
     }
+    @media(max-width: 768px) {
+      margin-top: 20px;
+    }
+}
+
+.footer-link {
+  font-size: 12px;
+  color: white;
+  &:hover {
+    color: white;
+  }
 }
 
 .social-network {

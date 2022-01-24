@@ -33,3 +33,15 @@ $margin-left: 20px;
 .ad-name {
   margin-right: 10px;
 }
+
+.address-field {
+  font-size: $font-size;
+  border: 1px solid $line-color;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 167px;
+}
+
+.address-label {
+  font-size: $label-font-size;
+}

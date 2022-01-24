@@ -1,10 +1,11 @@
 class Basket < ApplicationRecord
   belongs_to :user
   has_many :lines, dependent: :destroy
+  has_many :transactions, dependent: :destroy
 
   STATUS = ["basket", "delivery", "payment", "complete"]
 
-  PAYMENT_TYPE = ["Bank transfer", "Cash", "Paypal"]
+  PAYMENT_TYPE = ["Bank transfer", "Cash", "Card"]
 
   IBAN = "FR76 1234 5647 9191 58"
 

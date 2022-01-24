@@ -1,0 +1,25 @@
+<div class="left">
+  <div class="show">
+    <div>
+
+      <% @transactions.each do |transaction| %>
+
+        <div class="horizontal">
+          <p>Id</p>
+          <p><%= link_to transaction.id, transaction_path(transaction) %></p>
+          <p>Total</p>
+          <p><%= transaction.basket.totalize %>
+          <p>Basket</p>
+          <p><%= transaction.basket_id %></p>
+          <p>Basket status</p>
+          <p><%= transaction.basket.status %></p>
+          <p>User</p>
+          <p><%= transaction.basket.user.email %></p>
+        </div>
+
+      <% end %>
+
+
+    </div>
+  </div>
+</div>

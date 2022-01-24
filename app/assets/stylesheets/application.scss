@@ -24,14 +24,16 @@ body {
 }
 
 .wrapper {
-  height: 100vh
+  min-height: 100vh
 }
 
 .horizontal {
   display: flex;
+  width: fit-content;
   align-items: center;
   a {
     display: flex;
+    align-items: center;
   }
   @media(max-width: 768px) {
     width: 100vw;
@@ -64,6 +66,7 @@ body {
 
 a {
   color: black;
+  font-size: 14px;
   &:hover {
     text-decoration: none;
     color: $violet;

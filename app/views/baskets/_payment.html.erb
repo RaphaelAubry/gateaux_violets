@@ -1,42 +1,45 @@
 <%= simple_form_for((@basket), remote: true, authenticity_token: true) do |f| %>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
+  <div class="message">
+  Sélectionnez votre moyen de paiment.
+  Dès réception de votre règlement, je commence à préparer votre commande.
+  </div>
+
   <div class="horizontal">
     <%= f.input :payment_type, collection: Basket::PAYMENT_TYPE, label: false, selected: Basket::PAYMENT_TYPE[0], input_html: { id: "paymentType", class: "field"} %>
     <p class="fas fa-money-bill-wave icon"></p>
     <p class="fas fa-server icon"></p>
-    <p class="fab fa-cc-paypal icon"></p>
+    <p class="fas fa-money-check icon"></p>
   </div>
 
-  <div class="IBAN">
-    <div class="horizontal">
-      <p class="label">IBAN</p>
-      <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
+    <!-- 3 options below ----------------------------------------------->
+    <div class="IBAN payment-instructions">
+      <div class="horizontal">
+        <p class="label">IBAN</p>
+        <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
+      </div>
     </div>
-  </div>
 
-  <div class="Cash">
-    <div class="horizontal">
-      <p class="label">Cash on delivery</p>
+    <div class="Cash payment-instructions">
+      <div class="horizontal">
+        <p class="label">Cash on delivery</p>
+      </div>
     </div>
-  </div>
 
-  <div class="Paypal">
-    <div class="horizontal">
-      <p class="label">Paypal</p>
+    <div class="Card payment-instructions">
+      <div class="horizontal">
+        <p class="label">Carte</p>
+      </div>
     </div>
+    <!------------------------------------------------------------------->
+
+  <!-- checkout to card form or update basket show ------------------------------------>
+  <div class="e-payment">
+    <p><%= link_to "Checkout", new_basket_transaction_path(@basket), class: "button" %></p>
+  </div>
+  <div class="manual-payment">
+    <%= f.submit "Checkout", class: "button" %>
   </div>
 
-    <!-- Step one: add an empty container to your page -->
-  <div id="dropin-container"></div>
-  <button id="submit-button" class="button button--small button--green">Purchase</button>
-
-
-
-
-  <div>
-    <p></p>
-    <%= f.submit "Approve basket", class: "button" %>
-    <p></p>
-  </div>
 <% end %>

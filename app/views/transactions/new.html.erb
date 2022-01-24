@@ -1,0 +1,39 @@
+ <div class="left">
+  <h3>Transaction</h3>
+  <div class="transaction">
+    <div>
+
+      <div>
+        <!-- invoicing address -->
+          <h3>Invoicing Address</h3>
+          <div class="transaction-invoicing-adress">
+            <% if current_user.addresses.exists? %>
+              <%= render 'baskets/address', local: { basket: @basket, address: @address } %>
+            <% else %>
+              <%= link_to 'new', new_address_path, class: "button" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- invoicing address -->
+        <h3>Card details</h3>
+        <%= simple_form_for([@basket, @transaction], html: { id: "payment_form" }) do |f| %>
+
+          <!-- Step one: add an empty container to your page -->
+            <div id="dropin-container" data-token="<%= @client_token %>"></div>
+            <input type="hidden" id="nonce" name="payment_method_nonce"/>
+            <%= f.submit "Pay", class: "button" %>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+<%= console %>

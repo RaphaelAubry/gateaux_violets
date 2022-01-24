@@ -12,6 +12,7 @@ class BasketsController < ApplicationController
   def show
     @total = 0
     @address = Address.find_by(user_id: current_user.id)
+    @client_token = token()
   end
 
   def edit
@@ -27,22 +28,25 @@ class BasketsController < ApplicationController
       case @basket.status
         when Basket::STATUS[0]
           @basket.update(basket_params)
+          redirect_to basket_path(@basket)
         when Basket::STATUS[1]
+          @basket.update(basket_params)
+          redirect_to basket_path(@basket)
+        when Basket::STATUS[2]
           if current_user.addresses.exists?
             @basket.update(basket_params)
+            redirect_to basket_path(@basket)
           else
             flash[:alert] = "Please enter an address"
+            redirect_to new_address_path
           end
-        when Basket::STATUS[2]
-            @basket.update(basket_params)
         when Basket::STATUS[3]
             @basket.update(basket_params)
+            redirect_to basket_path(@basket)
         end
     else
       flash[:alert] = "Your basket is empty, you must order a cake to validate your basket"
     end
-
-    redirect_to basket_path(@basket)
   end
 
   def destroy
@@ -61,4 +65,9 @@ class BasketsController < ApplicationController
     @basket = Basket.find(params[:id])
     authorize @basket
   end
+
+  def token
+    Braintree::ClientToken.generate
+  end
+
 end

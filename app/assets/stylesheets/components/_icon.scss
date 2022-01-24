@@ -3,3 +3,32 @@
   color: $violet;
   margin-left: 20px;
 }
+
+
+.footer-icon {
+      color: white;
+      font-size: 30px;
+      &:hover {
+        color: white;
+      }
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+  text-align: center;
+  grid-template-columns: 50px 50px;
+  margin-right: 15px;
+  }
+
+
+
+ .action {
+  font-size: 12px;
+  text-decoration: underline;
+  width: fit-content;
+  &:hover  {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

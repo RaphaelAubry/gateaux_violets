@@ -10,6 +10,10 @@
   }
 }
 
+.form-control {
+  font-size: 14px;
+}
+
 .field {
   &:hover {
     box-shadow: 0px 0px 0px 0px $violet;
@@ -18,7 +22,7 @@
 }
 
 label {
-  font-size: 12px;
+  font-size: $label-font-size;
   margin-bottom: 0.1rem;
 }
 
@@ -39,6 +43,10 @@ input, textarea {
   background: $white;
 }
 
+#paymentType {
+   width: 230px;
+}
+
 .flatpickr-day.selected {
   background: $violet;
   border-color: $violet;
@@ -47,10 +55,6 @@ input, textarea {
     border-color: $violet;
     color: $violet;
   }
-}
-
-#paymentType {
-   width: 230px;
 }
 
 .ap-dropdown-menu.ap-with-places {

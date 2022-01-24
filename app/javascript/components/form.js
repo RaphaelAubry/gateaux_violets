@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
+import { brain } from "./braintree";
 
 
 
@@ -66,20 +67,25 @@ const displayPaymentMethod = () => {
 
     const IBANDiv = document.querySelector(".IBAN")
     const cashDiv = document.querySelector(".Cash")
-    const paypalDiv = document.querySelector(".Paypal")
+    const paypalDiv = document.querySelector(".Card")
     const IBANIcon = document.querySelector(".fa-server")
     const cashIcon = document.querySelector(".fa-money-bill-wave")
-    const paypalIcon = document.querySelector(".fa-cc-paypal")
+    const paypalIcon = document.querySelector(".fa-money-check")
+    const manualPaymentDiv = document.querySelector(".manual-payment")
+    const ePaymentDiv = document.querySelector(".e-payment")
 
     cashDiv.style.display = "none";
     paypalDiv.style.display = "none";
     cashIcon.style.display = "none";
     paypalIcon.style.display = "none";
-
+    manualPaymentDiv.style.display = "";
+    ePaymentDiv.style.display = "none";
 
     paymentType.addEventListener('change', () => {
 
-    console.log(paymentType.options[paymentType.selectedIndex].value)
+    brain()
+
+    console.log("Display Payment Method: " + paymentType.options[paymentType.selectedIndex].value)
 
       switch (paymentType.options[paymentType.selectedIndex].value) {
         case "Cash":
@@ -89,6 +95,8 @@ const displayPaymentMethod = () => {
           IBANIcon.style.display = "none";
           cashIcon.style.display = "";
           paypalIcon.style.display = "none";
+          manualPaymentDiv.style.display = "";
+          ePaymentDiv.style.display = "none";
           break;
         case "Bank transfer":
           IBANDiv.style.display = "";
@@ -97,14 +105,18 @@ const displayPaymentMethod = () => {
           IBANIcon.style.display = "";
           cashIcon.style.display = "none";
           paypalIcon.style.display = "none";
+          manualPaymentDiv.style.display = "";
+          ePaymentDiv.style.display = "none";
           break;
-        case "Paypal":
+        case "Card":
           IBANDiv.style.display = "none";
           cashDiv.style.display = "none";
           paypalDiv.style.display = "";
           IBANIcon.style.display = "none";
           cashIcon.style.display = "none";
           paypalIcon.style.display = "";
+          manualPaymentDiv.style.display = "none";
+          ePaymentDiv.style.display = "";
           break;
       }
     })

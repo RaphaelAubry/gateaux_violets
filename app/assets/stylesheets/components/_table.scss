@@ -4,15 +4,36 @@ $width-number: 50px;
 $width-string: 200px;
 $margin-right: 10px;
 $font-little: 0.75em;
+$font-size: 14px;
+
+
+.tabl-head {
+  font-size: $font-size;
+  border-bottom: 1px solid $line-color;
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.tabl-data {
+  font-size: $font-size;
+  p {
+    margin: 8px 10px 8px 0px;
+  }
+}
 
 .tabl-name {
   margin-right: $margin-right;
   width: $width-string;
+}
 
+.tabl-photo {
+  margin-right: $margin-right;
+  width: 90px;
 }
 
 .tabl-date {
-  width: 200px;
+  width: 160px;
    @media(max-width: 768px) {
     display: none;
   }
@@ -35,22 +56,16 @@ $font-little: 0.75em;
   width: 25px;
 }
 
-.tabl-total {
-  margin-right: 5px;
-  min-width: 90px;
-  display: flex;
-  align-items: center;
-}
-
 .tabl-icon {
   margin-right: $margin-right;
+  width: fit-content;
 }
 
 .basket-total {
   display: flex;
   justify-content: flex-end;
   padding: 20px 70px 0px 0px;
-  border-top: 1px double black;
+  border-top: 1px double $line-color;
   font-weight: bold;
   font-size: 1.25em;
   p {
@@ -83,11 +98,14 @@ $font-little: 0.75em;
 }
 
 .tabl-total {
-  width: 150px;
+  display: flex;
+  align-items: center;
+  min-width: 90px;
+  width: 100x;
   margin-right: $margin-right;
 }
 
 .label-quantity {
   font-size: 12px;
-  margin: 0 2px 12px 0;
+  margin: 5px 2px 20px 0;
 }

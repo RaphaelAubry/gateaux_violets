@@ -1,15 +1,42 @@
 
   <div class="horizontal">
-    <p><%= @address.surname %></p>
-    <p><%= @address.name %></p>
-  </div>
-  <div>
-    <p><%= @address.address %></p>
-    <p><%= @address.addition_address %></p>
-    <div class="horizontal">
-      <p><%= @address.zip_code %></p>
-      <p><%= @address.city %></p>
+    <div>
+      <div class="address-label">Surname</div>
+      <p class="address-field"><%= @address.surname %></p>
+    </div>
+    <div>
+      <div class="label">Name</div>
+      <p class="address-field"><%= @address.name %></p>
     </div>
   </div>
-  <%= link_to "", edit_address_path(@address), class: "fas fa-edit" %>
-  <%= link_to "", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "fas fa-trash" %>
+  <div>
+    <div>
+      <div class="label">Address</div>
+      <p class="address-field"><%= @address.address %></p>
+    </div>
+    <div>
+      <div class="label">Additional address</div>
+      <% if @address.addition_address == "" %>
+        <p class="address-field">No info</p>
+      <% else %>
+        <p class="address-field"><%= @address.addition_address %></p>
+      <% end %>
+    </div>
+    <div class="horizontal">
+      <div>
+        <div class="label">Zip code</div>
+        <p class="address-field"><%= @address.zip_code %></p>
+      </div>
+      <div>
+       <div class="label">City</div>
+       <p class="address-field"><%= @address.city %></p>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'baskets/contact', local: { basket: @basket, address: @address } %>
+
+  <div class="actions">
+    <%= link_to "modifier addresse", edit_address_path(@address), class: "action" %>
+    <%= link_to "supprimer", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "action" %>
+  </div>
