@@ -37,7 +37,7 @@
 
               <% basket = Basket.where(user_id: current_user.id).last %>
               <% if !basket.nil?%>
-                <%= link_to "", basket_path(basket), class: "nav-link fas fa-shopping-bag" %>
+                <%= link_to "", basket_path(basket), class: "fas fa-shopping-bag" %>
               <% end %>
 
             <% end %>
