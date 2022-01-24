@@ -1,12 +1,10 @@
  <div class="left">
-  <div class="show">
+  <h3>Transaction</h3>
+  <div class="transaction">
     <div>
-
-    <h3>Transaction</h3>
 
       <div>
         <!-- invoicing address -->
-        <div class="invoicing-address">
           <h3>Invoicing Address</h3>
           <% if current_user.addresses.exists? %>
             <%= render 'baskets/address', local: { basket: @basket, address: @address } %>
@@ -16,14 +14,18 @@
         </div>
       </div>
 
-      <%= simple_form_for([@basket, @transaction], html: { id: "payment_form" }) do |f| %>
+      <div>
+        <!-- invoicing address -->
+        <h3>Card details</h3>
+        <%= simple_form_for([@basket, @transaction], html: { id: "payment_form" }) do |f| %>
 
-        <!-- Step one: add an empty container to your page -->
-          <div id="dropin-container" data-token="<%= @client_token %>"></div>
-          <input type="hidden" id="nonce" name="payment_method_nonce"/>
-          <%= f.submit "Pay", class: "button" %>
-        </div>
-      <% end %>
+          <!-- Step one: add an empty container to your page -->
+            <div id="dropin-container" data-token="<%= @client_token %>"></div>
+            <input type="hidden" id="nonce" name="payment_method_nonce"/>
+            <%= f.submit "Pay", class: "button" %>
+          </div>
+        <% end %>
+      </div>
 
     </div>
 

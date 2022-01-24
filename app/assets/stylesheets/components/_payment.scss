@@ -1,3 +1,13 @@
+.transaction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  @media(max-width: 768px) {
+      grid-template-columns: 90vw;
+    }
+  grid-gap: 25px;
+  margin-top:10px;
+}
+
 .payment-instructions {
   border: 1px solid $line-color;
   border-radius: 4px;
