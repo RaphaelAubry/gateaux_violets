@@ -38,6 +38,9 @@ $margin-left: 20px;
   border-radius: 4px;
   padding: 10px;
   min-width: 167px;
+  @media(max-width: 768px) {
+  min-width: 152px;
+  }
 }
 
 .address-label {

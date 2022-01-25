@@ -7,7 +7,7 @@
   display: grid;
   grid-template-columns: 1fr 500px;
   @media(max-width: 768px) {
-      grid-template-columns: 90vw;
+      grid-template-columns: 95vw;
     }
   grid-gap: 25px;
   margin-top:10px;
@@ -34,6 +34,7 @@
 
 .label {
   font-size: 12px;
+  width: 90px;
 }
 
 

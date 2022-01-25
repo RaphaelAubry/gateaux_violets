@@ -20,11 +20,16 @@
 }
 
 body {
-  height:100vh;
+  height: auto;
+  width: auto;
+  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .wrapper {
-  min-height: 100vh
+  min-height: 100vh;
+  width:auto;
 }
 
 .horizontal {
@@ -36,7 +41,7 @@ body {
     align-items: center;
   }
   @media(max-width: 768px) {
-    width: 100vw;
+    width: 90vw;
   }
 }
 

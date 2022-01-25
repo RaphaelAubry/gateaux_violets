@@ -4,6 +4,9 @@
   p {
     font-size: 14px;
   }
+  @media(max-width: 768px) {
+  width: 46vw;
+  }
 }
 
 .photo {
