@@ -37,7 +37,10 @@
 
               <% basket = Basket.where(user_id: current_user.id).last %>
               <% if !basket.nil?%>
-                <%= link_to "", basket_path(basket), class: "fas fa-shopping-bag" %>
+                <div class="badge-container">
+                  <%= link_to "", basket_path(basket), class: "fas fa-shopping-bag" %>
+                  <div class="badge1">1</div>
+                </div>
               <% end %>
 
             <% end %>

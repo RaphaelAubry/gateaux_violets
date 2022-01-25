@@ -43,7 +43,9 @@ h2 {
 }
 
 .basket-icon {
+  display: flex;
   width: 50px;
+  margin-right: 30px;
   font-size: 25px;
   @media(max-width: 768px) {
     margin-bottom: 20px;
