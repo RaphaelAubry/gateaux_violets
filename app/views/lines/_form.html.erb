@@ -16,7 +16,7 @@
         <p><%= cl_image_tag @cake.photo.key, class: "photo" %></p>
       <% end %>
 
-      <p><%= @cake.name %></p>
+      <p class="name"><%= @cake.name %></p>
 
       <%= f.input :quantity, collection: Line::QUANTITY, :input_html => { class: "field" }, label: false, include_blank: false %>
       <p id="price" data-price=<%="#{d2(@cake.price)}"%>></p>
@@ -35,12 +35,12 @@
 
     <div>
       <div class="button-wrapper">
-        <%= link_to "Cancel", :back, class: "button" %>
+        <%= link_to "Cancel", :back, class: "action" %>
       </div>
     </div>
     <div>
       <div class="button-wrapper">
-        <%= link_to "Order more", :home, class: "button" %>
+        <%= link_to "Order more", :home, class: "action" %>
       </div>
     </div>
 

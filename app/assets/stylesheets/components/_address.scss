@@ -9,8 +9,6 @@ $margin-left: 20px;
 }
 
 .address {
-  display: flex;
-  justify-content: flex-start;
   @media(max-width: 768px) {
   display: block;
   width: 80vw;
