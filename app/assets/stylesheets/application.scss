@@ -45,6 +45,19 @@ body {
   }
 }
 
+.horizontal-narrow {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  a {
+    display: flex;
+    align-items: center;
+  }
+  @media(max-width: 768px) {
+    width: 200px;
+  }
+}
+
 .center {
   width: 50vw;
   min-height: 100vh;

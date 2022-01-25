@@ -7,7 +7,6 @@
     <div class="product-basket">
       <% if @basket.status == Basket::STATUS[0] %>
         <div>
-          <%= link_to edit_line_path(line) do %>
           <!--photo -->
           <% if line.cake.photo.key.nil? %>
             <p class=""><%= image_tag "cake1.png", class: "photo-basket" %></p>
@@ -18,40 +17,39 @@
         <!-- description -->
         <div>
           <p class="name"><%= line.cake.name %></p>
-          <p class="tabl-date">Pour le <%= TimeFr(line.delivery_date) %></p>
-          <div class="horizontal">
-            <p class="label-quantity">Qté</p>
+          <p class="">Pour le <%= TimeFr(line.delivery_date) %></p>
+          <div class="horizontal-narrow">
+            <p class="label-quantity">Qté : </p>
             <p class="tabl-quantity"><%= line.quantity %></p>
+            <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
           </div>
-          <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
-          <% end %>
+          <!-- actions -->
+          <div class="actions">
+            <p class="tabl-icon"><%= link_to "modifier", edit_line_path(line), class: "action" %></p>
+            <p class="tabl-icon"><%= link_to "supprimer", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "action", remote: true %></p>
           </div>
+        </div>
       <% else %>
           <!--photo -->
           <div>
             <% if line.cake.photo.key.nil? %>
-              <p class="tabl-photo"><%= image_tag "cake1.png", class: "photo-basket" %></p>
+              <p class=""><%= image_tag "cake1.png", class: "photo-basket" %></p>
             <% else %>
-              <p class="tabl-photo"><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></p>
+              <p class=""><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></p>
             <% end %>
           </div>
           <!-- description -->
           <div>
             <p class="tabl-name"><%= line.cake.name %></p>
-            <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
-            <div class="horizontal">
-              <p class="label-quantity">Qté</p>
+            <p class="">Pour le <%= TimeFr(line.delivery_date) %></p>
+            <div class="horizontal-narrow">
+              <p class="label-quantity">Qté : </p>
               <p class="tabl-quantity"><%= line.quantity %></p>
+              <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
             </div>
-            <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
           </div>
       <% end %>
-      <% if @basket.status == Basket::STATUS[0] %>
-        <div class="actions">
-          <p class="tabl-icon"><%= link_to "modifier", edit_line_path(line), class: "action" %></p>
-          <p class="tabl-icon"><%= link_to "supprimer", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "action", remote: true %></p>
-        </div>
-      <% end %>
+
     </div>
 
   <% end %>

@@ -5,9 +5,13 @@
   padding: 5px 20px;
 }
 
-.complete {
+.complete, .basket, .payment {
   width: 800px;
+  @media(max-width: 768px) {
+  width: 90vw;
+  }
 }
+
 
 .noshow {
   display: none;
@@ -17,7 +21,6 @@
   margin-bottom: 20px;
   @media(max-width: 768px) {
   width: 90vw;
-
   }
 }
 
