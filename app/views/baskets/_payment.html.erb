@@ -2,8 +2,13 @@
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 
   <div class="message">
-    <p>Sélectionnez votre moyen de paiment.</p>
-    <p>Dès réception de votre règlement, je commence à préparer votre commande.</p>
+    <div class="horizontal">
+      <%= image_tag "logo.png", class: "avatar" %>
+        <div>
+          <p>Sélectionnez votre moyen de paiment.</p>
+          <p>Dès réception de votre règlement, je commence à préparer votre commande.</p>
+        </div>
+    </div>
   </div>
 
   <div class="horizontal">
@@ -14,25 +19,31 @@
   </div>
 
     <!-- 3 options below ----------------------------------------------->
-    <div class="IBAN payment-instructions">
+
+  <div class="message IBAN payment-instructions">
+    <div class="horizontal">
+      <%= image_tag "logo.png", class: "avatar" %>
       <div class="">
         <p class="">Voici mes coordonnées bancaires pour effectuer votre règlement</p>
         <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
       </div>
     </div>
+  </div>
 
-    <div class="Cash payment-instructions">
-      <div class="horizontal">
-        <p class="">Vous pouvez régler en avance en espèce 100% de votre commande</p>
-      </div>
+  <div class="message Cash payment-instructions">
+    <div class="horizontal">
+      <%= image_tag "logo.png", class: "avatar" %>
+      <p class="">Vous pouvez régler en avance en espèce 100% de votre commande</p>
     </div>
+  </div>
 
-    <div class="Card payment-instructions">
-      <div class="horizontal">
-        <p class="">Veuillez suivre les instructions de paiment par carte de l"étape suivante</p>
-      </div>
+  <div class="message Card payment-instructions">
+    <div class="horizontal">
+      <%= image_tag "logo.png", class: "avatar" %>
+      <p class="">Veuillez suivre les instructions de paiment par carte de l"étape suivante</p>
     </div>
-    <!------------------------------------------------------------------->
+  </div>
+  <!------------------------------------------------------------------->
 
   <!-- checkout to card form or update basket show ------------------------------------>
   <div class="e-payment">

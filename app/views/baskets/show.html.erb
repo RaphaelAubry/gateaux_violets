@@ -135,8 +135,12 @@
         <%= render 'baskets/basket', basket: @basket %>
 
         <div class="message">
-          J'ai reçu votre règlement et je prépare votre commande.
+          <div class="horizontal">
+            <%= image_tag "logo.png", class: "avatar" %>
+            <p>J'ai reçu votre règlement et je prépare votre commande.</p>
+          </div>
         </div>
+
         <div>
           <h3>Delivery Address</h3>
           <%= render 'takeaway' %>
