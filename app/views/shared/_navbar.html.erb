@@ -39,7 +39,7 @@
               <% if !basket.nil?%>
                 <div class="badge-container">
                   <%= link_to "", basket_path(basket), class: "fas fa-shopping-bag" %>
-                  <div class="badge1">1</div>
+                  <div id="badge-red" class="badge-red" data-items="<%= active_basket_items %>"></div>
                 </div>
               <% end %>
 
@@ -67,7 +67,7 @@
                 <% if current_user.addresses.exists? %>
                   <%= link_to "My addresses", address_path(current_user.addresses.last), class: "dropdown-item" %>
                 <% else %>
-                  <%= link_to 'new', new_address_path, class: "button" %>
+                  <%= link_to 'New address', new_address_path, class: "dropdown-item" %>
                 <% end %>
               </div>
             </li>

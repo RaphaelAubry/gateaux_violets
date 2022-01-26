@@ -18,6 +18,8 @@ class Basket < ApplicationRecord
   end
 
 
+
+
   #def self.newbasket(user)
     #basket = self.where(user_id: user.id).last
     #if basket.totalize != 0
