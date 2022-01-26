@@ -7,11 +7,11 @@
         <p id="flow" data-status=<%= "#{@basket.status}" %>></p>
         <div class="horizontal">
           <div class="" id="basket"><%= Basket::STATUS[0] %></div>
-          <div class="space"> >> </div>
+          <div class="space"> > </div>
           <div class="" id="delivery"><%= Basket::STATUS[1] %></div>
-          <div class="space"> >> </div>
+          <div class="space"> > </div>
           <div class="" id="payment"><%= Basket::STATUS[2] %></div>
-          <div class="space"> >> </div>
+          <div class="space"> > </div>
           <div class="" id="complete"><%= Basket::STATUS[3] %></div>
         </div>
       </div>
@@ -28,15 +28,14 @@
 
         <!-- basket actions -->
         <% if @basket.status == Basket::STATUS[0] %>
-          <div>
-            <div class="button-wrapper">
-              <%= link_to "Order more", :home, class: "button" %>
+          <div class="actions-wide">
+            <div class="">
+              <%= link_to "Order more", :home, class: "action" %>
             </div>
-            <div class="button-wrapper">
-              <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
+            <div class="">
+              <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "action", remote: true %>
             </div>
           </div>
-
 
           <!-- flow forms --><!-- stage basket -->
           <div class="horizontal">
@@ -56,16 +55,19 @@
 
         <div class="address">
           <!-- left -->
-          <div>
-             <div class="message">
-          Les commandes sont à emporter à l'adresse ci-dessous
-          </div>
+
+            <div class="message">
+              <div class="horizontal">
+                <%= image_tag "logo.png", class: "avatar" %>
+                <p>Les commandes sont à emporter à l'adresse ci-dessous.</p>
+              </div>
+            </div>
             <div class="delivery-address">
               <h3>Delivery Address</h3>
               <!-- delivery address -->
               <%= render 'takeaway' %>
             </div>
-          </div>
+
         </div>
 
 
@@ -86,7 +88,7 @@
             <h1>Overview</h1>
         </div>
 
-        <h3>Basket</h3>
+        <h3>My basket</h3>
 
         <!-- basket -->
         <%= render 'basket', basket: @basket %>
@@ -133,8 +135,12 @@
         <%= render 'baskets/basket', basket: @basket %>
 
         <div class="message">
-          J'ai reçu votre règlement et je prépare votre commande.
+          <div class="horizontal">
+            <%= image_tag "logo.png", class: "avatar" %>
+            <p>J'ai reçu votre règlement et je prépare votre commande.</p>
+          </div>
         </div>
+
         <div>
           <h3>Delivery Address</h3>
           <%= render 'takeaway' %>

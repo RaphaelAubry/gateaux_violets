@@ -34,16 +34,6 @@ $font-size: 14px;
 
 .tabl-date {
   width: 160px;
-   @media(max-width: 768px) {
-    display: none;
-  }
-}
-
-.tabl-date-smallscreen {
-  width: 200px;
-   @media(min-width: 769px) {
-    display: none;
-  }
 }
 
 .tabl-price {

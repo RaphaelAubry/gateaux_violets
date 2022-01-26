@@ -1,6 +1,16 @@
 .message {
   margin: 20px 0 20px 0;
+  border: 1px solid $line-color;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
   @media(max-width: 768px) {
-  width: 90vw;
+  width: 95vw;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    width: 100%;
   }
 }

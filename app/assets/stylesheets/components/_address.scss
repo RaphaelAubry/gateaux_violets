@@ -9,8 +9,6 @@ $margin-left: 20px;
 }
 
 .address {
-  display: flex;
-  justify-content: flex-start;
   @media(max-width: 768px) {
   display: block;
   width: 80vw;
@@ -40,8 +38,15 @@ $margin-left: 20px;
   border-radius: 4px;
   padding: 10px;
   min-width: 167px;
+  @media(max-width: 768px) {
+  min-width: 152px;
+  }
 }
 
 .address-label {
   font-size: $label-font-size;
 }
+
+.address-actions .actions {
+    grid-template-columns: 110px 50px;
+  }

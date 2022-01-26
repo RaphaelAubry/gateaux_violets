@@ -19,5 +19,4 @@ module ApplicationHelper
   def currency
     " EUR"
   end
-
 end

@@ -21,6 +21,7 @@ class TransactionsController < ApplicationController
     pay(@basket.totalize)
     if @transaction.save
       @basket.update(status: Basket::STATUS[3], payment_type: Basket::PAYMENT_TYPE[2])
+      redirect_to basket_path(@basket)
     else
       flash[:notice] = 'Sélectionnez un autre moyen de règlement'
     end

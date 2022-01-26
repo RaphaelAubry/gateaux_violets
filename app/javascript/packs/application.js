@@ -9,11 +9,11 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
-
 import { initForm, calendar, displayPaymentMethod } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
 import { address } from '../components/autocomplete.js'
 import { brain } from '../components/braintree.js'
+import { initBadge } from '../components/badge.js'
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -23,6 +23,7 @@ ActiveStorage.start()
 document.addEventListener('turbolinks:load', () => {
   initForm();
   initFlow();
+  initBadge();
   calendar();
   displayPaymentMethod();
   address();

@@ -1,6 +1,7 @@
 .footer {
     background: rgb(58, 22, 120);
     color: white;
+    width: auto;
     height: 300px;
     margin-top: 20px;
     padding-top: 20px;
@@ -11,6 +12,7 @@
     @media(max-width: 768px) {
       margin-top: 20px;
     }
+    overflow: hidden;
 }
 
 .footer-link {
