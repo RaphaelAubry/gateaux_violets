@@ -23,23 +23,15 @@
           </li>
 
           <li class="nav-item active push-right" style="margin-right: 20px;">
-            <% if user_signed_in? %>
-              <% if current_user.admin? %>
-                <%= link_to "Paniers", baskets_path, class: "nav-link" %>
-              <% else %>
-                <%= link_to "Mes commandes", baskets_path, class: "nav-link" %>
-              <% end %>
-            <% end %>
+
           </li>
 
           <li class="nav-item active basket-icon">
             <% if user_signed_in? && !current_user.admin? %>
-
-              <% basket = Basket.where(user_id: current_user.id).last %>
-              <% if !basket.nil?%>
+              <% if !current_user.last_basket.nil? %>
                 <div class="badge-container">
-                  <%= link_to "", basket_path(basket), class: "fas fa-shopping-bag" %>
-                  <div id="badge-red" class="badge-red" data-items="<%= active_basket_items %>"></div>
+                  <%= link_to "", basket_path(current_user.last_basket), class: "fas fa-shopping-bag" %>
+                  <div id="badge-red" class="badge-red" data-items="<%= current_user.active_basket_items %>"></div>
                 </div>
               <% end %>
 
@@ -62,13 +54,25 @@
                 <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% end %>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <!-- Connection -->
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                <!-- Profile -->
                 <%= link_to "Edit", edit_user_registration_path, class: "dropdown-item" %>
+                <!-- Adresse -->
                 <% if current_user.addresses.exists? %>
                   <%= link_to "My addresses", address_path(current_user.addresses.last), class: "dropdown-item" %>
                 <% else %>
                   <%= link_to 'New address', new_address_path, class: "dropdown-item" %>
                 <% end %>
+                <!-- Orders -->
+                <% if user_signed_in? %>
+                  <% if current_user.admin? %>
+                    <%= link_to "Paniers", baskets_path, class: "dropdown-item" %>
+                  <% else %>
+                    <%= link_to "Mes commandes", baskets_path, class: "dropdown-item" %>
+                  <% end %>
+                <% end %>
+
               </div>
             </li>
             <% end %>

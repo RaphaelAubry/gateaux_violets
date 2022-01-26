@@ -19,16 +19,4 @@ module ApplicationHelper
   def currency
     " EUR"
   end
-
-  def active_basket_items
-    count = 0
-    basket = Basket.last
-    if basket.payment_type.nil?
-      basket.lines.each do |line|
-        count += line.quantity
-      end
-    end
-    return count
-  end
-
 end

@@ -9,10 +9,10 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
-     authorize @address
+    authorize @address
     @address.user_id = current_user.id
     if @address.save
-      redirect_to basket_path(@basket)
+      redirect_from_address_to()
     else
       render 'new'
     end
@@ -29,13 +29,12 @@ class AddressesController < ApplicationController
   def update
     @address.update(address_params)
 
-    redirect_to new_basket_transaction_path(@basket)
+    redirect_from_address_to()
   end
 
   def destroy
     @address.destroy
-
-    redirect_to new_basket_transaction_path(@basket)
+    redirect_from_address_to()
   end
 
   private
@@ -51,5 +50,25 @@ class AddressesController < ApplicationController
 
   def set_basket
     @basket = Basket.where(user_id: current_user.id).last
+  end
+
+  def redirect_from_address_to
+    if current_user.basket_opened?
+        basket = current_user.last_basket
+        case basket.status
+          when Basket::STATUS[0]
+            redirect_to basket_path(basket)
+          when Basket::STATUS[1]
+            redirect_to basket_path(basket)
+          when Basket::STATUS[2]
+            if basket.payment_type.nil?
+            redirect_to new_basket_transaction_path(current_user.last_basket)
+            else
+            redirect_to home_path
+            end
+          end
+      else
+      redirect_to home_path
+      end
   end
 end
