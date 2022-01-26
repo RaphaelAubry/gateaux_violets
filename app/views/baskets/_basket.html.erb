@@ -17,7 +17,7 @@
         <!-- description -->
         <div>
           <p class="name"><%= line.cake.name %></p>
-          <p class="">Pour le <%= TimeFr(line.delivery_date) %></p>
+          <p class="" style="width: 250px;">Livraison le <%= TimeFr(line.delivery_date) %></p>
           <div class="horizontal-narrow">
             <p class="label-quantity">Qté : </p>
             <p class="tabl-quantity push-right"><%= line.quantity %></p>
@@ -40,8 +40,8 @@
           </div>
           <!-- description -->
           <div>
-            <p class="tabl-name"><%= line.cake.name %></p>
-            <p class="">Pour le <%= TimeFr(line.delivery_date) %></p>
+            <p class="name"><%= line.cake.name %></p>
+            <p class="" style="width: 250px;">Livraison le <%= TimeFr(line.delivery_date) %></p>
             <div class="horizontal-narrow">
               <p class="label-quantity">Qté : </p>
               <p class="tabl-quantity push-right"><%= line.quantity %></p>

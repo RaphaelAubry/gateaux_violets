@@ -37,8 +37,13 @@ class BasketsController < ApplicationController
             @basket.update(basket_params)
             redirect_to basket_path(@basket)
           else
-            flash[:alert] = "Please enter an address"
-            redirect_to new_address_path
+            if params[:basket][:status] == Basket::STATUS[1]
+              @basket.update(basket_params)
+              redirect_to basket_path(@basket)
+            else
+              flash[:alert] = "Please enter an address"
+              redirect_to new_address_path
+            end
           end
         when Basket::STATUS[3]
             @basket.update(basket_params)

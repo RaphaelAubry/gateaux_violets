@@ -6,8 +6,10 @@
           <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[0] }, label: false %>
           <%= f.submit "Back", class: "action" %>
         <% when "payment" %>
-          <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[1] }, label: false %>
-          <%= f.submit "Back", class: "action" %>
+          <% if @basket.payment_type.nil? %>
+            <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[1] }, label: false %>
+            <%= f.submit "Back", class: "action" %>
+          <% end %>
       <% end %>
     </div>
 <% end %>
