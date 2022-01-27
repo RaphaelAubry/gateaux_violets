@@ -1,0 +1,8 @@
+
+const initAlgolia = () => {
+
+
+
+}
+
+export { initAlgolia }

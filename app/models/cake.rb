@@ -6,6 +6,8 @@ class Cake < ApplicationRecord
 
   has_one_attached :photo
 
+  include AlgoliaSearch
+
   def to_s
     "id: #{id} /name: #{name} /descripion: #{description} /price: #{price} /size: #{size}"
   end
