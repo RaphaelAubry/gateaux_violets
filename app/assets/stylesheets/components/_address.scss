@@ -6,6 +6,9 @@ $margin-left: 20px;
   h3 {
     margin: 20px 0 20px 0;
   }
+  @media(max-width: 768px) {
+  width: 95vw;
+  }
 }
 
 .address {

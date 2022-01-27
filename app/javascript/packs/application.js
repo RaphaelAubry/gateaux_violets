@@ -14,6 +14,7 @@ import { initFlow } from '../components/flow.js'
 import { address } from '../components/autocomplete.js'
 import { brain } from '../components/braintree.js'
 import { initBadge } from '../components/badge.js'
+import { initMapBox } from "../components/mapbox.js";
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -24,9 +25,12 @@ document.addEventListener('turbolinks:load', () => {
   initForm();
   initFlow();
   initBadge();
+  initMapBox();
   calendar();
   displayPaymentMethod();
   address();
   brain();
+  var TEST = process.env.MAPBOX_API_KEY;
+  console.log(TEST)
 
 })

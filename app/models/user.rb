@@ -16,7 +16,9 @@ class User < ApplicationRecord
 
   def basket_opened?
     basket = Basket.where(user_id: id).last
-    basket.payment_type.nil? ? true : false
+    if !basket.nil?
+      basket.payment_type.nil? ? true : false
+    end
   end
 
   def active_basket_items

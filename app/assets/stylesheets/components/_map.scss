@@ -1,0 +1,30 @@
+#map {
+  width: 400px;
+  height: 300px;
+  border-radius: 4px;
+  @media(max-width: 768px) {
+  width: 95vw;
+  }
+}
+
+.mapboxgl-ctrl-logo {
+    //display: none !important;
+}
+
+.mapboxgl-ctrl button.mapboxgl-ctrl-fullscreen .mapboxgl-ctrl-icon {
+  //background-image: url("expand.png") !important;
+}
+
+.mapboxgl-ctrl-fullscreen {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-group {
+  margin: 5px 5px 0 0 !important;
+}
+
+.mapboxgl-ctrl-shrink {
+  width: 25px !important;
+  height: 25px !important;
+}
