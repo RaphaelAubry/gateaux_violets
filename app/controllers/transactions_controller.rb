@@ -20,10 +20,16 @@ class TransactionsController < ApplicationController
     @transaction.basket = @basket
     pay(@basket.totalize)
     if @transaction.save
-      @basket.update(status: Basket::STATUS[3], payment_type: Basket::PAYMENT_TYPE[2])
-      redirect_to basket_path(@basket)
+      if current_user.addresses.exists?
+        @basket.update(status: Basket::STATUS[3], payment_type: Basket::PAYMENT_TYPE[2])
+        redirect_to basket_path(@basket)
+      else
+        flash[:notice] = 'Create your address'
+        render 'new'
+      end
     else
       flash[:notice] = 'Sélectionnez un autre moyen de règlement'
+      redirect_to basket_path(@basket)
     end
   end
 
