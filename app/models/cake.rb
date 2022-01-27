@@ -8,6 +8,10 @@ class Cake < ApplicationRecord
 
   include AlgoliaSearch
 
+  algoliasearch do
+
+  end
+
   def to_s
     "id: #{id} /name: #{name} /descripion: #{description} /price: #{price} /size: #{size}"
   end
