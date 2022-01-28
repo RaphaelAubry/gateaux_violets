@@ -9,7 +9,7 @@ class Cake < ApplicationRecord
   include AlgoliaSearch
 
   algoliasearch do
-
+    #all attributes
   end
 
   def to_s

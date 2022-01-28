@@ -3,7 +3,12 @@ class CakesController < ApplicationController
   before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
   def index
+    #algolia
+    Cake.reindex
     @cakes = policy_scope(Cake)
+      if params[:query].present?
+        @cakes = Cake.search(params[:query])
+      end
   end
 
   def new

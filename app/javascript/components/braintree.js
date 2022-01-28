@@ -1,5 +1,5 @@
 
-const brain = () => {
+const initBraintree = () => {
 
   const container = document.getElementById('dropin-container')
 
@@ -42,4 +42,4 @@ const brain = () => {
 
 
 
-export { brain }
+export { initBraintree }

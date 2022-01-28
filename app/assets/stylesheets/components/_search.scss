@@ -1,0 +1,112 @@
+
+$search-bg-color: #fefeff;
+$icon-color: $violet;
+$transition: all .5s ease;
+* {
+  box-sizing: border-box;
+}
+
+.search {
+  width: 43px;
+  height: 43px;
+  margin: 40px auto 0;
+  background-color: $search-bg-color;
+  position: relative;
+  overflow: hidden;
+  transition: $transition;
+  &:before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 100%;
+    position: relative;
+    background-color: $icon-color;
+    transition: $transition;
+  }
+  &.open {
+    width: 420px;
+    &:before {
+      height: 60px;
+      margin: 2px 0 20px 30px;
+      position: absolute;
+    }
+  }
+}
+
+.search-box {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  padding: 20px 100px 20px 45px;
+  font-size: $font-size;
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-button {
+  width: 43px;
+  height: 43px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 40px;
+  border: 3px solid $icon-color;
+  display: block;
+  position: relative;
+  margin-left: 5px;
+  transition: $transition;
+  &:before {
+    content: '';
+    width: 3px;
+    height: 10px;
+    position: absolute;
+    right: -1px;
+    top: 19px;
+    display: block;
+    background-color: $icon-color;
+    transform: rotate(-45deg);
+    transition: $transition;
+  }
+  &:after {
+    content: '';
+    width: 3px;
+    height: 7px;
+    position: absolute;
+    right: -5px;
+    top: 25px;
+    display: block;
+    background-color: $icon-color;
+    transform: rotate(-45deg);
+    transition: $transition;
+  }
+  .open & {
+    margin: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 60px;
+    &:before {
+      transform: rotate(52deg);
+      right: 13px;
+      top: 13px;
+      height: 10px;
+    }
+    &:after {
+      transform: rotate(-230deg);
+      right: 13px;
+      top: 8px;
+      height: 10px;
+    }
+  }
+}

@@ -1,5 +1,16 @@
   <div class="left">
 
+
+      <!-- query -->
+      <form action="/cakes" accept-charset="UTF-8" method="get">
+        <div class="search">
+          <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a cake" />
+            <span class="search-button">
+              <span class="search-icon"></span>
+            </span>
+          </div>
+      </form>
+
       <h1>Créations</h1>
 
       <% if user_signed_in? && current_user.admin? %>
