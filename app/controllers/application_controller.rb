@@ -19,6 +19,9 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  # add flash types ?
+  # add_flash_types :info, :error, :warning
+
   private
 
   def skip_pundit?
