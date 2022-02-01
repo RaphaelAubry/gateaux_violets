@@ -8,8 +8,12 @@ class BasketsController < ApplicationController
   def index
     @baskets = policy_scope(Basket)
     if params[:query].present?
-      sql_query = "status ILIKE :query OR payment_type ILIKE :query"
-      @baskets = Basket.where(sql_query, query: "%#{params[:query]}%")
+        sql_query = " \
+        baskets.status @@ :query \
+        OR baskets.payment_type @@ :query \
+        OR users.email @@ :query \
+      "
+      @baskets = Basket.joins(:user).where(sql_query, query: "%#{params[:query]}%")
     end
   end
 

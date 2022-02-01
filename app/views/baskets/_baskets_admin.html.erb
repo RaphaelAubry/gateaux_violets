@@ -3,9 +3,9 @@
   <div class="horizontal tabl-head">
     <p class="tabl-date">Date</p>
     <p class="tabl-email">Customer email</p>
-    <p class="tabl-status">Status</p>
     <p class="tabl-payment-type">Payment Type</p>
     <p class="tabl-total">Amount</p>
+    <p class="tabl-status">Status</p>
   </div>
 
   <% @baskets.each do |basket| %>
@@ -14,9 +14,9 @@
       <div class="horizontal tabl-data">
         <p class="tabl-date"><%= TimeFr(basket.created_at) %></p>
         <p class="tabl-email"><%= basket.user.email %></p>
-        <p class="tabl-status" data-status="<%= basket.status %>"><%= basket.status %></p>
         <p class="tabl-payment-type"><%= basket.payment_type %></p>
         <p class="tabl-total"><%= number_with_precision(basket.totalize, precision: 2) %></p>
+        <p class="tabl-status" data-status="<%= basket.status %>"><%= basket.status %></p>
       </div>
 
     <% end %>
