@@ -7,6 +7,10 @@ class BasketsController < ApplicationController
 
   def index
     @baskets = policy_scope(Basket)
+    if params[:query].present?
+      sql_query = "status ILIKE :query OR payment_type ILIKE :query"
+      @baskets = Basket.where(sql_query, query: "%#{params[:query]}%")
+    end
   end
 
   def show

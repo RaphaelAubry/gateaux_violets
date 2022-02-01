@@ -1,9 +1,20 @@
       <!-- query -->
-      <form action="/cakes" accept-charset="UTF-8" method="get">
-        <div class="search">
-          <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a cake" />
-            <span class="search-button">
-              <span class="search-icon"></span>
-            </span>
-          </div>
-      </form>
+      <% if current_page?(baskets_path)%>
+        <form action="/baskets" accept-charset="UTF-8" method="get">
+          <div class="search">
+            <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a basket" />
+              <span class="search-button">
+                <span class="search-icon"></span>
+              </span>
+            </div>
+        </form>
+      <% else %>
+        <form action="/cakes" accept-charset="UTF-8" method="get">
+          <div class="search">
+            <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a cake" />
+              <span class="search-button">
+                <span class="search-icon"></span>
+              </span>
+            </div>
+        </form>
+      <%end %>
