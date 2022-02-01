@@ -60,7 +60,7 @@ gem 'simple_form'
 
 #Front-end gems
 gem 'autoprefixer-rails', '10.2.5'
-gem 'font-awesome-sass', '~> 5.6.1'
+gem 'font-awesome-sass', '~> 5.15.1'
 
 #Devise
 gem 'devise', '~> 4.2'

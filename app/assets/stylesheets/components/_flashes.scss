@@ -1,11 +1,18 @@
 .information {
-  color: black;
-  background-color: #e0ddff;
-  border-color: #b1b1ea;
+  color:  #111010;
+  background-color: #a3f2c2;
+  border-color: #abffbc;
 }
 
 .alerte {
-  color: #2b2a29;
+  color:  #111010;
   background-color: #ffb37e;
   border-color: #b9b4ae;
+}
+
+.alert {
+  i {
+    font-family: "Font Awesome 5 Free", "FontAwesome";
+    margin-right: 10px;
+  }
 }
