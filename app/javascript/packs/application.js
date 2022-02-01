@@ -14,7 +14,6 @@ import { initFlow } from '../components/flow.js'
 import { initBraintree } from '../components/braintree.js'
 import { initBadge } from '../components/badge.js'
 import { initMapBox } from "../components/mapbox.js";
-import { initAlgolia } from "../components/algolia.js";
 import { initSearch } from "../components/search.js";
 import { initStatus } from "../components/status.js";
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
@@ -28,7 +27,6 @@ document.addEventListener('turbolinks:load', () => {
   initFlow();
   initBadge();
   initMapBox();
-  initAlgolia();
   initBraintree();
   initCalendar();
   initSearch();
