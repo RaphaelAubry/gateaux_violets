@@ -16,6 +16,7 @@ import { initBadge } from '../components/badge.js'
 import { initMapBox } from "../components/mapbox.js";
 import { initAlgolia } from "../components/algolia.js";
 import { initSearch } from "../components/search.js";
+import { initStatus } from "../components/status.js";
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -31,5 +32,6 @@ document.addEventListener('turbolinks:load', () => {
   initBraintree();
   initCalendar();
   initSearch();
+  initStatus();
   displayPaymentMethod();
 })
