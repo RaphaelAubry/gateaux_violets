@@ -10,6 +10,7 @@ class BasketsController < ApplicationController
     if params[:query].present?
         sql_query = " \
         baskets.status @@ :query \
+        OR Cast(baskets.created_at AS varchar) @@ :query \
         OR Cast(baskets.id AS varchar) @@ :query \
         OR baskets.payment_type @@ :query \
         OR users.email @@ :query \
