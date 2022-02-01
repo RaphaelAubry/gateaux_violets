@@ -9,12 +9,14 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
-import { initForm, calendar, displayPaymentMethod } from '../components/form.js'
+import { initForm, initCalendar, displayPaymentMethod } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
-import { address } from '../components/autocomplete.js'
-import { brain } from '../components/braintree.js'
+import { initBraintree } from '../components/braintree.js'
 import { initBadge } from '../components/badge.js'
 import { initMapBox } from "../components/mapbox.js";
+import { initAlgolia } from "../components/algolia.js";
+import { initSearch } from "../components/search.js";
+import { initStatus } from "../components/status.js";
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -26,11 +28,10 @@ document.addEventListener('turbolinks:load', () => {
   initFlow();
   initBadge();
   initMapBox();
-  calendar();
+  initAlgolia();
+  initBraintree();
+  initCalendar();
+  initSearch();
+  initStatus();
   displayPaymentMethod();
-  address();
-  brain();
-  var TEST = process.env.MAPBOX_API_KEY;
-  console.log(TEST)
-
 })

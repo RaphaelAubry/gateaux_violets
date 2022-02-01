@@ -4,6 +4,9 @@ class CakesController < ApplicationController
 
   def index
     @cakes = policy_scope(Cake)
+      if params[:query].present?
+        @cakes = Cake.search(params[:query])
+      end
   end
 
   def new

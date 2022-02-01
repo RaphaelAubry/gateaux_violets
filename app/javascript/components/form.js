@@ -1,6 +1,6 @@
 import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
-import { brain } from "./braintree";
+import { initBraintree } from "./braintree";
 
 
 
@@ -31,7 +31,7 @@ const initForm = () => {
   };
 }
 
-const calendar = () => {
+const initCalendar = () => {
 
   const date = document.getElementById("delivery_date")
   const dbdate = document.getElementById("dbdate")
@@ -83,7 +83,7 @@ const displayPaymentMethod = () => {
 
     paymentType.addEventListener('change', () => {
 
-    brain()
+    initBraintree()
 
     console.log("Display Payment Method: " + paymentType.options[paymentType.selectedIndex].value)
 
@@ -125,4 +125,4 @@ const displayPaymentMethod = () => {
 
 
 
-export { initForm, calendar, displayPaymentMethod }
+export { initForm, initCalendar, displayPaymentMethod }
