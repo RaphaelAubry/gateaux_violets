@@ -29,8 +29,17 @@ class CakesController < ApplicationController
   end
 
   def update
-    @cake.lines == [] || params[:cake][:active] ? @cake.update(cake_params) : flash[:alert] = "The cake has been ordered, can't modify it"
-
+    status = @cake.active
+    if @cake.lines == []
+      @cake.update(cake_params)
+     else
+      flash[:alert] = "The cake has been ordered, can't modify it"
+    end
+    if params[:cake][:active] != status.to_s
+      @cake.update(cake_params)
+    else
+      flash[:alert] = "The cake has been ordered, can't modify it"
+    end
     redirect_to cake_path
   end
 
