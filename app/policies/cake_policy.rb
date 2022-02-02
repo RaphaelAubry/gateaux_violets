@@ -11,8 +11,7 @@ class CakePolicy < ApplicationPolicy
   end
 
   def show?
-    return true if record.active == true
-    #user.admin?
+    record.active == true || user.admin?
     #record.user == user
   end
 
