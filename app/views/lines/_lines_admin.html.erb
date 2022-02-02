@@ -18,7 +18,7 @@
         <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
         <p class="tabl-id"><%= line.id %></p>
         <p class="tabl-email"><%= line.basket.user.email %></p>
-        <p class="tabl-phone"><%= address.phone %></p>
+        <p class="tabl-phone"><%= format(address.phone) %></p>
         <p class="tabl-name"><%= line.cake.name %></p>
         <p class="tabl-status" data-status="<%= line.basket.status %>"><%= line.basket.status %></p>
 
