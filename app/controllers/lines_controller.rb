@@ -3,6 +3,7 @@ class LinesController < ApplicationController
   before_action :set_cake, only: [:new, :create]
 
   def index
+    @lines = policy_scope(Line)
   end
 
   def new

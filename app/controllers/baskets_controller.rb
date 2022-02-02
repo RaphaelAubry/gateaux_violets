@@ -1,5 +1,5 @@
 class BasketsController < ApplicationController
-  before_action :set_basket, only: [:show, :edit, :update, :destroy, :invoice]
+  before_action :set_basket, only: [:show, :edit, :update, :destroy, :invoice ]
 
   def new
     @basket = Basket.new
@@ -26,9 +26,6 @@ class BasketsController < ApplicationController
   end
 
   def edit
-  end
-
-  def invoice
   end
 
   def update
@@ -68,6 +65,10 @@ class BasketsController < ApplicationController
     @basket.destroy
 
     redirect_to home_path
+  end
+
+
+  def invoice
   end
 
   private

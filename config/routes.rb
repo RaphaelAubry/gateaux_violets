@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-
   resources :cakes, except: [:index]
   resources :baskets
 

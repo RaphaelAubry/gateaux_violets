@@ -67,10 +67,13 @@
                 <% else %>
                   <%= link_to 'New address', new_address_path, class: "dropdown-item" %>
                 <% end %>
-                <!-- Orders -->
+
                 <% if user_signed_in? %>
                   <% if current_user.admin? %>
+                    <!-- Orders -->
                     <%= link_to "Paniers", baskets_path, class: "dropdown-item" %>
+                    <!-- Deliveries -->
+                    <%= link_to "Livraisons", lines_path, class: "dropdown-item" %>
                   <% else %>
                     <%= link_to "Mes commandes", baskets_path, class: "dropdown-item" %>
                   <% end %>
