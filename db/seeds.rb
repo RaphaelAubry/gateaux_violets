@@ -20,7 +20,7 @@ puts "Start seed ..."
   size = SIZES[rand(5)]
   price = rand(100)
 
-  cake = Cake.new(name: name, description: description, size: size, price: price)
+  cake = Cake.new(name: name, description: description, size: size, price: price, active: true)
   cake.save
 end
 

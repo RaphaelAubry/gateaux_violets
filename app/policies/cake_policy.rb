@@ -1,7 +1,7 @@
 class CakePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      user && user.admin? ? scope.all : scope.where(active: true)
     end
   end
 
@@ -11,7 +11,7 @@ class CakePolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+    return true if record.active == true
     #user.admin?
     #record.user == user
   end
