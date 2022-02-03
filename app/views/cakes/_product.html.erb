@@ -11,8 +11,16 @@
       <p class="size"><%= cake.size %><%= personnes() %></p>
       <p class="price"><%= d2(cake.price) %><%= currency() %></p>
     </div>
-    <div class="button-wrapper">
-      <%= link_to "Order", new_cake_line_path(cake), class: "button" %>
-    </div>
+
+    <% if cake.active %>
+      <div class="button-wrapper">
+        <%= link_to "Order", new_cake_line_path(cake), class: "button" %>
+      </div>
+    <% else %>
+        <div class="button-wrapper">
+          <p id="active-flag" class="inactivated">Inactive</p>
+        </div>
+    <% end %>
+
   <% end %>
 </div>

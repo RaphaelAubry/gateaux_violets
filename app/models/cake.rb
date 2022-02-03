@@ -10,6 +10,7 @@ class Cake < ApplicationRecord
 
   algoliasearch do
      attributes :name, :description, :price, :size
+
   end
 
   def to_s

@@ -15,7 +15,7 @@ class BasketsController < ApplicationController
         OR baskets.payment_type @@ :query \
         OR users.email @@ :query \
       "
-      @baskets = Basket.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      @baskets = policy_scope(Basket).joins(:user).where(sql_query, query: "%#{params[:query]}%")
     end
   end
 
