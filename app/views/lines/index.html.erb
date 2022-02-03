@@ -1,0 +1,17 @@
+ <div class="left">
+  <div class="show">
+    <div>
+
+      <% if current_user.admin? %>
+
+        <%= render 'lines/lines_admin' %>
+
+      <% end %>
+
+      <div class="button-wrapper">
+        <%= link_to "Back", :back, class: "action" %>
+      </div>
+
+    </div>
+  </div>
+</div>

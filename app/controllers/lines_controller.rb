@@ -3,6 +3,16 @@ class LinesController < ApplicationController
   before_action :set_cake, only: [:new, :create]
 
   def index
+    @lines = policy_scope(Line)
+    if params[:query].present?
+      sql_query = " \
+      Cast(lines.delivery_date AS varchar) @@ :query \
+      OR Cast(lines.id AS varchar) @@ :query \
+      OR baskets.payment_type @@ :query \
+      OR users.email @@ :query \
+    "
+    @lines = Line.joins(basket: :user).where(sql_query, query: "%#{params[:query]}%")
+    end
   end
 
   def new

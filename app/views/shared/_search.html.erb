@@ -1,8 +1,17 @@
       <!-- query -->
-      <% if current_page?(baskets_path)%>
+      <% if current_page?(baskets_path) %>
         <form action="/baskets" accept-charset="UTF-8" method="get">
           <div class="search">
             <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a basket" />
+              <span class="search-button">
+                <span class="search-icon"></span>
+              </span>
+            </div>
+        </form>
+      <% elsif current_page?(lines_path) %>
+        <form action="/lines" accept-charset="UTF-8" method="get">
+          <div class="search">
+            <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a line" />
               <span class="search-button">
                 <span class="search-icon"></span>
               </span>

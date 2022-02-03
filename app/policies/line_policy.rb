@@ -1,7 +1,7 @@
 class LinePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all.order("delivery_date")
+      scope.all.order(delivery_date: :desc) if user.admin?
     end
   end
 

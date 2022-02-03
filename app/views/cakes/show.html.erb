@@ -5,14 +5,19 @@
       <%= render 'product', cake: @cake %>
 
       <% if user_signed_in? && current_user.admin? %>
-      <div>
-        <div class="button-wrapper">
-          <%= link_to 'edit', edit_cake_path, class: "button" %>
+        <div>
+          <div class="button-wrapper">
+            <%= link_to 'edit', edit_cake_path, class: "button" %>
+          </div>
+          <div class="button-wrapper">
+            <%= link_to 'delete', cake_path(@cake), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
+          </div>
+          <!-- active form -->
+          <div class="button-wrapper">
+            <%= render 'cakes/form_active' %>
+          </div>
+          <!------------>
         </div>
-        <div class="button-wrapper">
-          <%= link_to 'delete', cake_path(@cake), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
-        </div>
-      </div>
       <% end %>
 
 

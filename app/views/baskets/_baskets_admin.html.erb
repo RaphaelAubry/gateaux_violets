@@ -2,7 +2,7 @@
 
   <div class="horizontal tabl-head">
     <p class="tabl-date">Date</p>
-    <p class="tabl-date">Number</p>
+    <p class="tabl-id">Number</p>
     <p class="tabl-email">Customer email</p>
     <p class="tabl-payment-type">Payment Type</p>
     <p class="tabl-total">Amount</p>
@@ -14,7 +14,7 @@
 
       <div class="horizontal tabl-data">
         <p class="tabl-date"><%= TimeFr(basket.created_at) %></p>
-        <p class="tabl-date"><%= basket.id %></p>
+        <p class="tabl-id"><%= basket.id %></p>
         <p class="tabl-email"><%= basket.user.email %></p>
         <p class="tabl-payment-type"><%= basket.payment_type %></p>
         <p class="tabl-total"><%= number_with_precision(basket.totalize, precision: 2) %></p>

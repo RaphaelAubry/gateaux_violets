@@ -1,4 +1,5 @@
 .status-basket{
+  padding: 5px 0px;
   background-color: #9f86a5;
   border-radius: 4px;
   color: white;
@@ -7,6 +8,7 @@
 }
 
 .status-delivery{
+  padding: 5px 0px;
   background-color: #474280;
   border-radius: 4px;
   color: white;
@@ -15,6 +17,7 @@
 }
 
 .status-payment{
+  padding: 5px 0px;
   background-color: #0a0080;
   border-radius: 4px;
   color: white;
@@ -23,6 +26,7 @@
 }
 
 .status-complete{
+  padding: 5px 0px;
   background-color:#009332;
   border-radius: 4px;
   color: white;
@@ -31,13 +35,26 @@
 }
 
 .BankTransfer{
-
 }
 
 .Cash{
-
 }
 
 .Card{
+}
 
+.activated {
+  background-color: rgb(32, 133, 32);
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  padding: 5px 20px;
+}
+
+.inactivated {
+  background-color: rgb(216, 138, 22);
+  color: white;
+  border-radius: 5px;
+  width: 100px;
+  padding: 5px 20px;
 }

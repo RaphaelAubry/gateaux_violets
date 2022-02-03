@@ -3,10 +3,7 @@ class CakesController < ApplicationController
   before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cakes = policy_scope(Cake)
-    if params[:query].present?
-      @cakes = Cake.search(params[:query])
-    end
+    params[:query].present? ? @cakes = policy_scope(Cake).search(params[:query]) : @cakes = policy_scope(Cake)
   end
 
   def new
@@ -29,21 +26,14 @@ class CakesController < ApplicationController
   end
 
   def update
-    if @cake.lines == []
-    @cake.update(cake_params)
-    else
-      flash[:alert] = "The cake has been ordered, can't modify it"
-    end
+    status = @cake.active
+    @cake.lines == [] || params[:cake][:active] != status.to_s ? @cake.update(cake_params) : flash[:alert] = "The cake has been ordered, can't modify it"
 
     redirect_to cake_path
   end
 
   def destroy
-    if @cake.lines == []
-    @cake.destroy
-    else
-      flash[:alert] = "The cake has been ordered, can't delete it"
-    end
+    @cake.lines == [] ? @cake.destroy : flash[:alert] = "The cake has been ordered, can't delete it"
 
     redirect_to home_path
   end
@@ -51,7 +41,7 @@ class CakesController < ApplicationController
   private
 
   def cake_params
-    params.require(:cake).permit(:name, :description, :price, :size, :photo)
+    params.require(:cake).permit(:name, :description, :price, :size, :photo, :active)
   end
 
   def set_cake

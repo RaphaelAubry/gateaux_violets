@@ -24,7 +24,12 @@ $font-size: 14px;
 
 .tabl-name {
   margin-right: $margin-right;
-  width: $width-string;
+  width: 125px;
+}
+
+.tabl-phone {
+  margin-right: $margin-right;
+  width: 125px;
 }
 
 .tabl-photo {
@@ -65,7 +70,6 @@ $font-size: 14px;
 }
 
 //basket table
-
 .tabl-id {
   width: 50px;
   margin-right: $margin-right;
@@ -73,7 +77,7 @@ $font-size: 14px;
 }
 
 .tabl-email {
-  width: $width-string +30px;
+  width: $width-string;
   margin-right: $margin-right;
 }
 
