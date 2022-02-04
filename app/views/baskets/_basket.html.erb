@@ -1,23 +1,21 @@
 <!-- table -->
 <div>
-
-
   <% @basket.lines.order("delivery_date").each do |line| %>
     <% @total += line.total  %>
     <div class="product-basket">
       <% if @basket.status == Basket::STATUS[0] %>
-        <div>
+        <div class="">
           <!--photo -->
           <% if line.cake.photo.key.nil? %>
-            <p class=""><%= image_tag "cake1.png", class: "photo-basket" %></p>
+            <div class=""><%= image_tag "cake1.png", class: "photo-basket" %></div>
           <% else %>
-            <p class=""><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></p>
+            <div class=""><%= cl_image_tag line.cake.photo.key, crop: :fill, class: "photo-basket" %></div>
           <% end %>
         </div>
         <!-- description -->
-        <div>
+        <div class="basket-text">
           <p class="name"><%= line.cake.name %></p>
-          <p class="" style="width: 250px;">Livraison le <%= TimeFr(line.delivery_date) %></p>
+          <p class="basket-delivery">Livraison le <%= TimeFr(line.delivery_date) %></p>
           <div class="horizontal-narrow">
             <p class="label-quantity">Qté : </p>
             <p class="tabl-quantity push-right"><%= line.quantity %></p>
@@ -41,7 +39,7 @@
           <!-- description -->
           <div>
             <p class="name"><%= line.cake.name %></p>
-            <p class="" style="width: 250px;">Livraison le <%= TimeFr(line.delivery_date) %></p>
+            <p class="basket-delivery">Livraison le <%= TimeFr(line.delivery_date) %></p>
             <div class="horizontal-narrow">
               <p class="label-quantity">Qté : </p>
               <p class="tabl-quantity push-right"><%= line.quantity %></p>

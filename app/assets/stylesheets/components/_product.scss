@@ -35,6 +35,10 @@
   display: flex;
 }
 
+.product-buttons {
+  padding-left: 5px;
+}
+
 .photo-basket {
   width: 150px;
   height: 150px;
@@ -63,4 +67,8 @@ word-wrap: break-word;
 
 .price {
   font-weight: bold;
+}
+
+.basket-text {
+  margin-left: 10px;
 }

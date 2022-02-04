@@ -1,6 +1,6 @@
 const initActive = () => {
 
- const actives = document.getElementById("active")
+ const active = document.getElementById("active")
 
  if (active != null ){
 
