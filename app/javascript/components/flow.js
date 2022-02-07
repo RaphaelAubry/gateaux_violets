@@ -15,6 +15,8 @@ const initFlow = () => {
     const completeGroup = document.querySelector(".complete")
 
     switch (flow.dataset.status) {
+      case "":
+        console.log("basket start")
       case "basket":
           console.log("basket")
           basket.classList.toggle("inprogress")

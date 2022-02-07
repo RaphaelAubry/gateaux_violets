@@ -1,24 +1,23 @@
 <div class="footer">
 
+  <div class="footer-content">
+    <div class="social-network">
+      <%= link_to "", "https://www.instagram.com/gateau_violet_nice/", class: "fab fa-instagram footer-icon"  %>
+    </div>
+    <div>
+      <p>Mention légale</p>
       <div>
-      <div class="social-network">
-        <%= link_to "", "https://www.instagram.com/gateau_violet_nice/", class: "fab fa-instagram footer-icon"  %>
+        <p><%= link_to "Identification", identification_path, class: "footer-link" %></p>
+        <p><%= link_to "Conditions générales de vente", sales_legal_path, class: "footer-link" %></p>
       </div>
-      <div>
-        <p>Mention légale</p>
-        <div>
-          <p><%= link_to "Identification", identification_path, class: "footer-link" %></p>
-          <p><%= link_to "Conditions générales de vente", sales_legal_path, class: "footer-link" %></p>
-        </div>
-
-      </div>
-      <div>
-        <p>Service client</p>
-      </div>
-      <div>
-        <p><%= link_to "Contact", contact_path, class: "footer-link" %></p>
-        <p><%= link_to "Livraisons", delivery_path, class: "footer-link" %></p>
-      </div>
+    </div>
+    <div>
+      <p>Service client</p>
+    </div>
+    <div>
+      <p><%= link_to "Contact", contact_path, class: "footer-link" %></p>
+      <p><%= link_to "Livraisons", delivery_path, class: "footer-link" %></p>
+    </div>
   </div>
 
 </div>

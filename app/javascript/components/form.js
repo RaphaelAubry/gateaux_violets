@@ -2,8 +2,6 @@ import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
 import { initBraintree } from "./braintree";
 
-
-
 const initForm = () => {
 
   // get targets
@@ -39,17 +37,30 @@ const initCalendar = () => {
   if (date != null) {
 
     const delivery_date = JSON.parse(dbdate.dataset.deliverydate);
-    console.log(delivery_date)
-    const fp = flatpickr(date, {
-      defaultDate: delivery_date,
-      enableTime: true,
-      dateFormat: "Le d/m/Y à H:i",
-      "locale": French,
-      minDate: minDeliveryDate(+(24*7)),
-    });
 
+    if (delivery_date != null) {
+
+      console.log(delivery_date)
+      const fp = flatpickr(date, {
+        defaultDate: delivery_date,
+        enableTime: true,
+        dateFormat: "Le d/m/Y à H:i",
+        "locale": French,
+        minDate: minDeliveryDate(+(24 * 7)),
+      });
+
+    } else {
+
+      const fp = flatpickr(date, {
+        // defaultDate: delivery_date,
+        enableTime: true,
+        dateFormat: "Le d/m/Y à H:i",
+        "locale": French,
+        minDate: minDeliveryDate(+(24 * 7)),
+      });
+
+    }
   }
-
 }
 
 const minDeliveryDate = (notice) => {

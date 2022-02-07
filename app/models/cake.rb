@@ -16,4 +16,8 @@ class Cake < ApplicationRecord
   def to_s
     "id: #{id} /name: #{name} /descripion: #{description} /price: #{price} /size: #{size}"
   end
+
+  def active?
+    return true if active
+  end
 end
