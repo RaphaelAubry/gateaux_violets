@@ -16,7 +16,7 @@ const initFlow = () => {
 
     switch (flow.dataset.status) {
       case "":
-        console.log("basket start")
+        console.log("start basket")
       case "basket":
           console.log("basket")
           basket.classList.toggle("inprogress")

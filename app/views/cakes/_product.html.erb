@@ -21,13 +21,16 @@
   </div>
   <div class="product-buttons">
       <!-- buttons -->
-      <% if cake.active %>
+      <% if cake.active? %>
+
         <div class="button-wrapper">
           <%= link_to "Order", new_cake_line_path(cake), class: "button" %>
         </div>
       <% else %>
           <div class="button-wrapper">
-            <p id="active-flag" class="inactivated">Inactive</p>
+
+            <div id="active-flag" class="inactivated">Inactive</div>
+
           </div>
       <% end %>
   </div>

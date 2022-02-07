@@ -9,7 +9,7 @@ $font-size: 14px;
 
 .tabl-head {
   font-size: $font-size;
-  padding-left: 10px;
+  padding-left:10px;
   border-bottom: 1px solid $line-color;
   p {
     margin-bottom: 10px;
@@ -18,13 +18,13 @@ $font-size: 14px;
 
 .tabl-data {
   font-size: $font-size;
-  padding-left: 10px;
+  padding-left:10px;
   p {
     margin: 8px 10px 8px 0px;
   }
   &:hover {
-  box-shadow: 0px 0px 5px gray;
-  border-radius: 4px;
+    box-shadow: 0px 0px 5px gray;
+    border-radius: 4px;
   }
 }
 
