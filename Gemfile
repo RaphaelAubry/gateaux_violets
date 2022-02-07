@@ -81,3 +81,6 @@ gem 'cloudinary', '~> 1.16.0'
 
 #Algolia
 gem "algoliasearch-rails"
+
+#Internationalization
+gem 'i18n', '~> 1.9.1'
