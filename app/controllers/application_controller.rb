@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:show]
   before_action :update_allowed_parameters, if: :devise_controller?
+  before_action :set_locale
 
   include Pundit
 
@@ -26,6 +27,10 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def set_locale
+    I18n.locale = I18n.default_locale
   end
 
   protected
