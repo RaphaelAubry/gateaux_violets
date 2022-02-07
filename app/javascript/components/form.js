@@ -38,7 +38,7 @@ const initCalendar = () => {
 
     const delivery_date = JSON.parse(dbdate.dataset.deliverydate);
 
-    if (delivery_date != null){
+    if (delivery_date != null) {
 
       console.log(delivery_date)
       const fp = flatpickr(date, {
@@ -46,10 +46,10 @@ const initCalendar = () => {
         enableTime: true,
         dateFormat: "Le d/m/Y à H:i",
         "locale": French,
-        minDate: minDeliveryDate(+(24*7)),
+        minDate: minDeliveryDate(+(24 * 7)),
       });
 
-    }else{
+    } else {
 
       const fp = flatpickr(date, {
         // defaultDate: delivery_date,
@@ -60,9 +60,7 @@ const initCalendar = () => {
       });
 
     }
-
   }
-
 }
 
 const minDeliveryDate = (notice) => {
