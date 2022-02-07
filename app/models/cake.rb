@@ -10,10 +10,13 @@ class Cake < ApplicationRecord
 
   algoliasearch do
      attributes :name, :description, :price, :size
-
   end
 
   def to_s
     "id: #{id} /name: #{name} /descripion: #{description} /price: #{price} /size: #{size}"
+  end
+
+  def active?
+    return true if active
   end
 end

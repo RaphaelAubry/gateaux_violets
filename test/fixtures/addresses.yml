@@ -7,7 +7,7 @@ one:
   addition_address: MyString
   zip_code: MyString
   city: MyString
-  type: 
+  type:
   user: one
 
 two:
@@ -17,5 +17,5 @@ two:
   addition_address: MyString
   zip_code: MyString
   city: MyString
-  type: 
+  type:
   user: two
