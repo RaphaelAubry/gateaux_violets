@@ -4,11 +4,11 @@
       <% case @basket.status %>
         <% when "delivery" %>
           <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[0] }, label: false %>
-          <%= f.submit "Back", class: "action" %>
+          <%= f.submit t('back'), class: "action" %>
         <% when "payment" %>
           <% if @basket.payment_type.nil? %>
             <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[1] }, label: false %>
-            <%= f.submit "Back", class: "action" %>
+            <%= f.submit t('back'), class: "action" %>
           <% end %>
       <% end %>
     </div>

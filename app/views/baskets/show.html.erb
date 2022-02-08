@@ -6,13 +6,13 @@
       <div class="flow">
         <p id="flow" data-status=<%= "#{@basket.status}" %>></p>
         <div class="horizontal">
-          <div class="" id="basket"><%= Basket::STATUS[0] %></div>
+          <div class="" id="basket"><%= t(Basket::STATUS[0], scope: 'STATUS') %></div>
           <div class="space"> > </div>
-          <div class="" id="delivery"><%= Basket::STATUS[1] %></div>
+          <div class="" id="delivery"><%= t(Basket::STATUS[1], scope: 'STATUS') %></div>
           <div class="space"> > </div>
-          <div class="" id="payment"><%= Basket::STATUS[2] %></div>
+          <div class="" id="payment"><%= t(Basket::STATUS[2], scope: 'STATUS') %></div>
           <div class="space"> > </div>
-          <div class="" id="complete"><%= Basket::STATUS[3] %></div>
+          <div class="" id="complete"><%= t(Basket::STATUS[3], scope: 'STATUS') %></div>
         </div>
       </div>
       <!---------------------------------------------------------------->
@@ -20,7 +20,7 @@
       <!-- stage basket ------------------------------------------------>
       <div class="basket">
         <div class="title">
-          <h1>My basket</h1>
+          <h1><%= t('title.basket') %></h1>
         </div>
 
         <!-- basket -->
@@ -30,10 +30,10 @@
         <% if @basket.status == Basket::STATUS[0] %>
           <div class="actions-wide">
             <div class="">
-              <%= link_to "Order more", :home, class: "action" %>
+              <%= link_to t('form.order_more'), :home, class: "action" %>
             </div>
             <div class="">
-              <%= link_to 'delete', basket_path(@basket), method: :delete, data: { confirm: "Are you sure ?" }, class: "action", remote: true %>
+              <%= link_to t('form.delete'), basket_path(@basket), method: :delete, data: { confirm: t('confirm') }, class: "action", remote: true %>
             </div>
           </div>
 
@@ -50,7 +50,7 @@
       <div class="delivery">
 
         <div class="title">
-          <h1>Delivery</h1>
+          <h1><%= t('title.delivery') %></h1>
         </div>
 
         <div class="address">
@@ -59,20 +59,21 @@
             <div class="message">
               <div class="horizontal">
                 <%= image_tag "logo.png", class: "avatar" %>
-                <p>Les commandes sont à emporter à l'adresse ci-dessous.</p>
+                <p><%= t('orders_are_delivered_at_the_below_place') %></p>
               </div>
             </div>
+
             <div class="delivery-address">
-              <h3>Delivery Address</h3>
+              <h3><%= t('title.delivery_address') %></h3>
+
               <!-- delivery address -->
               <%= render 'takeaway' %>
+
               <!-- map -->
               <div id='map'></div>
             </div>
 
-
         </div>
-
 
         <!-- flow forms --><!-- stage delivery -->
         <% if @basket.status == Basket::STATUS[1] %>
@@ -88,21 +89,21 @@
       <div class="payment">
 
         <div class="title">
-            <h1>Overview</h1>
+            <h1><%= t('title.overview') %></h1>
         </div>
 
-        <h3>My basket</h3>
+        <h3><%= t('title.basket') %></h3>
 
         <!-- basket -->
         <%= render 'basket', basket: @basket %>
 
         <div class="delivery-address">
-          <h3>Delivery Address</h3>
+          <h3><%= t('title.delivery_address') %></h3>
           <!-- delivery address -->
           <%= render 'takeaway' %>
         </div>
 
-        <h3>Payment</h3>
+        <h3><%= t('title.payment') %></h3>
 
         <% if @basket.payment_type.nil? %>
            <!-- payment instructions -->

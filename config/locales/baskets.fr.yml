@@ -1,0 +1,15 @@
+fr:
+  title:
+    basket: "Mon panier"
+    baskets: "Paniers"
+    delivery: "Livraison"
+    delivery_address: "Adresse de livraison"
+    overview: "Récapitulatif"
+    payment: "Paiement"
+  field:
+    delivered_at: "Livraison le "
+    qty: "Qté : "
+  button:
+    validate_basket: "Valider ma commande"
+    validate_delivery: "Etape suivante"
+    checkout: "Valider"

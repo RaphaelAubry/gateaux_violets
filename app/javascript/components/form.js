@@ -99,7 +99,7 @@ const displayPaymentMethod = () => {
     console.log("Display Payment Method: " + paymentType.options[paymentType.selectedIndex].value)
 
       switch (paymentType.options[paymentType.selectedIndex].value) {
-        case "Cash":
+        case "En espèces":
           IBANDiv.style.display = "none";
           cashDiv.style.display = "";
           paypalDiv.style.display = "none";
@@ -109,7 +109,7 @@ const displayPaymentMethod = () => {
           manualPaymentDiv.style.display = "";
           ePaymentDiv.style.display = "none";
           break;
-        case "Bank transfer":
+        case "Virement bancaire":
           IBANDiv.style.display = "";
           cashDiv.style.display = "none";
           paypalDiv.style.display = "none";
@@ -119,7 +119,7 @@ const displayPaymentMethod = () => {
           manualPaymentDiv.style.display = "";
           ePaymentDiv.style.display = "none";
           break;
-        case "Card":
+        case "Carte bancaire":
           IBANDiv.style.display = "none";
           cashDiv.style.display = "none";
           paypalDiv.style.display = "";

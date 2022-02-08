@@ -5,14 +5,14 @@
     <div class="horizontal">
       <%= image_tag "logo.png", class: "avatar" %>
         <div>
-          <p>Sélectionnez votre moyen de paiment.</p>
-          <p>Dès réception de votre règlement, je commence à préparer votre commande.</p>
+          <p><%= t('please_select_your_payment_option') %></p>
+          <p><%= t('I_begin_to_prepare_your_order_once_I_get_your_payment') %></p>
         </div>
     </div>
   </div>
 
   <div class="horizontal">
-    <%= f.input :payment_type, collection: Basket::PAYMENT_TYPE, label: false, selected: Basket::PAYMENT_TYPE[0], input_html: { id: "paymentType", class: "field"} %>
+    <%= f.input :payment_type, collection: t(Basket::PAYMENT_TYPE, scope: 'PAYMENT_TYPE'), label: false, selected: Basket::PAYMENT_TYPE[0], input_html: { id: "paymentType", class: "field"} %>
     <p class="fas fa-money-bill-wave icon"></p>
     <p class="fas fa-server icon"></p>
     <p class="fas fa-money-check icon"></p>
@@ -24,7 +24,7 @@
     <div class="horizontal">
       <%= image_tag "logo.png", class: "avatar" %>
       <div class="">
-        <p class="">Voici mes coordonnées bancaires pour effectuer votre règlement</p>
+        <p class=""><%= t('Please_find_below_my_bank_details') %></p>
         <p class="bank-details"><%= "#{Basket::IBAN}" %></p>
       </div>
     </div>
@@ -33,14 +33,17 @@
   <div class="message Cash payment-instructions">
     <div class="horizontal">
       <%= image_tag "logo.png", class: "avatar" %>
-      <p class="">Vous pouvez régler en avance en espèce 100% de votre commande</p>
+      <p class=""><%= t('You_can_pre_pay_in_cash_100%_of_your_order') %></p>
     </div>
   </div>
 
   <div class="message Card payment-instructions">
     <div class="horizontal">
       <%= image_tag "logo.png", class: "avatar" %>
-      <p class="">Veuillez suivre les instructions de paiment par carte de l"étape suivante</p>
+        <div>
+          <p class=""><%= t('The_payment_is_secured_by_Braintree_owned_by_Paypal_and_comply_with_payments_rules') %></p>
+          <p class=""><%= t('Please_follow_payment_instructions_next_step') %></p>
+        </div>
     </div>
   </div>
   <!------------------------------------------------------------------->
@@ -50,7 +53,7 @@
     <p><%= link_to "Checkout", new_basket_transaction_path(@basket), class: "button" %></p>
   </div>
   <div class="manual-payment">
-    <%= f.submit "Checkout", class: "button" %>
+    <%= f.submit t('button.checkout'), class: "button" %>
   </div>
 
 <% end %>

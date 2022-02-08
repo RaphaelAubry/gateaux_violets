@@ -4,10 +4,10 @@
       <% case @basket.status %>
         <% when "basket" %>
           <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[1] }, label: false %>
-          <%= f.submit "Validate Basket", class: "button" %>
+          <%= f.submit t('button.validate_basket'), class: "button" %>
         <% when "delivery" %>
           <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[2] }, label: false %>
-          <%= f.submit "Validate Delivery", class: "button" %>
+          <%= f.submit t('button.validate_delivery'), class: "button" %>
         <% when "payment" %>
           <% if current_user.admin? %>
             <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[3] }, label: false %>

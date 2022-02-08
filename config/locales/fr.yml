@@ -1,3 +1,36 @@
 fr:
   hello: "Bonjour le monde"
   back: "Retour"
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        password: "Mot de passe"
+      address:
+        surname: "Prénom"
+        name: "Nom ou raison sociale"
+        phone: "Téléphone"
+        address: "Adresse"
+        addition_address: "Complément d'adresse"
+        zip_code: "Code postal"
+        city: "Ville"
+      line:
+        delivery_date: "Date de livraison"
+        quantity: "Quantité"
+      cake:
+        name: "Nom"
+        description: "Description"
+        price: "Prix"
+        size: "Taille"
+        photo: "Photo"
+      basket:
+        status: "Statut"
+  STATUS:
+    basket: "1. commande"
+    delivery: "2. livraison"
+    payment: "3. paiement"
+    complete: "4. complété"
+  PAYMENT_TYPE:
+    Transfer: "Virement bancaire"
+    Card: "Carte bancaire"
+    Cash: "En espèces"

@@ -1,2 +1,9 @@
 fr:
   confirm: "Êtes-vous sûr ?"
+  orders_are_delivered_at_the_below_place: "Les commandes sont à emporter à l'adresse ci-dessous."
+  please_select_your_payment_option: "Sélectionnez votre moyen de paiment."
+  I_begin_to_prepare_your_order_once_I_get_your_payment: "Dès réception de votre règlement, je commence à préparer votre commande."
+  Please_find_below_my_bank_details: "Voici mes coordonnées bancaires pour effectuer votre règlement"
+  You_can_pre_pay_in_cash_100%_of_your_order: "Vous pouvez régler en avance en espèce 100% de votre commande"
+  The_payment_is_secured_by_Braintree_owned_by_Paypal_and_comply_with_payments_rules: "Le paiement est sécurisé par Braintree, filiale de Paypal, et respecte les normes en vigueur."
+  Please_follow_payment_instructions_next_step: "Veuillez suivre les instructions de paiment par carte de l'étape suivante."
