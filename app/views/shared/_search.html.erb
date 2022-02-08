@@ -2,7 +2,7 @@
       <% if current_page?(baskets_path) %>
         <form action="/baskets" accept-charset="UTF-8" method="get">
           <div class="search">
-            <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a basket" />
+            <input id="query" type="search" name="query" class="search-box" value="" placeholder="<%= t('search.find_a_creation') %>" />
               <span class="search-button">
                 <span class="search-icon"></span>
               </span>
@@ -11,7 +11,7 @@
       <% elsif current_page?(lines_path) %>
         <form action="/lines" accept-charset="UTF-8" method="get">
           <div class="search">
-            <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a line" />
+            <input id="query" type="search" name="query" class="search-box" value="" placeholder="<%= t('search.find_a_line') %>" />
               <span class="search-button">
                 <span class="search-icon"></span>
               </span>
@@ -20,7 +20,7 @@
       <% else %>
         <form action="/cakes" accept-charset="UTF-8" method="get">
           <div class="search">
-            <input id="query" type="search" name="query" class="search-box" value="" placeholder="Find a cake" />
+            <input id="query" type="search" name="query" class="search-box" value="" placeholder="<%= t('search.find_a_creation') %>" />
               <span class="search-button">
                 <span class="search-icon"></span>
               </span>

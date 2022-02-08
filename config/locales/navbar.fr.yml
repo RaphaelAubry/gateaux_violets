@@ -1,0 +1,15 @@
+fr:
+  menu:
+    creations: "Créations"
+  profile:
+    log_in: "Se connecter"
+    log_out: "Se déconnecter"
+    edit: "Modifier mon profil"
+    new_address: "Nouvelle adresse"
+    my_address: "Mon adresse"
+    baskets: "Commandes"
+    my_baskets: "Mes commandes"
+    deliveries: "Livraisons"
+  search:
+    find_a_creation: "Chercher une création"
+    find_a_line: "Chercher une commande"

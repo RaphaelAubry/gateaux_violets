@@ -1,0 +1,8 @@
+fr:
+  form:
+    new: "Ajouter"
+    order: "Ajouter au panier"
+  title:
+    creations: "Créations"
+  status:
+    inactive: "Désactivé"
