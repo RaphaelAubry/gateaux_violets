@@ -7,10 +7,10 @@
       <% if user_signed_in? && current_user.admin? %>
         <div>
           <div class="button-wrapper">
-            <%= link_to 'edit', edit_cake_path, class: "button" %>
+            <%= link_to t('form.edit'), edit_cake_path, class: "button" %>
           </div>
           <div class="button-wrapper">
-            <%= link_to 'delete', cake_path(@cake), method: :delete, data: { confirm: "Are you sure ?" }, class: "button", remote: true %>
+            <%= link_to t('form.delete'), cake_path(@cake), method: :delete, data: { confirm: t('confirm') }, class: "button", remote: true %>
           </div>
           <!-- active form -->
           <div class="button-wrapper">
@@ -22,7 +22,7 @@
 
 
       <div class="button-wrapper">
-        <%= link_to 'Créations', cakes_path, class: "action" %>
+        <%= link_to t('title.creations'), cakes_path, class: "action" %>
       </div>
     </div>
 

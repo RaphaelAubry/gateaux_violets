@@ -4,12 +4,12 @@
         <% when false %>
           <%= f.input :active, as: :select, label: false, collection: [['Yes',true]], include_blank: false, :input_html => { class: "noshow"} %>
           <div class="button-wrapper">
-            <%= f.submit "Activate", class: "button" %>
+            <%= f.submit t('form.activate'), class: "button" %>
           </div>
         <% when true %>
           <%= f.input :active, as: :select, label: false, collection: [['No',false]], include_blank: false, :input_html => { class: "noshow"} %>
           <div class="button-wrapper">
-            <%= f.submit "Desactivate", class: "button" %>
+            <%= f.submit t('form.deactivate'), class: "button" %>
           </div>
       <% end %>
     <% end %>

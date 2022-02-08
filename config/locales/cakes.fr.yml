@@ -1,8 +1,20 @@
 fr:
   form:
     new: "Ajouter"
+    edit: "Modifier"
+    delete: "Supprimer"
     order: "Ajouter au panier"
+    activate: "Activer"
+    deactivate: "Désactiver"
+    create: "Créer"
   title:
     creations: "Créations"
+    new_cake: "Nouvelle création"
   status:
     inactive: "Désactivé"
+  label:
+    name: "Nom"
+    description: "Description"
+    price: "Prix"
+    size: "Taille"
+    photo: "Photo"
