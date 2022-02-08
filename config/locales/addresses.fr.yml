@@ -1,0 +1,16 @@
+fr:
+  title:
+    address: "Mon adresse"
+  label:
+    surname: "Prénom"
+    name: "Nom ou raison sociale"
+    address: "Adresse"
+    additional_address: "Complément d'adresse"
+    zip_code: "Code postal"
+    city: "Ville"
+    phone: "Téléphone"
+    email: "Email"
+  link:
+    edit_email: "modifier l'email"
+    edit_address: "modifier l'adresse"
+    delete: "supprimer"
