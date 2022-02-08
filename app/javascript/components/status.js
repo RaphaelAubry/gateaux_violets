@@ -1,4 +1,4 @@
-const initStatus = () => {
+const initStatusBasket = () => {
 
   const statusDivs = document.querySelectorAll(".horizontal.tabl-data > .tabl-status")
 
@@ -27,4 +27,4 @@ const initStatus = () => {
   }
 }
 
-export { initStatus }
+export { initStatusBasket }

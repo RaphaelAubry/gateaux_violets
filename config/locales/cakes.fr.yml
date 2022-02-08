@@ -7,6 +7,8 @@ fr:
     activate: "Activer"
     deactivate: "Désactiver"
     create: "Créer"
+    cancel: "Annuler"
+    order_more: "Poursuivre mes achats"
   title:
     creations: "Créations"
     new_cake: "Nouvelle création"

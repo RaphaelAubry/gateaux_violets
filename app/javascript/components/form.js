@@ -2,7 +2,7 @@ import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
 import { initBraintree } from "./braintree";
 
-const initForm = () => {
+const initFormBasket = () => {
 
   // get targets
   const flow = document.getElementById("flow")
@@ -29,7 +29,7 @@ const initForm = () => {
   };
 }
 
-const initCalendar = () => {
+const initCalendarLine = () => {
 
   const date = document.getElementById("delivery_date")
   const dbdate = document.getElementById("dbdate")
@@ -136,4 +136,4 @@ const displayPaymentMethod = () => {
 
 
 
-export { initForm, initCalendar, displayPaymentMethod }
+export { initFormBasket, initCalendarLine, displayPaymentMethod }

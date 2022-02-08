@@ -1,12 +1,12 @@
-<h1 class="title">Livraisons</h1>
+<h1 class="title"><%= t('title.deliveries') %></h1>
 
   <div class="horizontal tabl-head">
-    <p class="tabl-date">Delivery Date</p>
-    <p class="tabl-id">Number</p>
-    <p class="tabl-email">Customer email</p>
-    <p class="tabl-phone">Customer Phone</p>
-    <p class="tabl-name">Cake</p>
-    <p class="tabl-status">Basket</p>
+    <p class="tabl-date"><%= t('header.delivery_date') %></p>
+    <p class="tabl-id"><%= t('header.basket_number') %></p>
+    <p class="tabl-email"><%= t('header.customer_email') %></p>
+    <p class="tabl-phone"><%= t('header.customer_phone') %></p>
+    <p class="tabl-name"><%= t('header.article') %></p>
+    <p class="tabl-status"><%= t('header.basket_status') %></p>
 
   </div>
 
@@ -16,9 +16,9 @@
 
       <div class="horizontal tabl-data">
         <p class="tabl-date"><%= TimeFr(line.delivery_date) %></p>
-        <p class="tabl-id"><%= line.id %></p>
+        <p class="tabl-id"><%= line.basket.id %></p>
         <p class="tabl-email"><%= line.basket.user.email %></p>
-        <p class="tabl-phone"><%= format(address.phone) %></p>
+        <p class="tabl-phone"><%= format(line.basket.user.addresses.try(:phone)) %></p>
         <p class="tabl-name"><%= line.cake.name %></p>
         <p class="tabl-status" data-status="<%= line.basket.status %>"><%= line.basket.status %></p>
 

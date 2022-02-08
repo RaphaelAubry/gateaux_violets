@@ -9,14 +9,15 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
-import { initForm, initCalendar, displayPaymentMethod } from '../components/form.js'
+import { initFormBasket, initCalendarLine, displayPaymentMethod } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
 import { initBraintree } from '../components/braintree.js'
 import { initBadge } from '../components/badge.js'
 import { initMapBox } from "../components/mapbox.js";
 import { initSearch } from "../components/search.js";
-import { initStatus } from "../components/status.js";
+import { initStatusBasket } from "../components/status.js";
 import { initActive } from "../components/active.js";
+import { autocompleteAddress } from "../components/autocomplete_address.js";
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -24,14 +25,15 @@ Turbolinks.start()
 ActiveStorage.start()
 
 document.addEventListener('turbolinks:load', () => {
-  initForm();
+  initFormBasket();
+  autocompleteAddress();
   initFlow();
   initBadge();
   initMapBox();
   initBraintree();
-  initCalendar();
+  initCalendarLine();
   initSearch();
-  initStatus();
+  initStatusBasket();
   initActive();
   displayPaymentMethod();
 })

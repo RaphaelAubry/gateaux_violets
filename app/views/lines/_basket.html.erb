@@ -4,4 +4,5 @@
     <%= hidden_field_tag :authenticity_token, @form_token %>
     <%= f.input :quantity, collection: Line::QUANTITY,:input_html => { class: "field", onchange: "this.form.submit();" }, label: false, include_blank: false %>
   </div>
+
 <% end %>

@@ -5,7 +5,7 @@
       <p id="dbdate" data-deliverydate=<%= "#{@line.delivery_date.to_json}" %>></p>
     </div>
 
-    <h1>Ma commande</h1>
+    <h1><%= t('title.order') %></h1>
 
     <%= simple_form_for([@cake, @line]) do |f| %>
 
@@ -28,18 +28,18 @@
       <%= f.input :delivery_date, as: :string, :input_html => { id: "delivery_date" } %>
 
       <div class="button-wrapper">
-        <%= f.submit class: "button" %>
+        <%= f.submit t('form.create'), class: "button" %>
       </div>
     <% end %>
 
     <div>
       <div class="button-wrapper">
-        <%= link_to "Cancel", :back, class: "action" %>
+        <%= link_to t('form.cancel'), :back, class: "action" %>
       </div>
     </div>
     <div>
       <div class="button-wrapper">
-        <%= link_to "Order more", :home, class: "action" %>
+        <%= link_to t('form.order_more'), :home, class: "action" %>
       </div>
     </div>
 
