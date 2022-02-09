@@ -23,30 +23,24 @@ fr:
       reset_password_instructions: "Instructions pour changer le mot de passe"
       unlock_instructions: "Instructions pour déverrouiller le compte"
       common:
-        hello: "Bonjour"
+        Hello: "Bonjour"
+        your_login: "Votre identifiant"
       confirmation_instructions:
         welcome: "Bienvenu(e)"
         you_can_confirm_your_account_through_the_link_below: "Vous pouvez confirmer votre compte en cliquant sur le lien ci-dessous"
         confirm_my_account: "Confirmer mon compte"
       email_changed:
-        # We're contacting you to notify you that your email is being changed to
         email_changed_in_progress: "Votre email va être"
-        # We're contacting you to notify you that your email has been changed to
         email_changed_completed: "Votre email est maintenant"
       password_change:
         changed: "Votre mot de passe a bien été modifié"
       reset_password_instructions:
-        # For "Someone has requested a link to change your password, and you can do this through the link below."
         reset_password_instruction: "Un changement de mot de passe a été demandé. Vous pouvez le faire en cliquant sur le lien ci-dessous."
         change_my_password: "Changer mon mot de passe"
-        # For "If you didn't request this, please ignore this email."
         wrong_request_instruction: "Si vous n'avez pas demandé ce changement, ignorez ce message."
-        # For "Your password won't change until you access the link above and create a new one."
-        unchange_password_message: "Votre mot de passe ne sera pas changé tant que vous n'aurez pas accédé au lien ci-dessus pour en créer un nouveau."
+        unchange_password_message: "Votre mot de passe ne sera pas changé tant que vous n'aurez pas activé le lien ci-dessus pour en créer un nouveau."
       unlock_instructions:
-        # For "Your account has been locked due to an excessive amount of unsuccessful sign in attempts."
         locked_account_message: "Votre compte a été verrouillé à la suite d'un trop grand nombre de tentatives d'authentification."
-        # For "Click the link below to unlock your account"
         unlock_account_instruction: "Cliquez sur le lien ci-dessous pour déverrouiller votre compte"
         unlock_my_account: "Déverrouiller mon compte"
     omniauth_callbacks:
@@ -123,9 +117,6 @@ fr:
         sign_up: "S'inscrire"
         didn't_receive_unlock_instructions?: "Vous n'avez pas reçu d'email de déverouillage ?"
         Sign_in_with: "Se connecter avec"
-    common:
-      hello: "Bonjour"
-      your_login: "Votre identifiant"
   errors:
     messages:
       not_found: "n'a pas été trouvé(e)"
