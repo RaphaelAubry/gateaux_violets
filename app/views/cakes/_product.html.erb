@@ -11,7 +11,7 @@
       <% end %>
 
       <!-- text -->
-      <div class="text">
+      <div class="paragraph">
         <p class="name"><%= cake.name %></p>
         <p class="description"><%= cake.description %></p>
         <p class="size"><%= cake.size %><%= personnes() %></p>
@@ -24,13 +24,11 @@
       <% if cake.active? %>
 
         <div class="button-wrapper">
-          <%= link_to "Order", new_cake_line_path(cake), class: "button" %>
+          <%= link_to t('form.order'), new_cake_line_path(cake), class: "button" %>
         </div>
       <% else %>
           <div class="button-wrapper">
-
-            <div id="active-flag" class="inactivated">Inactive</div>
-
+            <div id="active-flag" class="inactivated"><%= t('status.inactive') %></div>
           </div>
       <% end %>
   </div>

@@ -15,16 +15,16 @@
         <!-- description -->
         <div class="basket-text">
           <p class="name"><%= line.cake.name %></p>
-          <p class="basket-delivery">Livraison le <%= TimeFr(line.delivery_date) %></p>
+          <p class="basket-delivery"><%= t('field.delivered_at') %><%= TimeFr(line.delivery_date) %></p>
           <div class="horizontal-narrow">
-            <p class="label-quantity">Qté : </p>
+            <p class="label-quantity"><%= t('field.qty') %></p>
             <p class="tabl-quantity push-right"><%= line.quantity %></p>
             <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
           </div>
           <!-- actions -->
           <div class="actions">
-            <p class="tabl-icon"><%= link_to "modifier", edit_line_path(line), class: "action" %></p>
-            <p class="tabl-icon"><%= link_to "supprimer", line_path(line), method: :delete, data: { confirm: "Are you sure ?" }, class: "action", remote: true %></p>
+            <p class="tabl-icon"><%= link_to t('form.edit'), edit_line_path(line), class: "action" %></p>
+            <p class="tabl-icon"><%= link_to t('form.delete'), line_path(line), method: :delete, data: { confirm: t('confirm') }, class: "action", remote: true %></p>
           </div>
         </div>
       <% else %>
@@ -39,9 +39,9 @@
           <!-- description -->
           <div>
             <p class="name"><%= line.cake.name %></p>
-            <p class="basket-delivery">Livraison le <%= TimeFr(line.delivery_date) %></p>
+            <p class="basket-delivery"><%= t('field.delivered_at') %><%= TimeFr(line.delivery_date) %></p>
             <div class="horizontal-narrow">
-              <p class="label-quantity">Qté : </p>
+              <p class="label-quantity"><%= t('field.qty') %></p>
               <p class="tabl-quantity push-right"><%= line.quantity %></p>
               <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
             </div>

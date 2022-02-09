@@ -2,7 +2,7 @@ import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
 import { initBraintree } from "./braintree";
 
-const initForm = () => {
+const initFormBasket = () => {
 
   // get targets
   const flow = document.getElementById("flow")
@@ -29,7 +29,7 @@ const initForm = () => {
   };
 }
 
-const initCalendar = () => {
+const initCalendarLine = () => {
 
   const date = document.getElementById("delivery_date")
   const dbdate = document.getElementById("dbdate")
@@ -99,7 +99,7 @@ const displayPaymentMethod = () => {
     console.log("Display Payment Method: " + paymentType.options[paymentType.selectedIndex].value)
 
       switch (paymentType.options[paymentType.selectedIndex].value) {
-        case "Cash":
+        case "En espèces":
           IBANDiv.style.display = "none";
           cashDiv.style.display = "";
           paypalDiv.style.display = "none";
@@ -109,7 +109,7 @@ const displayPaymentMethod = () => {
           manualPaymentDiv.style.display = "";
           ePaymentDiv.style.display = "none";
           break;
-        case "Bank transfer":
+        case "Virement bancaire":
           IBANDiv.style.display = "";
           cashDiv.style.display = "none";
           paypalDiv.style.display = "none";
@@ -119,7 +119,7 @@ const displayPaymentMethod = () => {
           manualPaymentDiv.style.display = "";
           ePaymentDiv.style.display = "none";
           break;
-        case "Card":
+        case "Carte bancaire":
           IBANDiv.style.display = "none";
           cashDiv.style.display = "none";
           paypalDiv.style.display = "";
@@ -136,4 +136,4 @@ const displayPaymentMethod = () => {
 
 
 
-export { initForm, initCalendar, displayPaymentMethod }
+export { initFormBasket, initCalendarLine, displayPaymentMethod }

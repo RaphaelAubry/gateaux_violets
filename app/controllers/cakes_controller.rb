@@ -14,9 +14,11 @@ class CakesController < ApplicationController
   def create
     @cake = Cake.new(cake_params)
     authorize @cake
-    @cake.save
-
-    redirect_to home_path
+    if @cake.save
+      redirect_to home_path
+    else
+      render 'new'
+    end
   end
 
   def show

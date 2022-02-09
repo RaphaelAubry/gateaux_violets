@@ -4,9 +4,9 @@ class Basket < ApplicationRecord
   has_many :transactions, dependent: :destroy
   has_many :cakes, through: :lines
 
-  STATUS = ["basket", "delivery", "payment", "complete"]
+  STATUS = [ "basket", "delivery", "payment", "complete"]
 
-  PAYMENT_TYPE = ["Bank transfer", "Cash", "Card"]
+  PAYMENT_TYPE = ["Transfer", "Cash", "Card"]
 
   IBAN = "FR76 1234 5647 9191 58"
 

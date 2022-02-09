@@ -1,7 +1,7 @@
 <div class="center">
   <div class="form">
 
-    <h1>Cake</h1>
+    <h1><%= t('title.new_cake') %></h1>
     <%= simple_form_for(@cake) do |f| %>
       <%= f.input :name, :input_html => { class: "field" } %>
       <%= f.input :description, :input_html => { class: "field" } %>
@@ -12,11 +12,11 @@
       <!----------------------------------------------------------------------------------------------->
       <%= f.input :photo, as: :file %>
       <div class="button-wrapper">
-        <%= f.submit class: "button" %>
+        <%= f.submit t('form.create'), class: "button" %>
       </div>
     <% end %>
       <div class="button-wrapper">
-        <%= link_to "Back", :back, class: "action" %>
+        <%= link_to t('back'), :back, class: "action" %>
       </div>
   </div>
 </div>

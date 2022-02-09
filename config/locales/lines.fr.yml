@@ -1,0 +1,14 @@
+fr:
+  title:
+    deliveries: "Livraisons"
+    order: "Ma commande"
+  header:
+    delivery_date: "Date de livraison"
+    basket_number: "Panier"
+    customer_email: "Email client"
+    customer_phone: "Téléphone"
+    article: "Article"
+    basket_status: "Statut panier"
+    date: "Date"
+    payment_type: "Mode de paiement"
+    amount: "Montant"

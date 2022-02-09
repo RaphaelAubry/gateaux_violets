@@ -16,7 +16,7 @@
 .actions {
   display: grid;
   gap: 10px;
-  text-align: center;
+  text-align: left;
   grid-template-columns: 50px 50px;
   margin-right: 15px;
   }
@@ -24,15 +24,22 @@
 .actions-wide {
 display: grid;
 gap: 10px;
-text-align: center;
-grid-template-columns: 75px 75px;
+text-align: left;
+grid-template-columns: 150px 75px;
+margin-right: 15px;
+}
+
+.actions-wide-2x {
+display: grid;
+gap: 10px;
+text-align: left;
+grid-template-columns: 150px 150px;
 margin-right: 15px;
 }
 
 .action {
 font-size: 12px;
 text-decoration: underline;
-width: fit-content;
 border: none;
 background: none;
 &:hover  {

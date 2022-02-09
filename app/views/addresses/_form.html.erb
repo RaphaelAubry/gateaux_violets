@@ -1,18 +1,18 @@
 <div class="left">
   <div class="form">
 
-    <h1>Address</h1>
+    <h1><%= t('title.address') %></h1>
     <%= simple_form_for(@address) do |f| %>
 
       <%= f.input :surname %>
-      <%= f.input :name, label: "Name or company" %>
+      <%= f.input :name %>
       <%= f.input :phone %>
       <%= f.input :address, input_html: { id: "form-address" } %>
       <%= f.input :addition_address, input_html: { id: "form-address2" } %>
       <%= f.input :zip_code, input_html: { id: "form-zip" } %>
       <%= f.input :city, input_html: { id: "form-city" } %>
 
-      <%= f.submit class: "button" %>
+      <%= f.submit t('form.validate'), class: "button" %>
 
     <% end %>
 

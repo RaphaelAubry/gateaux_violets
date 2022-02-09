@@ -1,0 +1,8 @@
+fr:
+  title:
+    transaction: "Transaction carte"
+    invoicing_address: "Adresse de facturation"
+    card_details: "Informations de paiement"
+  button:
+    new: "Nouveau"
+    pay: "Payer"

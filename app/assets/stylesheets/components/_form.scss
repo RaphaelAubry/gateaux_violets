@@ -24,6 +24,14 @@
 label {
   font-size: $label-font-size;
   margin-bottom: 0.1rem;
+  width: 230px;
+}
+
+
+.label {
+  font-size: $label-font-size;
+  margin-bottom: 0.1rem;
+  width: 140px;
 }
 
 input, textarea {

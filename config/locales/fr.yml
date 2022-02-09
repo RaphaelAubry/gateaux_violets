@@ -1,0 +1,77 @@
+fr:
+  hello: "Bonjour le monde"
+  back: "Retour"
+  activerecord:
+    attributes:
+      user:
+        email: "Email"
+        password: "Mot de passe"
+        avatar: "Photo"
+        password_confirmation: "Confirmation du mot de passe"
+        current_password: "Mot de passe actuel"
+      address:
+        surname: "Prénom"
+        name: "Nom ou raison sociale"
+        phone: "Téléphone"
+        address: "Adresse"
+        addition_address: "Complément d'adresse"
+        zip_code: "Code postal"
+        city: "Ville"
+      line:
+        delivery_date: "Date de livraison"
+        quantity: "Quantité"
+      cake:
+        name: "Nom"
+        description: "Description"
+        price: "Prix"
+        size: "Taille"
+        photo: "Photo"
+      basket:
+        status: "Statut"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "doit être complété"
+              invalid: "non conforme"
+            password:
+              blank: "doit être complété"
+              too_short: "trop court"
+              invalid: "non conforme"
+            password_confirmation:
+              confirmation: "doit être identique au mot de passe"
+            current_password:
+              blank: "doit être complété"
+        cake:
+          attributes:
+            name:
+              blank: "doit être complété"
+            price:
+              blank: "doit être complété"
+        line:
+          attributes:
+            delivery_date:
+              blank: "doit être choisie"
+        address:
+          attributes:
+            name:
+              blank: "doit être complété"
+            phone:
+              blank: "doit être complété"
+              invalid: "doit comporter 10 chiffres"
+            address:
+              blank: "doit être complété"
+            zip_code:
+              blank: "doit être complété"
+            city:
+              blank: "doit être complété"
+  STATUS:
+    basket: "1. commande"
+    delivery: "2. livraison"
+    payment: "3. paiement"
+    complete: "4. complété"
+  PAYMENT_TYPE:
+    Transfer: "Virement bancaire"
+    Card: "Carte bancaire"
+    Cash: "En espèces"

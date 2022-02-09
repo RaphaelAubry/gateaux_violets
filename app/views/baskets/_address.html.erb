@@ -1,34 +1,30 @@
 
   <div class="horizontal">
     <div>
-      <div class="address-label">Surname</div>
+      <div class="address-label"><%= t('activerecord.attributes.address.surname') %></div>
       <p class="address-field"><%= @address.surname %></p>
     </div>
     <div>
-      <div class="label">Name</div>
+      <div class="label"><%= t('activerecord.attributes.address.name') %></div>
       <p class="address-field"><%= @address.name %></p>
     </div>
   </div>
   <div>
     <div>
-      <div class="label">Address</div>
+      <div class="label"><%= t('activerecord.attributes.address.address') %></div>
       <p class="address-field"><%= @address.address %></p>
     </div>
     <div>
-      <div class="label">Additional address</div>
-      <% if @address.addition_address == "" %>
-        <p class="address-field">No info</p>
-      <% else %>
-        <p class="address-field"><%= @address.addition_address %></p>
-      <% end %>
+    <div class="label"><%= t('activerecord.attributes.address.addition_address') %></div>
+      <p class="address-field"><%= @address.addition_address %></p>
     </div>
     <div class="horizontal">
       <div>
-        <div class="label">Zip code</div>
+        <div class="label"><%= t('activerecord.attributes.address.zip_code') %></div>
         <p class="address-field"><%= @address.zip_code %></p>
       </div>
       <div>
-       <div class="label">City</div>
+       <div class="label"><%= t('activerecord.attributes.address.city') %></div>
        <p class="address-field"><%= @address.city %></p>
       </div>
     </div>
@@ -37,6 +33,6 @@
   <%= render 'baskets/contact', local: { basket: @basket, address: @address } %>
 
   <div class="actions">
-    <%= link_to "modifier addresse", edit_address_path(@address), class: "action" %>
-    <%= link_to "supprimer", address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "action" %>
+    <%= link_to t('link.edit_address'), edit_address_path(@address), class: "action" %>
+    <%= link_to t('link.delete'), address_path(@address) , method: :delete, data: { confirm: t('confirm') },class: "action" %>
   </div>
