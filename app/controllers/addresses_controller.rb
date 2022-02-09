@@ -28,8 +28,13 @@ class AddressesController < ApplicationController
 
   def update
     @address.update(address_params)
+    if @address.save
+      redirect_from_address_to()
+    else
+      render 'new'
+    end
 
-    redirect_from_address_to()
+
   end
 
   def destroy

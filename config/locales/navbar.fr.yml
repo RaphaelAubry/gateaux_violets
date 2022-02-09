@@ -4,7 +4,7 @@ fr:
   profile:
     log_in: "Se connecter"
     log_out: "Se déconnecter"
-    edit: "Modifier mon profil"
+    edit: "Modifier mon compte"
     new_address: "Nouvelle adresse"
     my_address: "Mon adresse"
     baskets: "Paniers"

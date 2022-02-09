@@ -43,6 +43,29 @@ fr:
               confirmation: "doit être identique au mot de passe"
             current_password:
               blank: "doit être complété"
+        cake:
+          attributes:
+            name:
+              blank: "doit être complété"
+            price:
+              blank: "doit être complété"
+        line:
+          attributes:
+            delivery_date:
+              blank: "doit être choisie"
+        address:
+          attributes:
+            name:
+              blank: "doit être complété"
+            phone:
+              blank: "doit être complété"
+              invalid: "doit comporter 10 chiffres"
+            address:
+              blank: "doit être complété"
+            zip_code:
+              blank: "doit être complété"
+            city:
+              blank: "doit être complété"
   STATUS:
     basket: "1. commande"
     delivery: "2. livraison"
