@@ -35,3 +35,15 @@
 ::placeholder {
     font-family: $body-font;
   }
+
+.braintree-form__flexible-fields {
+   @media(max-width: 992px) {
+      display: block;
+    }
+}
+
+.braintree-upper-container {
+    @media(max-width: 992px) {
+    width: 75%;
+  }
+}

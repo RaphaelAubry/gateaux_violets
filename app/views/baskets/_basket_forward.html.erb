@@ -11,7 +11,7 @@
         <% when "payment" %>
           <% if current_user.admin? %>
             <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[3] }, label: false %>
-            <%= f.submit "Approve Customer", class: "button" %>
+            <%= f.submit t('button.approve_payment'), class: "button" %>
           <% end %>
         <% when "complete" %>
            <% if current_user.admin? %>

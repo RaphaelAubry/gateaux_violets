@@ -132,26 +132,26 @@
       <div class="complete">
 
         <div class="title">
-          <h1>Overview</h1>
+          <h1><%= t('title.overview') %></h1>
         </div>
 
-        <h3>Basket</h3>
+        <h3><%= t('title.basket') %></h3>
         <%= render 'baskets/basket', basket: @basket %>
 
         <div class="message">
           <div class="horizontal">
             <%= image_tag "logo.png", class: "avatar" %>
-            <p>J'ai reçu votre règlement et je prépare votre commande.</p>
+            <p><%= t('I_received_your_payment_,_I prepare_your_order_thanks_!') %></p>
           </div>
         </div>
 
         <div>
-          <h3>Delivery Address</h3>
+          <h3><%= t('title.delivery_address') %></h3>
           <%= render 'takeaway' %>
         </div>
 
         <div>
-          <%= link_to "My invoice", invoice_path(@basket), target: :_blank, method: :get, class: "button" %>
+          <%= link_to t("link.invoice"), invoice_path(@basket), target: :_blank, method: :get, class: "button" %>
         </div>
 
 

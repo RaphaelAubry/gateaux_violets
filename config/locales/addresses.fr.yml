@@ -14,3 +14,5 @@ fr:
     edit_email: "Modifier l'email"
     edit_address: "Modifier l'adresse"
     delete: "Supprimer"
+  form:
+    validate: "Valider"

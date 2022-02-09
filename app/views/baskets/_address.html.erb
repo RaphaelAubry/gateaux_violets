@@ -34,5 +34,5 @@
 
   <div class="actions">
     <%= link_to t('link.edit_address'), edit_address_path(@address), class: "action" %>
-    <%= link_to t('link.delete'), address_path(@address) , method: :delete, data: { confirm: "Are you sure ?" },class: "action" %>
+    <%= link_to t('link.delete'), address_path(@address) , method: :delete, data: { confirm: t('confirm') },class: "action" %>
   </div>
