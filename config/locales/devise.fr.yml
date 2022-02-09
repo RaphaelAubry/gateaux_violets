@@ -2,7 +2,7 @@ fr:
   devise:
     confirmations:
       account_confirmation: "Confirmation du compte"
-      send_instructions: "Vous allez recevoir un courriel contenant des instructions pour activer votre compte."
+      send_instructions: "Vous allez recevoir un email contenant des instructions pour activer votre compte."
       confirmed: "Votre compte a été activé. Vous êtes maintenant connecté."
       new:
         resend_confirmation_instructions: "Renvoyer l'email de confirmation"
@@ -11,7 +11,7 @@ fr:
       unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer."
       unconfirmed: "Vous devez confirmer votre compte pour continuer."
       locked: "Votre compte est verrouillé."
-      invalid: "Courriel ou mot de passe incorrect."
+      invalid: "email ou mot de passe incorrect."
       invalid_token: "Jeton d'authentification incorrect."
       timeout: "Votre session est expirée, veuillez vous reconnecter pour continuer."
       inactive: "Votre compte n'est pas encore activé."
@@ -62,14 +62,14 @@ fr:
       new:
         password: "Mot de passe"
         forgot_your_password?: "Mot de passe oublié ?"
-        send_me_reset_password_instructions: "Envoyez-moi un courriel pour changer mon mot de passe"
+        send_me_reset_password_instructions: "Envoyez-moi un email pour changer mon mot de passe"
         Your_email_is_required_to_send_instructions_to_reset_your_password: "Nous avons besoin de votre email pour réinitialiser votre mot de passe."
         reset: "Réinitialiser"
       user:
-        send_instructions: "Vous allez recevoir un courriel contenant des instructions pour changer votre mot de passe."
+        send_instructions: "Vous allez recevoir un email contenant des instructions pour changer votre mot de passe."
         updated: "Votre mot de passe a été changé. Vous êtes maintenant connecté."
     registrations:
-      signed_up: "Votre inscription est enregistrée. Si demandé, un courriel de confirmation vous a été envoyé."
+      signed_up: "Votre inscription est enregistrée. Si demandé, un email de confirmation vous a été envoyé."
       updated: "Votre mise à jour a été prise en compte."
       destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
       forgot_your_password?: "Mot de passe oublié ?"
@@ -96,7 +96,7 @@ fr:
         password_confirmation: "Confirmation du mot de passe"
       user:
         destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
-        signed_up: "Votre inscription est enregistrée. Si demandé, un courriel de confirmation vous a été envoyé."
+        signed_up: "Votre inscription est enregistrée. Si demandé, un email de confirmation vous a été envoyé."
         updated: "Modifié"
     sessions:
       session: "Connection"
@@ -109,19 +109,19 @@ fr:
       remember_me: "Se souvenir de moi"
     unlocks:
       unlock_intstructions: "Déverouiller mon compte"
-      send_instructions: "Vous allez recevoir un courriel avec des instructions pour déverrouiller votre compte."
+      send_instructions: "Vous allez recevoir un email avec des instructions pour déverrouiller votre compte."
       unlocked: "Votre compte est déverrouillé. Vous êtes maintenant connecté."
       new:
         resend_unlock_instructions: "Renvoyez le mail pour déverrouiller mon compte"
         resend: "Renvoyer"
     shared:
       links:
-        didnt_receive_confirmation_instructions?: "Vous n'avez pas reçu de courriel de confirmation ?"
-        didnt_receive_unlock_instructions?: "Vous n'avez pas reçu de courriel de déverrouillage de votre compte ?"
+        didnt_receive_confirmation_instructions?: "Vous n'avez pas reçu l'email de confirmation ?"
+        didnt_receive_unlock_instructions?: "Vous n'avez pas reçu l'email pour déverrouiller de votre compte ?"
         forgot_your_password?: "Mot de passe oublié ?"
         log_in: "Se connecter"
         sign_up: "S'inscrire"
-        didn't_receive_unlock_instructions?: "Vous n'avez pas reçu de courriel de déverouillage ?"
+        didn't_receive_unlock_instructions?: "Vous n'avez pas reçu d'email de déverouillage ?"
         Sign_in_with: "Se connecter avec"
     common:
       hello: "Bonjour"
