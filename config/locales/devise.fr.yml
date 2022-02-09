@@ -1,10 +1,11 @@
 fr:
   devise:
     confirmations:
+      account_confirmation: "Confirmation du compte"
       send_instructions: "Vous allez recevoir un courriel contenant des instructions pour activer votre compte."
       confirmed: "Votre compte a été activé. Vous êtes maintenant connecté."
       new:
-        resend_confirmation_instructions: "Renvoyer le courriel de confirmation"
+        resend_confirmation_instructions: "Renvoyer l'email de confirmation"
         resend: "Renvoyer"
     failure:
       unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer."
@@ -53,6 +54,7 @@ fr:
       success: "Authentification réussie sur ce compte %{kind} ."
     passwords:
       edit:
+        new_password: "Nouveau mot de passe"
         change_your_password: "Changez votre mot de passe"
         change_my_password: "Changer mon mot de passe"
         change: "Changer"
