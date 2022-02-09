@@ -7,7 +7,8 @@ fr:
         email: "Email"
         password: "Mot de passe"
         avatar: "Photo"
-        password_confirmation: "Les mots de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        current_password: "Mot de passe actuel"
       address:
         surname: "Prénom"
         name: "Nom ou raison sociale"
@@ -39,7 +40,9 @@ fr:
               too_short: "trop court"
               invalid: "non conforme"
             password_confirmation:
-              confirmation: "doivent être identiques"
+              confirmation: "doit être identique au mot de passe"
+            current_password:
+              blank: "doit être complété"
   STATUS:
     basket: "1. commande"
     delivery: "2. livraison"
