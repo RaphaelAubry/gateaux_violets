@@ -11,6 +11,6 @@ fr:
     phone: "Téléphone"
     email: "Email"
   link:
-    edit_email: "modifier l'email"
-    edit_address: "modifier l'adresse"
-    delete: "supprimer"
+    edit_email: "Modifier l'email"
+    edit_address: "Modifier l'adresse"
+    delete: "Supprimer"

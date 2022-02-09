@@ -50,7 +50,7 @@
 
   <!-- checkout to card form or update basket show ------------------------------------>
   <div class="e-payment">
-    <p><%= link_to "Checkout", new_basket_transaction_path(@basket), class: "button" %></p>
+    <p><%= link_to t('button.checkout'), new_basket_transaction_path(@basket), class: "button" %></p>
   </div>
   <div class="manual-payment">
     <%= f.submit t('button.checkout'), class: "button" %>
