@@ -88,7 +88,8 @@ fr:
         registration: "Inscription"
         sign_up: "S'inscrire"
         log_in: "Se connecter"
-        characters_minimum: "caractères minimum"
+        characters_minimum: "caractère(s) minimum"
+        password_confirmation: "Confirmation du mot de passe"
       user:
         destroyed: "Votre compte a été supprimé. Nous espérons vous revoir bientôt."
         signed_up: "Votre inscription est enregistrée. Si demandé, un courriel de confirmation vous a été envoyé."
@@ -100,7 +101,8 @@ fr:
       forgot_your_password?: "Mot de passe oublié ?"
       sign_in: "Se connecter"
       log_in: "Se connecter"
-      sign_up: "S'enregistrer"
+      sign_up: "S'inscrire"
+      remember_me: "Se souvenir de moi"
     unlocks:
       unlock_intstructions: "Déverouiller mon compte"
       send_instructions: "Vous allez recevoir un courriel avec des instructions pour déverrouiller votre compte."

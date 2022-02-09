@@ -6,6 +6,8 @@ fr:
       user:
         email: "Email"
         password: "Mot de passe"
+        avatar: "Photo"
+        password_confirmation: "Les mots de passe"
       address:
         surname: "Prénom"
         name: "Nom ou raison sociale"
@@ -25,6 +27,19 @@ fr:
         photo: "Photo"
       basket:
         status: "Statut"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "doit être complété"
+              invalid: "non conforme"
+            password:
+              blank: "doit être complété"
+              too_short: "trop court"
+              invalid: "non conforme"
+            password_confirmation:
+              confirmation: "doivent être identiques"
   STATUS:
     basket: "1. commande"
     delivery: "2. livraison"

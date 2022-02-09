@@ -2,7 +2,7 @@
   <div class="form">
 
 
-<h2>Sign up</h2>
+<h2><%= t('devise.registrations.new.registration') %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -14,17 +14,18 @@
                 input_html: { autocomplete: "email", class: "field" }%>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length} #{t('devise.registrations.new.characters_minimum')}" if @minimum_password_length),
                 input_html: { autocomplete: "new-password", class: "field" } %>
     <%= f.input :password_confirmation,
                 required: true,
+                label: t('devise.registrations.new.password_confirmation'),
                 input_html: { autocomplete: "new-password", class: "field" } %>
-    <%= f.input :avatar, as: :file %>
+    <%= f.input :avatar, as: :file, label: t('activerecord.attributes.user.avatar') %>
   </div>
 
   <div class="form-actions">
     <div class="button-wrapper">
-      <%= f.button :submit, "Sign up", class: "button" %>
+      <%= f.button :submit, t('devise.registrations.new.sign_up'), class: "button" %>
     </div>
   </div>
 <% end %>
