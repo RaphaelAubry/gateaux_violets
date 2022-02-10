@@ -75,3 +75,8 @@ fr:
     Transfer: "Virement bancaire"
     Card: "Carte bancaire"
     Cash: "En espèces"
+  time:
+    formats:
+      default: "%d/%m/%Y à %H:%M"
+  currency: "€"
+  price: "%{price} €"

@@ -15,11 +15,11 @@
         <!-- description -->
         <div class="basket-text">
           <p class="name"><%= line.cake.name %></p>
-          <p class="basket-delivery"><%= t('field.delivered_at') %><%= TimeFr(line.delivery_date) %></p>
+          <p class="basket-delivery"><%= t('field.delivered_at') %><%= l line.delivery_date, formats: :default %></p>
           <div class="horizontal-narrow">
             <p class="label-quantity"><%= t('field.qty') %></p>
             <p class="tabl-quantity push-right"><%= line.quantity %></p>
-            <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
+            <p class="tabl-total"><%= t('price', price: d2(line.total)) %></p>
           </div>
           <!-- actions -->
           <div class="actions">
@@ -39,11 +39,11 @@
           <!-- description -->
           <div>
             <p class="name"><%= line.cake.name %></p>
-            <p class="basket-delivery"><%= t('field.delivered_at') %><%= TimeFr(line.delivery_date) %></p>
+            <p class="basket-delivery"><%= t('field.delivered_at') %><%= l line.delivery_date, format: :default %></p>
             <div class="horizontal-narrow">
               <p class="label-quantity"><%= t('field.qty') %></p>
               <p class="tabl-quantity push-right"><%= line.quantity %></p>
-              <p class="tabl-total"><%= d2(line.total) %><%= currency() %></p>
+              <p class="tabl-total"><%= t('price', price: d2(line.total)) %></p>
             </div>
           </div>
       <% end %>
@@ -52,5 +52,5 @@
 
   <% end %>
 
-  <div class="basket-total"><p><%= d2(@basket.totalize) %></p><p><%= ApplicationHelper::CURRENCY %></p></div>
+  <div class="basket-total"><p><%= t('price', price: d2(@basket.totalize)) %></p></div>
 </div>

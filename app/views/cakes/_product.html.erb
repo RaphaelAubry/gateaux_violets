@@ -15,7 +15,7 @@
         <p class="name"><%= cake.name %></p>
         <p class="description"><%= cake.description %></p>
         <p class="size"><%= cake.size %><%= personnes() %></p>
-        <p class="price"><%= d2(cake.price) %><%= currency() %></p>
+        <p class="price"><%= t('price', price: d2(cake.price)) %></p>
       </div>
     <% end %>
   </div>

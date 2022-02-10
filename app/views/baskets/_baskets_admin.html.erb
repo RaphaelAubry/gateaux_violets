@@ -13,7 +13,7 @@
     <%= link_to basket_path(basket) do %>
 
       <div class="horizontal tabl-data">
-        <p class="tabl-date"><%= TimeFr(basket.created_at) %></p>
+        <p class="tabl-date"><%= l basket.created_at, format: :default %></p>
         <p class="tabl-id"><%= basket.id %></p>
         <p class="tabl-email"><%= basket.user.email %></p>
         <p class="tabl-payment-type"><%= basket.payment_type %></p>

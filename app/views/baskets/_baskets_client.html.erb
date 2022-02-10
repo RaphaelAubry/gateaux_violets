@@ -13,7 +13,7 @@
     <%= link_to basket_path(basket) do %>
 
       <div class="horizontal tabl-data">
-        <p class="tabl-date"><%= TimeFr(basket.created_at) %></p>
+        <p class="tabl-date"><%= l basket.created_at  %></p>
         <p class="tabl-date"><%= basket.id %></p>
         <p class="tabl-payment-type"><%= basket.payment_type %></p>
         <p class="tabl-total"><%= number_with_precision(basket.totalize, precision: 2) %></p>
