@@ -48,7 +48,7 @@ class BasketsController < ApplicationController
               @basket.update(basket_params)
               redirect_to basket_path(@basket)
             else
-              flash[:alert] = "Please enter an address"
+              flash[:alert] = t('address_request')
               redirect_to new_address_path
             end
           end
@@ -57,7 +57,7 @@ class BasketsController < ApplicationController
             redirect_to basket_path(@basket)
         end
     else
-      flash[:alert] = "Your basket is empty, you must order a cake to validate your basket"
+      flash[:alert] = t('empty_basket_instruction')
     end
   end
 
