@@ -39,6 +39,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
+
     redirect_from_address_to()
   end
 

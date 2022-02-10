@@ -18,6 +18,7 @@ import { initSearch } from "../components/search.js";
 import { initStatusBasket } from "../components/status.js";
 import { initActive } from "../components/active.js";
 import { autocompleteAddress } from "../components/autocomplete_address.js";
+import { upperCase } from "../components/fieldControl.js";
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -36,4 +37,8 @@ document.addEventListener('turbolinks:load', () => {
   initStatusBasket();
   initActive();
   displayPaymentMethod();
+  upperCase("address_surname");
+  upperCase("address_name");
+  upperCase("form-city");
+  upperCase("cake_name");
 })

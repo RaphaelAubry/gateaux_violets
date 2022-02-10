@@ -35,8 +35,12 @@ class CakesController < ApplicationController
   end
 
   def destroy
-    @cake.lines == [] ? @cake.destroy : flash[:alert] = t('cake_ordered_deletion_instruction')
-
+    if @cake.lines == []
+      @cake.destroy
+      flash[:notice] = t('cake_deleted')
+    else
+      flash[:alert] = t('cake_ordered_deletion_instruction')
+    end
     redirect_to home_path
   end
 
