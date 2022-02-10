@@ -34,7 +34,7 @@ const initFormLine = () => {
 
   if (quantity != null){
     // init total when page loads
-    total.innerText = (quantity.value * price.dataset.price).toFixed(2);
+    total.innerText = (quantity.value * price.dataset.price).toFixed(2) + " €";
     quantity.addEventListener('input', () => {
       // quantity x price = total
       total.innerText = (quantity.value * price.dataset.price).toFixed(2) + " €";
