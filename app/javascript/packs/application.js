@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
-import { initFormBasket, initCalendarLine, displayPaymentMethod } from '../components/form.js'
+import { initFormBasket, initCalendarLine, displayPaymentMethod, initFormLine } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
 import { initBraintree } from '../components/braintree.js'
 import { initBadge } from '../components/badge.js'
@@ -27,6 +27,7 @@ ActiveStorage.start()
 
 document.addEventListener('turbolinks:load', () => {
   initFormBasket();
+  initFormLine();
   autocompleteAddress();
   initFlow();
   initBadge();
