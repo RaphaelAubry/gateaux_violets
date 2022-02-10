@@ -1,6 +1,7 @@
 class Cake < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
+  validates :size, presence: true, numericality: { other_than: 0 }
 
   has_many :lines
 

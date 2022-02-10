@@ -1,6 +1,7 @@
 fr:
   hello: "Bonjour le monde"
   back: "Retour"
+  size_unit: "personne(s)"
   activerecord:
     attributes:
       user:
@@ -49,6 +50,8 @@ fr:
               blank: "doit être complété"
             price:
               blank: "doit être complété"
+            size:
+              other_than: "doit être supérieure à 0"
         line:
           attributes:
             delivery_date:
