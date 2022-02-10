@@ -16,7 +16,7 @@
         <% when "complete" %>
            <% if current_user.admin? %>
            <% else %>
-            <%= link_to "new order", cakes_path, class: "button" %>
+            <%= link_to t('title.creations'), cakes_path, class: "action" %>
            <% end %>
       <% end %>
     </div>
