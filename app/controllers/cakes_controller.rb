@@ -13,6 +13,7 @@ class CakesController < ApplicationController
 
   def create
     @cake = Cake.new(cake_params)
+    @cake.active = true
     authorize @cake
     if @cake.save
       redirect_to home_path

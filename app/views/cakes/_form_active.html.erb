@@ -2,12 +2,12 @@
     <%= simple_form_for(@cake) do |f| %>
       <% case @cake.active %>
         <% when false %>
-          <%= f.input :active, as: :select, label: false, collection: [['Yes',true]], include_blank: false, :input_html => { class: "noshow"} %>
+          <%= f.input :active, as: :select, label: false, collection: [['Yes',true]], include_blank: false, :input_html => { class: "noshow" } %>
           <div class="button-wrapper">
             <%= f.submit t('form.activate'), class: "button" %>
           </div>
         <% when true %>
-          <%= f.input :active, as: :select, label: false, collection: [['No',false]], include_blank: false, :input_html => { class: "noshow"} %>
+          <%= f.input :active, as: :select, label: false, collection: [['No',false]], include_blank: false, :input_html => { class: "noshow" } %>
           <div class="button-wrapper">
             <%= f.submit t('form.deactivate'), class: "button" %>
           </div>
