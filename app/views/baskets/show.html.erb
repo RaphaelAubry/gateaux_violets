@@ -147,7 +147,16 @@
 
         <div>
           <h3><%= t('title.delivery_address') %></h3>
-          <%= render 'takeaway' %>
+
+          <div class="horizontal-address">
+            <!-- delivery address -->
+            <div class="push right">
+            <%= render 'takeaway' %>
+            </div>
+
+            <!-- map -->
+            <div id='map2'></div>
+          </div>
         </div>
 
         <div>

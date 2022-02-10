@@ -21,8 +21,7 @@
       <p id="price" data-price=<%="#{d2(@cake.price)}"%>></p>
 
       <div class="horizontal">
-        <p id="total" class="price"></p>
-        <p class="price"><%= currency() %></p>
+        <p id="total" class="price"><%= t('price', price: d2(@cake.price)) %></p>
       </div>
 
       <%= f.input :delivery_date, as: :string, :input_html => { id: "delivery_date" } %>

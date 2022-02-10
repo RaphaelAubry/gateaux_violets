@@ -1,6 +1,7 @@
 fr:
   hello: "Bonjour le monde"
   back: "Retour"
+  size_unit: "personne(s)"
   activerecord:
     attributes:
       user:
@@ -41,31 +42,45 @@ fr:
               invalid: "non conforme"
             password_confirmation:
               confirmation: "doit être identique au mot de passe"
+              invalid: "non conforme"
             current_password:
               blank: "doit être complété"
+              invalid: "non conforme"
         cake:
           attributes:
             name:
               blank: "doit être complété"
+              invalid: "non conforme"
             price:
               blank: "doit être complété"
+              invalid: "non conforme"
+            size:
+              other_than: "doit être supérieure à 0"
+              invalid: "non conforme"
         line:
           attributes:
             delivery_date:
               blank: "doit être choisie"
+              invalid: "non conforme"
         address:
           attributes:
             name:
               blank: "doit être complété"
+              invalid: "doit commencer par une majuscule"
+            surname:
+              blank: "doit être complété"
+              invalid: "doit commencer par une majuscule"
             phone:
               blank: "doit être complété"
-              invalid: "doit comporter 10 chiffres"
+              invalid: "doit commencer par un 0 et comporter 10 chiffres"
             address:
               blank: "doit être complété"
             zip_code:
               blank: "doit être complété"
+              invalid: "non conforme"
             city:
               blank: "doit être complété"
+              invalid: "non conforme"
   STATUS:
     basket: "1. commande"
     delivery: "2. livraison"
@@ -75,3 +90,8 @@ fr:
     Transfer: "Virement bancaire"
     Card: "Carte bancaire"
     Cash: "En espèces"
+  time:
+    formats:
+      default: "%d/%m/%Y à %H:%M"
+  currency: "€"
+  price: "%{price} €"

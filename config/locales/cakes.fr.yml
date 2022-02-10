@@ -21,3 +21,7 @@ fr:
     price: "Prix"
     size: "Taille"
     photo: "Photo"
+  cake_ordered_modification_instruction: "Cet article a été commandé, modification impossible"
+  cake_ordered_deletion_instruction: "Cet article a été commandé, suppression impossible"
+  cake_deleted: "Gateau supprimé"
+  cake_modified: "Gateau modifié"

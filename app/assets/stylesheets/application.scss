@@ -41,14 +41,12 @@ body {
     align-items: center;
   }
   @media(max-width: 768px) {
-    width: 90vw;
+    width: 95vw;
   }
 }
 
 .horizontal-narrow {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   a {
     display: flex;
     align-items: center;

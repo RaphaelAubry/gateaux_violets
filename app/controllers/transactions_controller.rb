@@ -24,11 +24,11 @@ class TransactionsController < ApplicationController
         @basket.update(status: Basket::STATUS[3], payment_type: Basket::PAYMENT_TYPE[2])
         redirect_to basket_path(@basket)
       else
-        flash[:notice] = 'Create your address'
+        flash[:notice] = t('address_instruction')
         render 'new'
       end
     else
-      flash[:notice] = 'Sélectionnez un autre moyen de règlement'
+      flash[:notice] = t('payment_instruction')
       redirect_to basket_path(@basket)
     end
   end
@@ -58,9 +58,9 @@ class TransactionsController < ApplicationController
       }
     )
     if @result.success? || @result.transaction
-        flash[:notice] = 'success'
+        flash[:notice] = t('success')
     else
-        flash[:notice] = 'read more'
+        flash[:notice] = t('failure')
     end
   end
 

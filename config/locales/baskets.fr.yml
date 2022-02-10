@@ -14,5 +14,8 @@ fr:
     validate_delivery: "Etape suivante"
     checkout: "Valider"
     approve_payment: "Approuver le paiement"
+    new_order: "Nouvelle commande"
   link:
     invoice: "Facture"
+  address_request: "Renseignez votre adresse s'il vous plaît"
+  empty_basket_intsruction: "Votre panier est vide, vous devez sélectionner au moins un article pour le valider"

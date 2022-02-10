@@ -6,3 +6,7 @@ fr:
   button:
     new: "Nouveau"
     pay: "Payer"
+  address_instruction: "Create your address"
+  payment_instruction: "Sélectionnez un autre moyen de règlement"
+  success: "Transaction réussie"
+  failure: "Echec de la transaction"

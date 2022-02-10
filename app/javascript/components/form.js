@@ -4,7 +4,7 @@ import { initBraintree } from "./braintree";
 
 const initFormBasket = () => {
 
-  // get targets
+  // get sources and targets
   const flow = document.getElementById("flow")
   const quantity = document.getElementById("line_quantity")
   const total = document.getElementById("total")
@@ -13,20 +13,33 @@ const initFormBasket = () => {
   if (quantity != null && total != null && price != null && flow != null){
 
     //check if there is already a quantity line in the database
-
     if (flow.dataset.id == ""){
         quantity.value = 1
     }
-
+    // init total when page loads
     total.innerText = quantity.value * price.dataset.price;
-
     quantity.addEventListener('input', () => {
-
       // quantity x price = total
-      total.innerText = quantity.value * price.dataset.price;
-
+      total.innerHTML = quantity.value * price.dataset.price;
     })
   };
+}
+
+const initFormLine = () => {
+
+   // get sources and targets
+  const quantity = document.getElementById("line_quantity")
+  const price = document.getElementById("price")
+  const total = document.getElementById("total")
+
+  if (quantity != null){
+    // init total when page loads
+    total.innerText = (quantity.value * price.dataset.price).toFixed(2) + " €";
+    quantity.addEventListener('input', () => {
+      // quantity x price = total
+      total.innerText = (quantity.value * price.dataset.price).toFixed(2) + " €";
+    })
+  }
 }
 
 const initCalendarLine = () => {
@@ -136,4 +149,4 @@ const displayPaymentMethod = () => {
 
 
 
-export { initFormBasket, initCalendarLine, displayPaymentMethod }
+export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod }

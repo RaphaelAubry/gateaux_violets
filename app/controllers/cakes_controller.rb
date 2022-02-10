@@ -13,6 +13,7 @@ class CakesController < ApplicationController
 
   def create
     @cake = Cake.new(cake_params)
+    @cake.active = true
     authorize @cake
     if @cake.save
       redirect_to home_path
@@ -29,14 +30,18 @@ class CakesController < ApplicationController
 
   def update
     status = @cake.active
-    @cake.lines == [] || params[:cake][:active] != status.to_s ? @cake.update(cake_params) : flash[:alert] = "The cake has been ordered, can't modify it"
+    @cake.lines == [] || params[:cake][:active] != status.to_s ? @cake.update(cake_params) : flash[:alert] = t('cake_ordered_modification_instruction')
 
     redirect_to cake_path
   end
 
   def destroy
-    @cake.lines == [] ? @cake.destroy : flash[:alert] = "The cake has been ordered, can't delete it"
-
+    if @cake.lines == []
+      @cake.destroy
+      flash[:notice] = t('cake_deleted')
+    else
+      flash[:alert] = t('cake_ordered_deletion_instruction')
+    end
     redirect_to home_path
   end
 
