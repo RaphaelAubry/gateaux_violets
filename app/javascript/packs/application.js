@@ -31,7 +31,8 @@ document.addEventListener('turbolinks:load', () => {
   autocompleteAddress();
   initFlow();
   initBadge();
-  initMapBox();
+  initMapBox("map");
+  initMapBox("map2");
   initBraintree();
   initCalendarLine();
   initSearch();

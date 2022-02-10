@@ -1,6 +1,6 @@
-const initMapBox = () => {
+const initMapBox = (mapID) => {
 
-  const map = document.getElementById("map")
+  const map = document.getElementById(mapID)
 
   if (map !=null){
 
@@ -8,7 +8,7 @@ const initMapBox = () => {
 
     mapboxgl.accessToken = process.env.MAPBOX_API_KEY;
     const map = new mapboxgl.Map({
-      container: 'map', // container ID
+      container: mapID, // container ID
       style: 'mapbox://styles/raphaelaubry/ckysqyrs76zzn14tfc3s3rw33', // style URL
       center: GateauVioletCoord, // starting position [lng, lat]
       zoom: 11, // starting zoom
