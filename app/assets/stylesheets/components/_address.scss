@@ -14,7 +14,7 @@ $margin-left: 20px;
 .address {
   @media(max-width: 768px) {
   display: block;
-  width: 80vw;
+  width: 95vw;
   }
 }
 
@@ -62,3 +62,15 @@ $margin-left: 20px;
       margin-bottom: 2px;
     }
   }
+
+.horizontal-address {
+  display: grid;
+  grid-template-columns: 300px 500px ;
+  margin-bottom: 10px;
+  @media(max-width: 992px) {
+    grid-template-columns: 270px 500px;
+  }
+  @media(max-width: 768px) {
+    grid-template-columns: 95vw;
+  }
+}
