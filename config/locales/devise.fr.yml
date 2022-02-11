@@ -25,6 +25,8 @@ fr:
       common:
         Hello: "Bonjour"
         your_login: "Votre identifiant"
+        best_regards: "Cordialement"
+        signature: "L'équipe Gateau Violet"
       confirmation_instructions:
         welcome: "Bienvenu(e)"
         you_can_confirm_your_account_through_the_link_below: "Vous pouvez confirmer votre compte en cliquant sur le lien ci-dessous"
