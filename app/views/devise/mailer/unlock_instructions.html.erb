@@ -1,6 +1,6 @@
 <p><%= t('devise.mailer.common.Hello') %>!</p>
 
-<p><%= t('devise.mailer.common.your_login') @resource.email %></p>
+<p><%= t('devise.mailer.common.your_login') %><%= @resource.email %></p>
 
 <p><%= t('devise.mailer.unlock_instructions.locked_account_message') %></p>
 
