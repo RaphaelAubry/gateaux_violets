@@ -6,6 +6,7 @@ fr:
   contact: "Contact"
   delivery: "Livraison"
   sales_rules: "Conditions générales de vente"
+  sales_rules_agreement: "J'accepte les conditions générales de vente"
   activerecord:
     attributes:
       user:

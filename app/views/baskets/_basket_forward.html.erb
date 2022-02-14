@@ -3,6 +3,7 @@
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <% case @basket.status %>
         <% when "basket" %>
+          <%= f.input :sales_rules, as: :boolean, label: t('sales_rules_agreement') %>
           <%= f.input :status, :input_html => { class: "noshow", value: Basket::STATUS[1] }, label: false %>
           <%= f.submit t('button.validate_basket'), class: "button" %>
         <% when "delivery" %>
