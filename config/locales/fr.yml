@@ -2,6 +2,10 @@ fr:
   hello: "Bonjour le monde"
   back: "Retour"
   size_unit: "personne(s)"
+  identification: "Identification"
+  contact: "Contact"
+  delivery: "Livraison"
+  sales_rules: "Conditions générales de vente"
   activerecord:
     attributes:
       user:

@@ -2,7 +2,16 @@
   <div class="show">
     <div>
 
-      <h1>Delivery</h1>
+      <h1><%= t('delivery') %></h1>
+
+      <div class="message">
+        <div class="horizontal">
+          <%= image_tag "logo.png", class: "avatar" %>
+          <p><%= t('orders_are_delivered_at_the_below_place') %></p>
+        </div>
+      </div>
+
+      <%= render 'baskets/takeaway' %>
 
     </div>
   </div>
