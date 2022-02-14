@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_14_114322) do
+ActiveRecord::Schema.define(version: 2022_02_14_154042) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,14 @@ ActiveRecord::Schema.define(version: 2022_02_14_114322) do
     t.boolean "active"
   end
 
+  create_table "flavours", force: :cascade do |t|
+    t.string "description"
+    t.bigint "line_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["line_id"], name: "index_flavours_on_line_id"
+  end
+
   create_table "lines", force: :cascade do |t|
     t.integer "quantity"
     t.decimal "total"
@@ -118,6 +126,7 @@ ActiveRecord::Schema.define(version: 2022_02_14_114322) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "baskets", "users"
+  add_foreign_key "flavours", "lines"
   add_foreign_key "lines", "baskets"
   add_foreign_key "lines", "cakes"
   add_foreign_key "transactions", "baskets"
