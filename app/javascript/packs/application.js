@@ -19,6 +19,7 @@ import { initStatusBasket } from "../components/status.js";
 import { initActive } from "../components/active.js";
 import { autocompleteAddress } from "../components/autocomplete_address.js";
 import { upperCase } from "../components/fieldControl.js";
+import { rotate } from "../components/caret.js";
 // import { formatSchema } from "webpack/lib/WebpackOptionsValidationError";
 
 Rails.start()
@@ -43,4 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   upperCase("address_name");
   upperCase("form-city");
   upperCase("cake_name");
+  rotate("rotateable",".fa-angle-right",".target");
 })

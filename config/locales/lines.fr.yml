@@ -12,3 +12,6 @@ fr:
     date: "Date"
     payment_type: "Mode de paiement"
     amount: "Montant"
+  label:
+    quantity: "Quantité"
+    customization: "Personnalisation"
