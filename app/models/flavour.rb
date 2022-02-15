@@ -1,3 +1,3 @@
 class Flavour < ApplicationRecord
-  belongs_to :line
+  has_many :lines
 end

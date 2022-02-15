@@ -1,0 +1,30 @@
+<div class="left">
+  <div class="show">
+
+    <div>
+
+      <% if user_signed_in? && current_user.admin? %>
+        <div>
+          <p>
+            <%= @flavour.description %>
+          </p>
+          <div class="button-wrapper">
+            <%= link_to t('form.edit'), edit_flavour_path, class: "button" %>
+          </div>
+          <div class="button-wrapper">
+            <%= link_to t('form.delete'), flavour_path(@flavour), method: :delete, data: { confirm: t('confirm') }, class: "button", remote: true %>
+          </div>
+          <!-- active form -->
+          <!------------>
+        </div>
+      <% end %>
+
+
+      <div class="button-wrapper">
+        <%= link_to t('title.creations'), flavours_path, class: "action" %>
+      </div>
+    </div>
+
+  </div>
+
+</div>

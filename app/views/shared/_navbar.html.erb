@@ -72,6 +72,8 @@
                     <%= link_to t('profile.baskets'), baskets_path, class: "dropdown-item" %>
                     <!-- Deliveries -->
                     <%= link_to t('profile.deliveries'), lines_path, class: "dropdown-item" %>
+                    <!-- Flavours -->
+                    <%= link_to 'Flavours', flavours_path, class: "dropdown-item" %>
                   <% else %>
                     <%= link_to t('profile.my_baskets'), baskets_path, class: "dropdown-item" %>
                   <% end %>

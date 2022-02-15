@@ -80,10 +80,8 @@ ActiveRecord::Schema.define(version: 2022_02_14_154042) do
 
   create_table "flavours", force: :cascade do |t|
     t.string "description"
-    t.bigint "line_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["line_id"], name: "index_flavours_on_line_id"
   end
 
   create_table "lines", force: :cascade do |t|
@@ -126,7 +124,6 @@ ActiveRecord::Schema.define(version: 2022_02_14_154042) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "baskets", "users"
-  add_foreign_key "flavours", "lines"
   add_foreign_key "lines", "baskets"
   add_foreign_key "lines", "cakes"
   add_foreign_key "transactions", "baskets"
