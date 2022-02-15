@@ -21,6 +21,7 @@
       <%= f.input :quantity, collection: Line::QUANTITY, :input_html => { class: "field" }, label: false, include_blank: false %>
       <p id="price" data-price=<%="#{d2(@cake.price)}"%>></p>
       <p>Parfum</p>
+      <%= f.input :flavour_id, collection: Flavour.all, :input_html => { class: "field" }, label_method: :description, include_blank: false %>
 
       <p>Personnalisation</p>
       <div class="horizontal">
