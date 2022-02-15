@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!,except: [:show ]
   before_action :update_allowed_parameters, if: :devise_controller?
   before_action :set_locale
 
@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   # Uncomment when you *really understand* Pundit!
-  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  # def user_not_authorized
-  #   flash[:alert] = "You are not authorized to perform this action."
-  #   redirect_to(root_path)
-  # end
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  def user_not_authorized
+  flash[:alert] = "You are not authorized to perform this action."
+  redirect_to(home_path)
+  end
 
   # add flash types ?
   # add_flash_types :info, :error, :warning

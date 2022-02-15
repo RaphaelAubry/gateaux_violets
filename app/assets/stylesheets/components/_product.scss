@@ -76,3 +76,13 @@ word-wrap: break-word;
 .price {
   font-weight: bold;
 }
+
+.advices {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 25vw 25vw;
+    @media(max-width: 768px) {
+    grid-template-columns: 95vw;
+    gap: 10px;
+  }
+}

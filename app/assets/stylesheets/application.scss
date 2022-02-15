@@ -34,7 +34,6 @@ body {
 
 .horizontal {
   display: flex;
-  width: fit-content;
   align-items: center;
   a {
     display: flex;
@@ -62,6 +61,7 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  text-align:justify;
   @media(max-width: 768px) {
     width: 95vw;
   }
@@ -71,6 +71,7 @@ body {
   width: 50vw;
   min-height: 100vh;
   margin: 0 auto;
+  text-align: justify;
   @media(max-width: 768px) {
     width: 95vw;
   }
@@ -97,6 +98,7 @@ a {
 }
 
 p {
+  font-size: 14px;
   margin-right: 10px;
 }
 

@@ -1,5 +1,4 @@
 class TransactionsController < ApplicationController
-  before_action :skip_authorization
 
   def index
     @transactions = policy_scope(Transaction)

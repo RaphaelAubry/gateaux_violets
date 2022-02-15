@@ -1,9 +1,13 @@
 <p><%= t('devise.mailer.common.Hello') %>!</p>
 
-<p><%= t('devise.mailer.common.your_login') @email %></p>
+<p><%= t('devise.mailer.common.your_login') %> <%= @email %></p>
 
 <% if @resource.try(:unconfirmed_email?) %>
   <p><%= t('devise.mailer.email_changed.email_changed_in_progress') @resource.unconfirmed_email %>.</p>
 <% else %>
   <p><%= t('devise.mailer.email_changed.email_changed_completed') @resource.email %>.</p>
 <% end %>
+
+<p><%= t('devise.mailer.common.best_regards') %></p>
+
+<p><%= t('devise.mailer.common.signature') %></p>

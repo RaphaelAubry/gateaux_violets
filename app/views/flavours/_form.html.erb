@@ -1,0 +1,16 @@
+<div class="center">
+  <div class="form">
+
+    <h1>New flavour</h1>
+    <%= simple_form_for(@flavour) do |f| %>
+      <%= f.input :description, :input_html => { class: "field" } %>
+
+      <div class="button-wrapper">
+        <%= f.submit t('form.create'), class: "button" %>
+      </div>
+    <% end %>
+      <div class="button-wrapper">
+        <%= link_to t('back'), :back, class: "action" %>
+      </div>
+  </div>
+</div>

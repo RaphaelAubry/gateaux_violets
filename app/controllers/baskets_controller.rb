@@ -33,13 +33,20 @@ class BasketsController < ApplicationController
     #update filled basket only
     if @total != 0
       case @basket.status
-        when Basket::STATUS[0]
+        when Basket::STATUS[0] #order
+          if params[:basket][:sales_rules] == "1"
+            @basket.update(basket_params)
+            redirect_to basket_path(@basket)
+          else
+            params[:basket][:status] = Basket::STATUS[0]
+            @basket.update(basket_params)
+            redirect_to basket_path(@basket)
+            flash[:notice] = t('sales_rules_instructions')
+          end
+        when Basket::STATUS[1] #delivery
           @basket.update(basket_params)
           redirect_to basket_path(@basket)
-        when Basket::STATUS[1]
-          @basket.update(basket_params)
-          redirect_to basket_path(@basket)
-        when Basket::STATUS[2]
+        when Basket::STATUS[2] #payment
           if current_user.addresses.exists?
             @basket.update(basket_params)
             redirect_to basket_path(@basket)
@@ -52,7 +59,7 @@ class BasketsController < ApplicationController
               redirect_to new_address_path
             end
           end
-        when Basket::STATUS[3]
+        when Basket::STATUS[3] #completed
             @basket.update(basket_params)
             redirect_to basket_path(@basket)
         end
@@ -74,7 +81,7 @@ class BasketsController < ApplicationController
   private
 
   def basket_params
-    params.require(:basket).permit(:status, :payment_type)
+    params.require(:basket).permit(:status, :payment_type, :sales_rules)
   end
 
   def set_basket
