@@ -1,0 +1,52 @@
+.cake-scheme3 {
+  background-image: url('CakeScheme3.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 75px;
+  height: 100px;
+}
+
+.cake-scheme2 {
+  background-image: url('CakeScheme2.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 75px;
+  height: 65px;
+}
+
+.cake-scheme1 {
+  background-image: url('CakeScheme1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 75px;
+  height: 60px;
+}
+
+.schemes {
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px 160px;
+  gap: 5px;
+}
+
+.adjust-cake-scheme2 {
+  height: 37px;
+}
+
+.adjust-cake-scheme1 {
+  height: 42px;
+}
+
+.selectable {
+  border-radius: 4px;
+  width: 155px;
+  display: flex;
+  &:hover {
+    box-shadow: 0px 0px 5px rgb(185, 185, 185);
+  }
+  p {
+    font-size: 12px;
+  }
+}

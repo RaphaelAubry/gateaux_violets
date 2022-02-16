@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
+import { clearPrewarmedResources } from "mapbox-gl";
 import { initBraintree } from "./braintree";
 
 const initFormBasket = () => {
@@ -147,6 +148,32 @@ const displayPaymentMethod = () => {
   }
 }
 
+const initSize = () => {
+
+  //select all cards in an array
+  const cards = document.querySelectorAll(".selectable")
+  const border = "2px solid purple";
+  const input = document.querySelector(".targetSize")
+
+  cards.forEach((card, index) => { card.addEventListener('click', (event) => {
+
+    //border style for the selected card
+    if (card.style.border != border){
+      card.style.border = border;
+      input.innerText = card.dataset.size
+      // loop to clean all others cards at f=different index from borders
+      cards.forEach((card, index2) => {
+        if (index != index2){
+        card.style.border = "none";
+        }
+      });
+    }else{
+      card.style.border = "none";
+    }
+  });
+});
+}
 
 
-export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod }
+
+export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize }

@@ -17,12 +17,17 @@
 
       <p class="name"><%= @cake.name %></p>
 
+      <!-- Taille -->
+      <label>Taille</label>
+      <%= render 'cake_scheme' %>
+
+
       <!-- Parfum -->
       <%= f.input :flavour_id, collection: Flavour.all, :input_html => { class: "field" }, label_method: :description, label: t('flavour'), include_blank: false %>
 
       <!-- Personnalisation -->
       <div id="rotateable">
-        <label><%= t('label.customization') %></label><div class="fas fa-angle-right"></div>
+        <label class="push-right"><%= t('label.customization') %></label><div class="fas fa-angle-right"></div>
       </div>
       <%= f.input :option, :input_html => { class: "target" }, label: false, include_blank: false %>
 
