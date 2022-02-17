@@ -47,7 +47,7 @@ input, textarea {
 }
 
 #delivery_date {
-  width: 230px;
+  width: 380px;
   background: $white;
 }
 
@@ -84,4 +84,9 @@ input, textarea {
 #rotateable {
   display: flex;
   padding-right: 7px;
+  width: 379px;
+}
+
+#line_flavour_id, #line_option {
+  width: 380px;
 }
