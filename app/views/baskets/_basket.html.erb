@@ -15,6 +15,7 @@
         <!-- description -->
         <div>
           <p class="name"><%= line.cake.name %></p>
+          <p class="basket-delivery"><%= line.dimension.level %> étage(s) <%= line.dimension.share %> parts</p>
           <p class="basket-delivery"><%= line.flavour.description %></p>
           <p class="basket-delivery"><%= t('field.delivered_at') %><%= l line.delivery_date, formats: :default %></p>
           <div class="horizontal-narrow">
@@ -40,6 +41,7 @@
           <!-- description -->
           <div>
             <p class="name"><%= line.cake.name %></p>
+            <p class="basket-delivery"><%= line.dimension.level %> étage(s) <%= line.dimension.share %> parts</p>
             <p class="basket-delivery"><%= line.flavour.description %></p>
             <p class="basket-delivery"><%= t('field.delivered_at') %><%= l line.delivery_date, format: :default %></p>
             <div class="horizontal-narrow">

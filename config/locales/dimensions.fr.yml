@@ -1,0 +1,10 @@
+fr:
+  share: "parts"
+  level: "étage(s)"
+  title:
+    dimensions: "Dimensions"
+    dimension: "Dimension"
+    new_dimension: "Nouvelle dimension"
+  label:
+    share: "Parts"
+    level: "Etages"

@@ -1,5 +1,5 @@
 class FlavoursController < ApplicationController
-  before_action :set_flavour, only: [:show, :edit, :update, :destroy]
+  before_action :set_flavour, only: [:edit, :update, :destroy]
 
   def index
     @flavours = policy_scope(Flavour)
@@ -18,9 +18,6 @@ class FlavoursController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def show
   end
 
   def edit

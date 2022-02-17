@@ -1,0 +1,35 @@
+<div class="left">
+
+      <h1><%= t('title.dimensions') %></h1>
+
+      <% if current_user.admin? %>
+        <div class="button-wrapper">
+          <%= link_to t('form.new'), new_dimension_path, class: "button" %>
+        </div>
+
+
+      <div class="">
+        <% @dimensions.each do |dimension| %>
+
+          <div class="horizontal">
+            <%= link_to " #{dimension.level} #{t('level')}/  #{dimension.share} #{t('share')} ", dimension_path(dimension), class: "tabl-email" %>
+            <div class="push-right"><%= dimension.id %></div>
+            <div class="actions">
+              <div class="button-wrapper">
+                <%= link_to t('form.edit'), edit_dimension_path(dimension), class: "action" %>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+
+      <div class="dimensions-cake-scheme">
+        <%= render 'lines/cake_scheme' %>
+      </div>
+      <!-- >
+      <div class="button-wrapper">
+        <%= link_to "Back", :back, class: "button" %>
+      </div> -->
+   <% end %>
+</div>

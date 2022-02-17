@@ -1,7 +1,7 @@
 <div class="schemes">
 
   <!--Taille 5 -->
-  <div class="selectable" data-size="5">
+  <div class="selectable" data-size="<%= Dimension.first.id + 4 %>">
     <div class="cake-scheme3"></div>
     <div>
       <p>2 étages</p>
@@ -11,7 +11,7 @@
   </div>
 
   <!--Taille 4 -->
-  <div class="selectable" data-size="4">
+  <div class="selectable" data-size="<%= Dimension.first.id + 3 %>">
     <div class="cake-scheme3"></div>
     <div>
       <p>2 étages</p>
@@ -21,7 +21,7 @@
   </div>
 
   <!--Taille 3 -->
-  <div class="selectable" data-size="3">
+  <div class="selectable" data-size="<%= Dimension.first.id + 2 %>">
     <div class="cake-scheme3"></div>
     <div>
       <p>2 étages</p>
@@ -31,7 +31,7 @@
   </div>
 
   <!--Taille 2 -->
-  <div class="selectable" data-size="2">
+  <div class="selectable" data-size="<%= Dimension.first.id + 1 %>">
     <div>
     <div class="adjust-cake-scheme2"></div>
     <div class="cake-scheme2"></div>
@@ -43,7 +43,7 @@
   </div>
 
   <!--Taille 1 -->
-  <div class="selectable" data-size="1">
+  <div class="selectable" data-size="<%= Dimension.first.id %>">
     <div>
     <div class="adjust-cake-scheme1"></div>
     <div class="cake-scheme1"></div>
@@ -54,5 +54,4 @@
     </div>
   </div>
 
-  <div class="targetSize"><p>Select your format</p></div>
 </div>

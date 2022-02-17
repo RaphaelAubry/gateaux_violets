@@ -18,9 +18,9 @@
       <p class="name"><%= @cake.name %></p>
 
       <!-- Taille -->
-      <label>Taille</label>
+      <label><%= t('label.dimension') %></label>
       <%= render 'cake_scheme' %>
-
+      <%= f.input :dimension_id,  :input_html => { class: "noshow", id: "targetSize" }, label: false %>
 
       <!-- Parfum -->
       <%= f.input :flavour_id, collection: Flavour.all, :input_html => { class: "field" }, label_method: :description, label: t('flavour'), include_blank: false %>

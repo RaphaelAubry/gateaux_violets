@@ -1,6 +1,6 @@
 <div class="left">
 
-      <h1>Flavours</h1>
+      <h1><%= t('title.flavours') %></h1>
 
       <% if current_user.admin? %>
         <div class="button-wrapper">
@@ -12,12 +12,16 @@
         <% @flavours.each do |flavour| %>
 
           <div class="horizontal">
-            <%= link_to flavour.description, flavour_path(flavour), class: "push-right" %>
-            <div class="button-wrapper">
-              <%= link_to t('form.edit'), edit_flavour_path(flavour), class: "button" %>
+            <div class="push-right">
+              <p><%= flavour.description %></p>
             </div>
-            <div class="button-wrapper">
-              <%= link_to t('form.delete'), flavour_path(flavour), method: :delete, data: { confirm: t('confirm') }, class: "button", remote: true %>
+            <div class="actions">
+              <div class="button-wrapper">
+                <%= link_to t('form.edit'), edit_flavour_path(flavour), class: "action" %>
+              </div>
+              <div class="button-wrapper">
+                <%= link_to t('form.delete'), flavour_path(flavour), method: :delete, data: { confirm: t('confirm') }, class: "action", remote: true %>
+              </div>
             </div>
           </div>
 

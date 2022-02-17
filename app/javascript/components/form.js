@@ -153,14 +153,16 @@ const initSize = () => {
   //select all cards in an array
   const cards = document.querySelectorAll(".selectable")
   const border = "2px solid purple";
-  const input = document.querySelector(".targetSize")
+  const input = document.getElementById("targetSize")
 
   cards.forEach((card, index) => { card.addEventListener('click', (event) => {
 
     //border style for the selected card
     if (card.style.border != border){
       card.style.border = border;
-      input.innerText = card.dataset.size
+      if (input != null) {
+      input.value = card.dataset.size
+      }
       // loop to clean all others cards at f=different index from borders
       cards.forEach((card, index2) => {
         if (index != index2){
