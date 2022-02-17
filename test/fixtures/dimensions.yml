@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  share: 1
+  level: 1
+
+two:
+  share: 1
+  level: 1

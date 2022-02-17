@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_15_131452) do
+ActiveRecord::Schema.define(version: 2022_02_17_131121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,13 @@ ActiveRecord::Schema.define(version: 2022_02_15_131452) do
     t.boolean "active"
   end
 
+  create_table "dimensions", force: :cascade do |t|
+    t.integer "share"
+    t.integer "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "flavours", force: :cascade do |t|
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
@@ -93,8 +100,11 @@ ActiveRecord::Schema.define(version: 2022_02_15_131452) do
     t.datetime "updated_at", precision: 6, null: false
     t.datetime "delivery_date"
     t.bigint "flavour_id", null: false
+    t.string "option"
+    t.bigint "dimension_id", null: false
     t.index ["basket_id"], name: "index_lines_on_basket_id"
     t.index ["cake_id"], name: "index_lines_on_cake_id"
+    t.index ["dimension_id"], name: "index_lines_on_dimension_id"
     t.index ["flavour_id"], name: "index_lines_on_flavour_id"
   end
 
@@ -128,6 +138,7 @@ ActiveRecord::Schema.define(version: 2022_02_15_131452) do
   add_foreign_key "baskets", "users"
   add_foreign_key "lines", "baskets"
   add_foreign_key "lines", "cakes"
+  add_foreign_key "lines", "dimensions"
   add_foreign_key "lines", "flavours"
   add_foreign_key "transactions", "baskets"
 end

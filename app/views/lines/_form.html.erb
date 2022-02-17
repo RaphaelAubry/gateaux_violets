@@ -18,23 +18,31 @@
       <p class="name"><%= @cake.name %></p>
 
       <!-- Taille -->
-      <%= f.input :quantity, collection: Line::QUANTITY, :input_html => { class: "field" }, label: false, include_blank: false %>
-      <p id="price" data-price=<%="#{d2(@cake.price)}"%>></p>
+      <label id="dimension-id" data-id="<%= @line.dimension.try(:id) %>"><%= t('label.dimension') %></label>
+      <%= render 'cake_scheme' %>
+      <%= f.input :dimension_id,  :input_html => { class: "noshow", id: "dimension-input" }, label: false %>
 
       <!-- Parfum -->
       <%= f.input :flavour_id, collection: Flavour.all, :input_html => { class: "field" }, label_method: :description, label: t('flavour'), include_blank: false %>
 
       <!-- Personnalisation -->
+      <div id="rotateable">
+        <label class="push-right"><%= t('label.customization') %></label><div class="fas fa-angle-right"></div>
+      </div>
+      <%= f.input :option, :input_html => { class: "target" }, label: false, include_blank: false %>
+
 
       <!-- Date -->
       <%= f.input :delivery_date, as: :string, :input_html => { id: "delivery_date" } %>
+
+      <!-- Quantity -->
+      <%= f.input :quantity, collection: Line::QUANTITY, :input_html => { class: "field" }, label: t('label.quantity'), include_blank: false %>
+      <p id="price" data-price=<%="#{d2(@cake.price)}"%>></p>
 
       <!-- Total -->
       <div class="horizontal">
         <p id="total" class="price"><%= t('price', price: d2(@cake.price)) %></p>
       </div>
-
-
 
       <div class="button-wrapper">
         <%= f.submit t('form.order'), class: "button" %>

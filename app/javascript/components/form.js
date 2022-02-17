@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
+import { clearPrewarmedResources } from "mapbox-gl";
 import { initBraintree } from "./braintree";
 
 const initFormBasket = () => {
@@ -147,6 +148,44 @@ const displayPaymentMethod = () => {
   }
 }
 
+const initSize = () => {
+
+  //select all cards in an array
+  const cards = document.querySelectorAll(".selectable")
+  const borderPurple = "1px solid purple";
+  const borderGreen = "1px solid #1EDD88";
+  const input = document.getElementById("dimension-input")
+  const dimension = document.getElementById("dimension-id")
+
+  //border style green for the selected card in edit mode
+  if (dimension != null){
+    cards.forEach((card) => {
+      if (dimension.dataset.id == card.dataset.size){
+        card.style.border = borderGreen;
+      }
+    });
+  }
+  cards.forEach((card, index) => { card.addEventListener('click', (event) => {
+
+    //border style for the selected card in new mode
+    if (card.style.border != borderPurple){
+      card.style.border = borderPurple;
+      if (input != null) {
+      input.value = card.dataset.size
+      }
+      // loop to clean all others cards at f=different index from borders
+      cards.forEach((card, index2) => {
+        if (index != index2){
+        card.style.border = "none";
+        }
+      });
+    }else{
+      card.style.border = "none";
+    }
+  });
+});
+}
 
 
-export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod }
+
+export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize }

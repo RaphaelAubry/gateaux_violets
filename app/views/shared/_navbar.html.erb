@@ -73,7 +73,9 @@
                     <!-- Deliveries -->
                     <%= link_to t('profile.deliveries'), lines_path, class: "dropdown-item" %>
                     <!-- Flavours -->
-                    <%= link_to 'Flavours', flavours_path, class: "dropdown-item" %>
+                    <%= link_to t('title.flavours'), flavours_path, class: "dropdown-item" %>
+                    <!-- Dimensions -->
+                    <%= link_to t('title.dimensions'), dimensions_path, class: "dropdown-item" %>
                   <% else %>
                     <%= link_to t('profile.my_baskets'), baskets_path, class: "dropdown-item" %>
                   <% end %>

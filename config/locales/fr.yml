@@ -35,6 +35,9 @@ fr:
         photo: "Photo"
       basket:
         status: "Statut"
+      dimension:
+        share: "Nombre de parts"
+        level: "Nombre d'étages"
     errors:
       models:
         user:
@@ -87,6 +90,14 @@ fr:
             city:
               blank: "doit être complété"
               invalid: "non conforme"
+        dimension:
+          attributes:
+            share:
+              blank: "doit être complété"
+              invalid: "doit être supérieur à 0"
+            level:
+              blank: "doit être complété"
+              invalid: "doit être supérieur à 0"
   STATUS:
     basket: "1. commande"
     delivery: "2. livraison"

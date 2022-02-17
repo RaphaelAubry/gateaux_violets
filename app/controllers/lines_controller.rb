@@ -63,7 +63,7 @@ class LinesController < ApplicationController
   private
 
   def line_params
-    params.require(:line).permit(:quantity, :total, :cake_id, :basket_id, :flavour_id, :delivery_date)
+    params.require(:line).permit(:quantity, :total, :cake_id, :basket_id, :flavour_id, :dimension_id, :option, :delivery_date)
   end
 
   def set_line

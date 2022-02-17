@@ -1,10 +1,10 @@
 <div class="center">
   <div class="form">
 
-    <h1><%= t('title.new_flavour') %></h1>
-    <%= simple_form_for(@flavour) do |f| %>
-      <%= f.input :description, :input_html => { class: "field" } %>
-
+    <h1><%= t('title.new_dimension') %></h1>
+    <%= simple_form_for(@dimension) do |f| %>
+      <%= f.input :level, :input_html => { class: "field" } %>
+      <%= f.input :share, :input_html => { class: "field" } %>
       <div class="button-wrapper">
         <%= f.submit t('form.validate'), class: "button" %>
       </div>

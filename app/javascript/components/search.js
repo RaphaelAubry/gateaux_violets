@@ -4,11 +4,9 @@ const initSearch = () => {
 
  if (bar != null){
   bar.addEventListener('click', (e) => {
-  bar.parentElement.classList.toggle("open")
+    bar.parentElement.classList.toggle("open")
     });
  }
-
-
 }
 
 export { initSearch }

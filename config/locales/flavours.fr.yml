@@ -1,3 +1,5 @@
 fr:
-  flavours: "Parfums"
-  flavour: "Parfum"
+  title:
+    flavours: "Parfums"
+    flavour: "Parfum"
+    new_flavour: "Nouveau parfum"

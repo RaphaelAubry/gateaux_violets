@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   resources :transactions, only: [:index, :show]
 
-  resources :flavours
+  resources :flavours, except: [:show]
+  resources :dimensions, except: [:show]
 
 end
