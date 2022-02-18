@@ -14,7 +14,7 @@
   font-size: 14px;
 }
 
-.field, .form-control {
+.field, .form-control, .form-check-input {
   &:hover {
     box-shadow: 0px 0px 0px 0px $violet;
     border: 2px solid $violet;
@@ -23,6 +23,28 @@
     box-shadow: 0px 0px 0px 0rem $violet;
     border: 2px solid $violet;
   }
+  &:enabled {
+    box-shadow: 0px 0px 0px 0rem $violet;
+    border: 1px solid $violet;
+  }
+  &:valid {
+  }
+}
+
+input:-webkit-autofill {
+  background-color: $violet !important;
+  box-shadow: 0 0 0 0 $violet !important;
+  background-image: none !important;
+  color: white;
+  filter: none;
+}
+
+input:autofill:enabled {
+  background-color: $violet !important;
+  box-shadow: 0 0 0 0 $violet !important;
+  background-image: none !important;
+  color: white;
+  filter: none;
 }
 
 label {
