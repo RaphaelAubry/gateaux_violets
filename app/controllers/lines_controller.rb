@@ -2,7 +2,6 @@ class LinesController < ApplicationController
   before_action :set_line, only: [:edit, :update, :destroy]
   before_action :set_cake, only: [:new, :create]
 
-
   def index
     @lines = policy_scope(Line)
     if params[:query].present?

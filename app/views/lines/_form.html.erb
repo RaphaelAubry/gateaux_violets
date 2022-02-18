@@ -23,7 +23,7 @@
       <%= f.input :dimension_id,  :input_html => { class: "noshow", id: "dimension-input" }, label: false %>
 
       <!-- Parfum -->
-      <%= f.input :flavour_id, collection: Flavour.all, :input_html => { class: "field" }, label_method: :description, label: t('flavour'), include_blank: false %>
+      <%= f.input :flavour_id, collection: Flavour.all, :input_html => { class: "field" }, label_method: :description, label: t('label.flavour'), include_blank: false %>
 
       <!-- Personnalisation -->
       <div id="rotateable">
