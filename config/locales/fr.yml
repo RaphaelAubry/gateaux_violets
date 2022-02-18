@@ -8,6 +8,7 @@ fr:
   sales_rules: "Conditions générales de vente"
   sales_rules_agreement: "J'accepte les conditions générales de vente"
   sales_rules_instructions: "Vous devez accepter les conditions générales de vente pour commander"
+  empty_basket_instruction: "Votre panier est vide"
   activerecord:
     attributes:
       user:

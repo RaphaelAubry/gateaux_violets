@@ -7,5 +7,6 @@ class Line < ApplicationRecord
 
   validates :delivery_date, presence: true
 
+
   QUANTITY = (1..10)
 end

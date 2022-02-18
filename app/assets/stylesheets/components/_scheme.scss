@@ -29,6 +29,9 @@
   display: grid;
   grid-template-columns: 160px 160px 160px 160px 160px;
   gap: 5px;
+  @media(max-width: 768px) {
+    grid-template-columns: 160px 160px;
+  }
 }
 
 .adjust-cake-scheme2 {

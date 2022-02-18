@@ -41,7 +41,7 @@ class BasketsController < ApplicationController
             params[:basket][:status] = Basket::STATUS[0]
             @basket.update(basket_params)
             redirect_to basket_path(@basket)
-            flash[:notice] = t('sales_rules_instructions')
+            flash[:alert] = t('sales_rules_instructions')
           end
         when Basket::STATUS[1] #delivery
           @basket.update(basket_params)
@@ -64,6 +64,7 @@ class BasketsController < ApplicationController
             redirect_to basket_path(@basket)
         end
     else
+      redirect_to cakes_path
       flash[:alert] = t('empty_basket_instruction')
     end
   end
