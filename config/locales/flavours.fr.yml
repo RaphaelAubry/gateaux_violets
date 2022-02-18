@@ -3,3 +3,5 @@ fr:
     flavours: "Parfums"
     flavour: "Parfum"
     new_flavour: "Nouveau parfum"
+  label:
+     flavour: "Parfum"
