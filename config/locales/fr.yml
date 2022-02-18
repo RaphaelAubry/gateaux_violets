@@ -45,6 +45,7 @@ fr:
             email:
               blank: "doit être complété"
               invalid: "non conforme"
+              taken: "déjà pris"
             password:
               blank: "doit être complété"
               too_short: "trop court"
