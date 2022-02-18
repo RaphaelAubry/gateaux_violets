@@ -152,8 +152,8 @@ const initSize = () => {
 
   //select all cards in an array
   const cards = document.querySelectorAll(".selectable")
-  const borderPurple = "1px solid purple";
-  const borderGreen = "1px solid #1EDD88";
+  const borderPurple = "2px solid rgb(58, 22, 120)";
+  const borderGreen = "2px solid #1EDD88";
   const input = document.getElementById("dimension-input")
   const dimension = document.getElementById("dimension-id")
 
