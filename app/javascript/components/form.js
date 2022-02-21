@@ -186,6 +186,31 @@ const initSize = () => {
 });
 }
 
+const initOption = () => {
 
+  const source = document.getElementById("line_option")
+  const targetInput = document.getElementById("line_option")
 
-export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize }
+  targetInput.addEventListener("keyup", (event) => {
+
+    console.log(targetInput.value)
+    //1 letter
+    if (targetInput.value.match(/^[A-Z]{1}$/)) {
+      console.log("success 1 letter")
+    //short < 5 letters
+    } else if (targetInput.value.match(/^[A-Z]{1}[\w|\W]{0,4}\S$/)){
+      console.log("success short < 5 letters")
+    //age 1,2 or 3 numbers
+    } else if (targetInput.value.match(/^[0-9]{1,3}$/)){
+      console.log("success age 1,2 or 3 numbers")
+    //long > 5 letters
+    } else if (targetInput.value.match(/^[A-Z]{1}([\w|\W]){4,}\S$/)){
+      console.log("succes long > 5 letters")
+    //failure
+    } else {
+      console.log("failure no matches")
+    }
+  });
+}
+
+export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize, initOption }
