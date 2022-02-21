@@ -1,5 +1,5 @@
 <div class="left">
-  <div class="form">
+  <div class="">
 
     <div>
       <p id="dbdate" data-deliverydate=<%= "#{@line.delivery_date.to_json}" %>></p>
@@ -17,31 +17,70 @@
 
       <p class="name"><%= @cake.name %></p>
 
+      <div class="message">
+        <div class="horizontal">
+          <%= image_tag "logo.png", class: "avatar" %>
+          <p>Nous vous proposons 5 dimensions au choix.
+          En sélectionnant un gâteau 1 étage 10 parts, çà sera le dessin du haut sur la photo.
+          Si vous optez pour 1 étage 20 parts, je vous reproduis le dessin du bas.
+          </p>
+        </div>
+      </div>
+
       <!-- Taille -->
       <label id="dimension-id" data-id="<%= @line.dimension.try(:id) %>"><%= t('label.dimension') %></label>
       <%= render 'cake_scheme' %>
       <%= f.input :dimension_id,  :input_html => { class: "noshow", id: "dimension-input" }, label: false %>
 
+      <div class="message">
+        <div class="horizontal">
+          <%= image_tag "logo.png", class: "avatar" %>
+          <p>Ensuite, vous avez le choix du goût de la genoise fourrée.
+          </p>
+        </div>
+      </div>
+
       <!-- Parfum -->
       <%= f.input :flavour_id, collection: Flavour.all, :input_html => { class: "field" }, label_method: :description, label: t('label.flavour'), include_blank: false %>
 
+      <div class="message">
+        <div class="horizontal">
+          <%= image_tag "logo.png", class: "avatar" %>
+          <p>Je peux vous inscrire dans le cadre ses initiales, son prénom ou son âge.
+          Un prénom, un mot d'amour de plus de 5 lettres sera inscrit sur le socle.
+          Si vous souhaitez entretenir le mystère, ne remplissez pas.
+          </p>
+        </div>
+      </div>
+
       <!-- Personnalisation -->
       <div id="rotateable">
-        <label class="push-right"><%= t('label.customization') %></label><div class="fas fa-angle-right"></div>
+        <label class="push-right"><%= t('label.customization') %></label><div class="fas fa-angle-down"></div>
       </div>
-      <%= f.input :option, :input_html => { class: "target" }, label: false, include_blank: false %>
+      <div class="target">
+        <%= f.input :option, label: false, include_blank: false %>
+        <div id="personnalisation-message"></div>
+      </div>
 
+      <div class="message">
+        <div class="horizontal">
+          <%= image_tag "logo.png", class: "avatar" %>
+          <p>Enfin, accordez moi au moins 7 jours pour confectionner votre gâteau.
+          </p>
+        </div>
+      </div>
 
       <!-- Date -->
       <%= f.input :delivery_date, as: :string, :input_html => { id: "delivery_date" } %>
 
-      <!-- Quantity -->
-      <%= f.input :quantity, collection: Line::QUANTITY, :input_html => { class: "field" }, label: t('label.quantity'), include_blank: false %>
-      <p id="price" data-price=<%="#{d2(@cake.price)}"%>></p>
-
-      <!-- Total -->
       <div class="horizontal">
+        <!-- Quantity -->
+        <%= f.input :quantity, collection: Line::QUANTITY, :input_html => { class: "field" }, label: t('label.quantity'), include_blank: false %>
+        <p id="price" data-price=<%="#{d2(@cake.price)}"%>></p>
+
+        <!-- Total -->
         <p id="total" class="price"><%= t('price', price: d2(@cake.price)) %></p>
+
       </div>
 
       <div class="button-wrapper">

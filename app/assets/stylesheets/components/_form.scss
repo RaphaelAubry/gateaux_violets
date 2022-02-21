@@ -69,6 +69,7 @@ input, textarea {
 
 #line_quantity {
   width: 80px;
+  cursor: pointer;
 }
 
 #delivery_date {
@@ -109,11 +110,27 @@ input, textarea {
   display: flex;
   padding-right: 7px;
   width: 379px;
+  cursor: pointer;
 }
 
 #line_flavour_id, #line_option {
   width: 380px;
   &:hover {
   border: 1px solid $violet;
+  cursor: pointer;
   }
+}
+
+.valid {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: $green;
+}
+
+.invalid {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: $red;
 }

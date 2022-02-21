@@ -44,7 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   upperCase("address_name");
   upperCase("form-city");
   upperCase("cake_name");
-  rotate("rotateable",".fa-angle-right",".target");
+  rotate("rotateable",".fa-angle-down",".target");
   initSize();
   initOption();
 })
