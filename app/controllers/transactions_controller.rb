@@ -11,6 +11,7 @@ class TransactionsController < ApplicationController
 
     @transaction = Transaction.new
     token()
+    authorize @transaction
   end
 
   def create

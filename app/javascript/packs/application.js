@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
-import { initFormBasket, initCalendarLine, displayPaymentMethod, initFormLine, initSize } from '../components/form.js'
+import { initFormBasket, initCalendarLine, displayPaymentMethod, initFormLine, initSize, initOption } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
 import { initBraintree } from '../components/braintree.js'
 import { initBadge } from '../components/badge.js'
@@ -44,6 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   upperCase("address_name");
   upperCase("form-city");
   upperCase("cake_name");
-  rotate("rotateable",".fa-angle-right",".target");
+  rotate("rotateable",".fa-angle-down",".target");
   initSize();
+  initOption();
 })
