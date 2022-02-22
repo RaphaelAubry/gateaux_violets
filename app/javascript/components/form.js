@@ -165,6 +165,7 @@ const initSize = () => {
       }
     });
   }
+
   cards.forEach((card, index) => { card.addEventListener('click', (event) => {
 
     //border style for the selected card in new mode
@@ -181,12 +182,39 @@ const initSize = () => {
         card.style.padding = "10px 5px 10px 5px";
         }
       });
-    }else{
-      card.style.border = "none";
-      card.style.padding = "10px 5px 10px 5px";
-    }
+      }else{
+        card.style.border = "none";
+        card.style.padding = "10px 5px 10px 5px";
+      }
+    });
   });
-});
+}
+
+const selectImage = (datasetName) => {
+
+  //select all cards in an array
+  const cards = document.querySelectorAll(".selectable-custom")
+  const borderPurple = "2px solid rgb(58, 22, 120)";
+  const borderGreen = "2px solid #1EDD88";
+
+  cards.forEach((card, index) => {
+
+      //border style for the selected card in new mode
+      if (card.dataset.option == datasetName) {
+        card.style.border = borderPurple;
+        card.style.padding = "10px 5px 6px 5px";
+        // loop to clean all others cards at f=different index from borders
+        cards.forEach((card, index2) => {
+          if (index != index2) {
+            card.style.border = "none";
+            card.style.padding = "10px 5px 10px 5px";
+          }
+        });
+      }else{
+        card.style.border = "none";
+        card.style.padding = "10px 5px 10px 5px";
+      }
+  });
 }
 
 const initOption = () => {
@@ -202,30 +230,38 @@ const initOption = () => {
       if (targetInput.value.match(/^[A-Z]{1}$/)) {
         console.log("success 1 letter")
         targetDiv.innerHTML = "<div class='valid'>Inscription d'une initiale dans un cadre</div>"
+        selectImage("frame")
 
       //short < 5 letters
-      } else if (targetInput.value.match(/^[A-Z]{1}[\w|\W]{0,3}\S$/)){
+      } else if (targetInput.value.match(/^[A-Z|0-9]{1}[\w|\W|0-9]{0,3}\S$/)){
         console.log("success short < 5 letters")
         targetDiv.innerHTML = "<div class='valid'>Inscription d'un prénom ou autre de moins de 5 lettres dans un cadre</div>"
+        selectImage("frame")
 
       //age 1,2 or 3 numbers
       } else if (targetInput.value.match(/^[0-9]{1,3}$/)){
         console.log("success age 1,2 or 3 numbers")
         targetDiv.innerHTML = "<div class='valid'>Inscription de l'âge dans un cadre</div>"
+        selectImage("frame")
 
       //long > 5 letters
-      } else if (targetInput.value.match(/^[A-Z]{1}([\w|\W]){4,}\S$/)){
+      } else if (targetInput.value.match(/^[A-Z|0-9{1}]{1}([\w|\W|0-9]){4,}\S$/)){
         console.log("succes long > 5 letters")
         targetDiv.innerHTML = "<div class='valid'>Inscription d'un prénom ou autre de plus de 5 lettres sur le socle</div>"
+        selectImage("support")
 
       //failure
       } else {
         console.log("failure no matches")
-        targetDiv.innerHTML = "<div class='invalid'>Doit commencer par une majuscule et ne pas finir par un espace &#128517</div>"
-
+        targetDiv.innerHTML = "<div class='invalid'>Doit commencer par un chiffre, une majuscule et ne pas finir par un espace &#128517</div>"
+        selectImage("")
       }
     });
   }
 }
+
+
+
+
 
 export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize, initOption }
