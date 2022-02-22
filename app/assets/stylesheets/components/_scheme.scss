@@ -57,6 +57,21 @@
   }
 }
 
+.selectable-custom {
+  border-radius: 4px;
+  width: 155px;
+  display: flex;
+  padding: 10px 5px 10px 5px;
+  position: relative;
+  &:hover {
+    box-shadow: 0px 0px 5px $box-shadow-gray;
+    cursor: pointer;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
 .dimensions-cake-scheme {
   margin-top: 50px;
 }
@@ -87,4 +102,22 @@ top: 74px;
 left: 21px;
 color: white;
 font-size: 12px;
+}
+
+.custom-frame {
+  background-image: url('CakeCadre.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 75px;
+  height: 60px;
+}
+
+.custom-ribbon {
+  background-image: url('CakeSocleRuban.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  width: 75px;
+  height: 60px;
 }

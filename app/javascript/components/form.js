@@ -170,6 +170,7 @@ const initSize = () => {
     //border style for the selected card in new mode
     if (card.style.border != borderPurple){
       card.style.border = borderPurple;
+      card.style.padding = "10px 5px 6px 5px";
       if (input != null) {
       input.value = card.dataset.size
       }
@@ -177,10 +178,12 @@ const initSize = () => {
       cards.forEach((card, index2) => {
         if (index != index2){
         card.style.border = "none";
+        card.style.padding = "10px 5px 10px 5px";
         }
       });
     }else{
       card.style.border = "none";
+      card.style.padding = "10px 5px 10px 5px";
     }
   });
 });
