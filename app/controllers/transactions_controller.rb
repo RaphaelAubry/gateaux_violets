@@ -16,12 +16,14 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new
+    authorize @transaction
     @basket = Basket.find(params[:basket_id])
     @transaction.basket = @basket
     pay(@basket.totalize)
     if @transaction.save
       if current_user.addresses.exists?
         @basket.update(status: Basket::STATUS[3], payment_type: Basket::PAYMENT_TYPE[2])
+        UserMailer.with(user: current_user, basket: @basket).basket_completed_email.deliver_now #completed
         redirect_to basket_path(@basket)
       else
         flash[:notice] = t('address_instruction')

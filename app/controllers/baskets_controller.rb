@@ -49,10 +49,12 @@ class BasketsController < ApplicationController
         when Basket::STATUS[2] #payment
           if current_user.addresses.exists?
             @basket.update(basket_params)
+            UserMailer.with(user: current_user, basket: @basket).basket_completed_email.deliver_now #completed
             redirect_to basket_path(@basket)
           else
             if params[:basket][:status] == Basket::STATUS[1]
               @basket.update(basket_params)
+              UserMailer.with(user: current_user, basket: @basket).basket_completed_email.deliver_now #completed
               redirect_to basket_path(@basket)
             else
               flash[:alert] = t('address_request')
