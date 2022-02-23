@@ -272,6 +272,14 @@ const checkInputCustom = (targetDiv, targetInput) => {
   }
 }
 
+const testUpper = () => {
+
+    const target = document.getElementById("line_option")
+    if (target.value.match(/(^[a-z])/)){
+      const x = target.value.search(/(^[a-z])/)
+      console.log(x)
+    }
+}
 
 
-export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize, initOption }
+export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize, initOption, testUpper }

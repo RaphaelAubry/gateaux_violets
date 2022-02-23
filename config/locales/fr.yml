@@ -73,6 +73,8 @@ fr:
             delivery_date:
               blank: "doit être choisie"
               invalid: "non conforme"
+            option:
+              invalid: "non conforme"
         address:
           attributes:
             name:
