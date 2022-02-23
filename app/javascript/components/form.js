@@ -245,6 +245,7 @@ const checkInputCustom = (targetDiv, targetInput) => {
     console.log("success 1 letter")
     targetDiv.innerHTML = "<div class='valid'>Inscription d'une initiale dans un cadre</div>"
     selectImage("frame")
+    console.log(capitalize(targetInput.value))
 
     //short < 5 letters
   } else if (targetInput.value.match(/^[A-Z|0-9]{1}[\w|\W|0-9]{0,3}\S$/)) {
@@ -272,14 +273,15 @@ const checkInputCustom = (targetDiv, targetInput) => {
   }
 }
 
-const testUpper = () => {
-
-    const target = document.getElementById("line_option")
-    if (target.value.match(/(^[a-z])/)){
-      const x = target.value.search(/(^[a-z])/)
-      console.log(x)
-    }
+const capitalize = (value) => {
+  const textArray = value.split(' ')
+  const capitalizedText = ''
+  for (const i = 0; i < textArray.length; i++) {
+    capitalizedText += textArray[i].charAt(0).toUpperCase() + textArray[i].slice(1) + ' '
+  }
+  return capitalizedText
 }
 
 
-export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize, initOption, testUpper }
+
+export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize, initOption }

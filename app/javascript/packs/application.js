@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap';
 
-import { initFormBasket, initCalendarLine, displayPaymentMethod, initFormLine, initSize, initOption, testUpper } from '../components/form.js'
+import { initFormBasket, initCalendarLine, displayPaymentMethod, initFormLine, initSize, initOption  } from '../components/form.js'
 import { initFlow } from '../components/flow.js'
 import { initBraintree } from '../components/braintree.js'
 import { initBadge } from '../components/badge.js'
@@ -48,5 +48,4 @@ document.addEventListener('turbolinks:load', () => {
   rotate("rotateable",".fa-angle-down",".target");
   initSize();
   initOption();
-  testUpper();
 })
