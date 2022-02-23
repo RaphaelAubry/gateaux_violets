@@ -161,7 +161,7 @@ const initSize = () => {
   if (dimension != null){
     cards.forEach((card) => {
       if (dimension.dataset.id == card.dataset.size){
-        card.style.border = borderGreen;
+        card.style.border = borderPurple;
       }
     });
   }
@@ -223,44 +223,54 @@ const initOption = () => {
   const targetInput = document.getElementById("line_option")
 
   if (targetInput != null){
+
+    // when form is loaded on screen edit mode
+    const date = document.getElementById("dbdate")
+    if (date.dataset.deliverydate != "null"){
+      checkInputCustom(targetDiv, targetInput);
+    }
+
+    // when user uses the form create mode
     targetInput.addEventListener("keyup", (event) => {
-
-      console.log(targetInput.value)
-      //1 letter
-      if (targetInput.value.match(/^[A-Z]{1}$/)) {
-        console.log("success 1 letter")
-        targetDiv.innerHTML = "<div class='valid'>Inscription d'une initiale dans un cadre</div>"
-        selectImage("frame")
-
-      //short < 5 letters
-      } else if (targetInput.value.match(/^[A-Z|0-9]{1}[\w|\W|0-9]{0,3}\S$/)){
-        console.log("success short < 5 letters")
-        targetDiv.innerHTML = "<div class='valid'>Inscription d'un prénom ou autre de moins de 5 lettres dans un cadre</div>"
-        selectImage("frame")
-
-      //age 1,2 or 3 numbers
-      } else if (targetInput.value.match(/^[0-9]{1,3}$/)){
-        console.log("success age 1,2 or 3 numbers")
-        targetDiv.innerHTML = "<div class='valid'>Inscription de l'âge dans un cadre</div>"
-        selectImage("frame")
-
-      //long > 5 letters
-      } else if (targetInput.value.match(/^[A-Z|0-9{1}]{1}([\w|\W|0-9]){4,}\S$/)){
-        console.log("succes long > 5 letters")
-        targetDiv.innerHTML = "<div class='valid'>Inscription d'un prénom ou autre de plus de 5 lettres sur le socle</div>"
-        selectImage("support")
-
-      //failure
-      } else {
-        console.log("failure no matches")
-        targetDiv.innerHTML = "<div class='invalid'>Doit commencer par un chiffre, une majuscule et ne pas finir par un espace &#128517</div>"
-        selectImage("")
-      }
+    checkInputCustom(targetDiv, targetInput);
     });
   }
 }
 
+const checkInputCustom = (targetDiv, targetInput) => {
 
+  console.log(targetInput.value)
+  //1 letter
+  if (targetInput.value.match(/^[A-Z]{1}$/)) {
+    console.log("success 1 letter")
+    targetDiv.innerHTML = "<div class='valid'>Inscription d'une initiale dans un cadre</div>"
+    selectImage("frame")
+
+    //short < 5 letters
+  } else if (targetInput.value.match(/^[A-Z|0-9]{1}[\w|\W|0-9]{0,3}\S$/)) {
+    console.log("success short < 5 letters")
+    targetDiv.innerHTML = "<div class='valid'>Inscription d'un prénom ou autre de moins de 5 lettres dans un cadre</div>"
+    selectImage("frame")
+
+    //age 1,2 or 3 numbers
+  } else if (targetInput.value.match(/^[0-9]{1,3}$/)) {
+    console.log("success age 1,2 or 3 numbers")
+    targetDiv.innerHTML = "<div class='valid'>Inscription de l'âge dans un cadre</div>"
+    selectImage("frame")
+
+    //long > 5 letters
+  } else if (targetInput.value.match(/^[A-Z|0-9{1}]{1}([\w|\W|0-9]){4,}\S$/)) {
+    console.log("succes long > 5 letters")
+    targetDiv.innerHTML = "<div class='valid'>Inscription d'un prénom ou autre de plus de 5 lettres sur le socle</div>"
+    selectImage("support")
+
+    //failure
+  } else {
+    console.log("failure no matches")
+    targetDiv.innerHTML = "<div class='invalid'>Doit commencer par un chiffre, une majuscule et ne pas finir par un espace &#128517</div>"
+    selectImage("")
+  }
+}
 
 
 
