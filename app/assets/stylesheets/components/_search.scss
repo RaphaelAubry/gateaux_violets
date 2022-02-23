@@ -41,6 +41,9 @@ $transition: all .5s ease;
 
 .search-box {
   width: 100%;
+  @media(max-width: 768px) {
+  width: 114%;
+  }
   height: 100%;
   box-shadow: none;
   border: none;
