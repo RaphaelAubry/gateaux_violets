@@ -15,12 +15,14 @@
       <% address = line.basket.user.addresses.last %>
 
       <div class="horizontal tabl-data">
-        <p class="tabl-date"><%= l line.delivery_date, format: :default %></p>
-        <p class="tabl-id"><%= line.basket.id %></p>
-        <p class="tabl-email"><%= line.basket.user.email %></p>
-        <p class="tabl-phone"><%= format(line.basket.user.addresses.try(:phone)) %></p>
-        <p class="tabl-name"><%= line.cake.name %></p>
-        <p class="tabl-status" data-status="<%= line.basket.status %>"><%= line.basket.status %></p>
+        <%= link_to basket_path(line.basket) do %>
+          <p class="tabl-date"><%= l line.delivery_date, format: :default %></p>
+          <p class="tabl-id"><%= line.basket.id %></p>
+          <p class="tabl-email"><%= line.basket.user.email %></p>
+          <p class="tabl-phone"><%= format(line.basket.user.addresses.try(:phone)) %></p>
+          <p class="tabl-name"><%= line.cake.name %></p>
+          <p class="tabl-status" data-status="<%= line.basket.status %>"><%= line.basket.status %></p>
+        <% end %>
       </div>
 
 <% end %>
