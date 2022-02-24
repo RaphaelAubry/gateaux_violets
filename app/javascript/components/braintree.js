@@ -3,7 +3,7 @@ const initBraintree = () => {
 
   const container = document.getElementById('dropin-container')
 
-  if (container != null) {
+  if (container) {
 
     const form = document.getElementById('payment_form');
     console.log("Formulaire: " + form)
@@ -39,7 +39,5 @@ const initBraintree = () => {
     }).catch((error) => { });
   }
 }
-
-
 
 export { initBraintree }

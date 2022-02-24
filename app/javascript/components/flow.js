@@ -2,7 +2,7 @@ const initFlow = () => {
 
   const flow = document.getElementById("flow")
 
-  if (flow != null){
+  if (flow){
 
     const basket = document.getElementById("basket")
     const delivery = document.getElementById("delivery")

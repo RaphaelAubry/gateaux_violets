@@ -2,7 +2,7 @@ const initStatusBasket = () => {
 
   const statusDivs = document.querySelectorAll(".horizontal.tabl-data > .tabl-status")
 
-  if (statusDivs != null){
+  if (statusDivs){
 
     statusDivs.forEach((div) => {
       console.log(div.dataset.status);
