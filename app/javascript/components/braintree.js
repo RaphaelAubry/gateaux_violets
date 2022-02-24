@@ -6,7 +6,7 @@ const initBraintree = () => {
   if (container) {
 
     const form = document.getElementById('payment_form');
-    console.log("Formulaire: " + form)
+    console.log(form)
 
     // Step two: create a dropin instance
     braintree.dropin.create({
