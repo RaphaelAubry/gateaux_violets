@@ -3,10 +3,10 @@ const initBraintree = () => {
 
   const container = document.getElementById('dropin-container')
 
-  if (container != null) {
+  if (container) {
 
     const form = document.getElementById('payment_form');
-    console.log("Formulaire: " + form)
+    console.log(form)
 
     // Step two: create a dropin instance
     braintree.dropin.create({
@@ -39,7 +39,5 @@ const initBraintree = () => {
     }).catch((error) => { });
   }
 }
-
-
 
 export { initBraintree }

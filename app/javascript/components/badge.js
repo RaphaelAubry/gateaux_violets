@@ -3,7 +3,7 @@ const initBadge = () => {
 
 const badge = document.getElementById("badge-red")
 
-  if (badge != null){
+  if (badge){
 
     const count = document.getElementById("badge-red").dataset.items
 

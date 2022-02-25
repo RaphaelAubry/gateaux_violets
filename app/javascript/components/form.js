@@ -1,8 +1,8 @@
 import flatpickr from "flatpickr";
 import { French } from "flatpickr/dist/l10n/fr.js"
-import { clearPrewarmedResources } from "mapbox-gl";
 import { initBraintree } from "./braintree";
 
+//Basket -----------------------------------------------------------------------
 const initFormBasket = () => {
 
   // get sources and targets
@@ -11,7 +11,7 @@ const initFormBasket = () => {
   const total = document.getElementById("total")
   const price = document.getElementById("price")
 
-  if (quantity != null && total != null && price != null && flow != null){
+  if (quantity && total && price && flow){
 
     //check if there is already a quantity line in the database
     if (flow.dataset.id == ""){
@@ -33,7 +33,7 @@ const initFormLine = () => {
   const price = document.getElementById("price")
   const total = document.getElementById("total")
 
-  if (quantity != null){
+  if (quantity){
     // init total when page loads
     total.innerText = (quantity.value * price.dataset.price).toFixed(2) + " €";
     quantity.addEventListener('input', () => {
@@ -48,11 +48,11 @@ const initCalendarLine = () => {
   const date = document.getElementById("delivery_date")
   const dbdate = document.getElementById("dbdate")
 
-  if (date != null) {
+  if (date){
 
     const delivery_date = JSON.parse(dbdate.dataset.deliverydate);
 
-    if (delivery_date != null) {
+    if (delivery_date){
 
       console.log(delivery_date)
       const fp = flatpickr(date, {
@@ -63,7 +63,7 @@ const initCalendarLine = () => {
         minDate: minDeliveryDate(+(24 * 7)),
       });
 
-    } else {
+    }else{
 
       const fp = flatpickr(date, {
         // defaultDate: delivery_date,
@@ -84,70 +84,6 @@ const minDeliveryDate = (notice) => {
   return date
 }
 
-const displayPaymentMethod = () => {
-
-  const paymentType = document.querySelector("#paymentType")
-
-  if ( paymentType != null ){
-
-    const IBANDiv = document.querySelector(".IBAN")
-    const cashDiv = document.querySelector(".Cash")
-    const paypalDiv = document.querySelector(".Card")
-    const IBANIcon = document.querySelector(".fa-server")
-    const cashIcon = document.querySelector(".fa-money-bill-wave")
-    const paypalIcon = document.querySelector(".fa-money-check")
-    const manualPaymentDiv = document.querySelector(".manual-payment")
-    const ePaymentDiv = document.querySelector(".e-payment")
-
-    cashDiv.style.display = "none";
-    paypalDiv.style.display = "none";
-    cashIcon.style.display = "none";
-    paypalIcon.style.display = "none";
-    manualPaymentDiv.style.display = "";
-    ePaymentDiv.style.display = "none";
-
-    paymentType.addEventListener('change', () => {
-
-    initBraintree()
-
-    console.log("Display Payment Method: " + paymentType.options[paymentType.selectedIndex].value)
-
-      switch (paymentType.options[paymentType.selectedIndex].value) {
-        case "En espèces":
-          IBANDiv.style.display = "none";
-          cashDiv.style.display = "";
-          paypalDiv.style.display = "none";
-          IBANIcon.style.display = "none";
-          cashIcon.style.display = "";
-          paypalIcon.style.display = "none";
-          manualPaymentDiv.style.display = "";
-          ePaymentDiv.style.display = "none";
-          break;
-        case "Virement bancaire":
-          IBANDiv.style.display = "";
-          cashDiv.style.display = "none";
-          paypalDiv.style.display = "none";
-          IBANIcon.style.display = "";
-          cashIcon.style.display = "none";
-          paypalIcon.style.display = "none";
-          manualPaymentDiv.style.display = "";
-          ePaymentDiv.style.display = "none";
-          break;
-        case "Carte bancaire":
-          IBANDiv.style.display = "none";
-          cashDiv.style.display = "none";
-          paypalDiv.style.display = "";
-          IBANIcon.style.display = "none";
-          cashIcon.style.display = "none";
-          paypalIcon.style.display = "";
-          manualPaymentDiv.style.display = "none";
-          ePaymentDiv.style.display = "";
-          break;
-      }
-    })
-  }
-}
-
 const initSize = () => {
 
   //select all cards in an array
@@ -158,7 +94,7 @@ const initSize = () => {
   const dimension = document.getElementById("dimension-id")
 
   //border style green for the selected card in edit mode
-  if (dimension != null){
+  if (dimension){
     cards.forEach((card) => {
       if (dimension.dataset.id == card.dataset.size){
         card.style.border = borderPurple;
@@ -173,15 +109,15 @@ const initSize = () => {
       card.style.border = borderPurple;
       card.style.padding = "10px 5px 6px 5px";
       if (input != null) {
-      input.value = card.dataset.size
-      }
-      // loop to clean all others cards at f=different index from borders
-      cards.forEach((card, index2) => {
-        if (index != index2){
-        card.style.border = "none";
-        card.style.padding = "10px 5px 10px 5px";
+        input.value = card.dataset.size
         }
-      });
+        // loop to clean all others cards at f=different index from borders
+        cards.forEach((card, index2) => {
+          if (index != index2){
+          card.style.border = "none";
+          card.style.padding = "10px 5px 10px 5px";
+          }
+        });
       }else{
         card.style.border = "none";
         card.style.padding = "10px 5px 10px 5px";
@@ -222,7 +158,7 @@ const initOption = () => {
   const targetDiv = document.getElementById("personnalisation-message")
   const targetInput = document.getElementById("line_option")
 
-  if (targetInput != null){
+  if (targetInput){
 
     // when form is loaded on screen edit mode
     const date = document.getElementById("dbdate")
@@ -233,6 +169,7 @@ const initOption = () => {
     // when user uses the form create mode
     targetInput.addEventListener("keyup", (event) => {
     checkInputCustom(targetDiv, targetInput);
+    targetInput.value = capitalize(targetInput.value);
     });
   }
 }
@@ -245,6 +182,7 @@ const checkInputCustom = (targetDiv, targetInput) => {
     console.log("success 1 letter")
     targetDiv.innerHTML = "<div class='valid'>Inscription d'une initiale dans un cadre</div>"
     selectImage("frame")
+    console.log(capitalize(targetInput.value))
 
     //short < 5 letters
   } else if (targetInput.value.match(/^[A-Z|0-9]{1}[\w|\W|0-9]{0,3}\S$/)) {
@@ -272,6 +210,102 @@ const checkInputCustom = (targetDiv, targetInput) => {
   }
 }
 
+//forms -----------------------------------------------------------------------
+const capitalizeInputAll = (inputId) => {
+
+  const targetInput = document.getElementById(inputId)
+  if (targetInput){
+    targetInput.addEventListener('keyup', (event) => {
+      targetInput.value = capitalizeAll(targetInput.value);
+    });
+  }
+}
+
+const capitalizeInputFirst = (inputId) => {
+
+  const targetInput = document.getElementById(inputId)
+
+  if (targetInput){
+    targetInput.addEventListener('keyup', (event) => {
+      targetInput.value = capitalizeFirst(targetInput.value);
+    });
+  }
+}
+
+const capitalizeFirst = (text) => {
+  return text.toLowerCase().replace(/^\w/, (c) => c.toUpperCase());
+}
+
+const capitalizeAll = (text) => {
+  return text.toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/(^\w)|(-\w)/g, (c) => c.toUpperCase())));
+}
 
 
-export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize, initOption }
+//Payment ----------------------------------------------------------------------
+const displayPaymentMethod = () => {
+
+  const paymentType = document.querySelector("#paymentType")
+
+  if (paymentType) {
+
+    const IBANDiv = document.querySelector(".IBAN")
+    const cashDiv = document.querySelector(".Cash")
+    const paypalDiv = document.querySelector(".Card")
+    const IBANIcon = document.querySelector(".fa-server")
+    const cashIcon = document.querySelector(".fa-money-bill-wave")
+    const paypalIcon = document.querySelector(".fa-money-check")
+    const manualPaymentDiv = document.querySelector(".manual-payment")
+    const ePaymentDiv = document.querySelector(".e-payment")
+
+    cashDiv.style.display = "none";
+    paypalDiv.style.display = "none";
+    cashIcon.style.display = "none";
+    paypalIcon.style.display = "none";
+    manualPaymentDiv.style.display = "";
+    ePaymentDiv.style.display = "none";
+
+    paymentType.addEventListener('change', () => {
+
+      initBraintree()
+
+      console.log("Display Payment Method: " + paymentType.options[paymentType.selectedIndex].value)
+
+      switch (paymentType.options[paymentType.selectedIndex].value) {
+        case "En espèces":
+          IBANDiv.style.display = "none";
+          cashDiv.style.display = "";
+          paypalDiv.style.display = "none";
+          IBANIcon.style.display = "none";
+          cashIcon.style.display = "";
+          paypalIcon.style.display = "none";
+          manualPaymentDiv.style.display = "";
+          ePaymentDiv.style.display = "none";
+          break;
+        case "Virement bancaire":
+          IBANDiv.style.display = "";
+          cashDiv.style.display = "none";
+          paypalDiv.style.display = "none";
+          IBANIcon.style.display = "";
+          cashIcon.style.display = "none";
+          paypalIcon.style.display = "none";
+          manualPaymentDiv.style.display = "";
+          ePaymentDiv.style.display = "none";
+          break;
+        case "Carte bancaire":
+          IBANDiv.style.display = "none";
+          cashDiv.style.display = "none";
+          paypalDiv.style.display = "";
+          IBANIcon.style.display = "none";
+          cashIcon.style.display = "none";
+          paypalIcon.style.display = "";
+          manualPaymentDiv.style.display = "none";
+          ePaymentDiv.style.display = "";
+          break;
+      }
+    })
+  }
+}
+
+//------------------------------------------------------------------------------
+
+export { initFormBasket, initFormLine, initCalendarLine, displayPaymentMethod, initSize, initOption, capitalizeInputAll, capitalizeInputFirst }

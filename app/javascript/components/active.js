@@ -2,7 +2,7 @@ const initActive = () => {
 
  const active = document.getElementById("active")
 
- if (active != null ){
+ if (active){
 
   const activeDiv = document.getElementById("active-flag")
   switch (active.dataset.active){

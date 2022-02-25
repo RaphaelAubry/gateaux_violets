@@ -2,7 +2,7 @@ const initMapBox = (mapID) => {
 
   const map = document.getElementById(mapID)
 
-  if (map !=null){
+  if (map){
 
     const GateauVioletCoord = [7.255857425272438, 43.70396954971656]
 

@@ -4,7 +4,7 @@ const rotate = (sourceID, targetCaret, targetClass) => {
   const targetDivCaret = document.querySelector(targetCaret)
   const targetDiv = document.querySelector(targetClass)
 
-  if (source != null) {
+  if (source) {
 
 
     targetDiv.style.display = ""

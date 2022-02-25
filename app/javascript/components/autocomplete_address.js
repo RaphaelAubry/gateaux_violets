@@ -4,7 +4,7 @@ const autocompleteAddress = () => {
 
   const inputAddress = document.querySelector('#form-address')
 
-  if (inputAddress != null) {
+  if (inputAddress) {
 
     (function () {
       var placesAutocomplete = places({
