@@ -3,7 +3,8 @@ class CakesController < ApplicationController
   before_action :set_cake, only: [:show, :edit, :update, :destroy]
 
   def index
-    params[:query].present? ? @cakes = policy_scope(Cake).search(params[:query]) : @cakes = policy_scope(Cake)
+    @cakes = params[:query].present? ? policy_scope(Cake).where('description like ?', params[:query]) : policy_scope(Cake)
+    @cakes = policy_scope(Cake) if @cakes.empty?
   end
 
   def new
